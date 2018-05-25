@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="menuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menuPrincipal.Designer.cs">
+      <DependentUpon>menuPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="telaCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     <Compile Include="_cadastroFuncionario.Designer.cs">
       <DependentUpon>_cadastroFuncionario.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="menuPrincipal.resx">
+      <DependentUpon>menuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="telaCadastro.resx">
       <DependentUpon>telaCadastro.cs</DependentUpon>
     </EmbeddedResource>

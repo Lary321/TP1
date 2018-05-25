@@ -26,3 +26,20 @@ C:\Users\lucinea\Desktop\FACUL_ARTHUR\1° periodo\ATP\telasTrab\telasTrab\obj\De
 C:\Users\lucinea\Desktop\FACUL_ARTHUR\1° periodo\ATP\telasTrab\telasTrab\obj\Debug\telasTrab._cadastroFornecedor.resources
 C:\Users\lucinea\Desktop\FACUL_ARTHUR\1° periodo\ATP\telasTrab\telasTrab\obj\Debug\telasTrab._cadastroCliente.resources
 C:\Users\lucinea\Desktop\FACUL_ARTHUR\1° periodo\ATP\telasTrab\telasTrab\obj\Debug\telasTrab._cadastroFesta.resources
+E:\PUC MINAS\1º Período\Disciplinas\Lab. Algoritmos e Técnicas de Programação\TP1\TP1\telasTrab\bin\Debug\telasTrab.exe.config
+E:\PUC MINAS\1º Período\Disciplinas\Lab. Algoritmos e Técnicas de Programação\TP1\TP1\telasTrab\bin\Debug\telasTrab.exe
+E:\PUC MINAS\1º Período\Disciplinas\Lab. Algoritmos e Técnicas de Programação\TP1\TP1\telasTrab\bin\Debug\telasTrab.pdb
+E:\PUC MINAS\1º Período\Disciplinas\Lab. Algoritmos e Técnicas de Programação\TP1\TP1\telasTrab\obj\Debug\telasTrab.csprojAssemblyReference.cache
+E:\PUC MINAS\1º Período\Disciplinas\Lab. Algoritmos e Técnicas de Programação\TP1\TP1\telasTrab\obj\Debug\telasTrab.telaCadastro.resources
+E:\PUC MINAS\1º Período\Disciplinas\Lab. Algoritmos e Técnicas de Programação\TP1\TP1\telasTrab\obj\Debug\telasTrab.telaConsulta.resources
+E:\PUC MINAS\1º Período\Disciplinas\Lab. Algoritmos e Técnicas de Programação\TP1\TP1\telasTrab\obj\Debug\telasTrab.telaRelatorio.resources
+E:\PUC MINAS\1º Período\Disciplinas\Lab. Algoritmos e Técnicas de Programação\TP1\TP1\telasTrab\obj\Debug\telasTrab.Properties.Resources.resources
+E:\PUC MINAS\1º Período\Disciplinas\Lab. Algoritmos e Técnicas de Programação\TP1\TP1\telasTrab\obj\Debug\telasTrab._cadastroCliente.resources
+E:\PUC MINAS\1º Período\Disciplinas\Lab. Algoritmos e Técnicas de Programação\TP1\TP1\telasTrab\obj\Debug\telasTrab._cadastroFesta.resources
+E:\PUC MINAS\1º Período\Disciplinas\Lab. Algoritmos e Técnicas de Programação\TP1\TP1\telasTrab\obj\Debug\telasTrab._cadastroFornecedor.resources
+E:\PUC MINAS\1º Período\Disciplinas\Lab. Algoritmos e Técnicas de Programação\TP1\TP1\telasTrab\obj\Debug\telasTrab._cadastroFuncionario.resources
+E:\PUC MINAS\1º Período\Disciplinas\Lab. Algoritmos e Técnicas de Programação\TP1\TP1\telasTrab\obj\Debug\telasTrab.csproj.GenerateResource.cache
+E:\PUC MINAS\1º Período\Disciplinas\Lab. Algoritmos e Técnicas de Programação\TP1\TP1\telasTrab\obj\Debug\telasTrab.csproj.CoreCompileInputs.cache
+E:\PUC MINAS\1º Período\Disciplinas\Lab. Algoritmos e Técnicas de Programação\TP1\TP1\telasTrab\obj\Debug\telasTrab.exe
+E:\PUC MINAS\1º Período\Disciplinas\Lab. Algoritmos e Técnicas de Programação\TP1\TP1\telasTrab\obj\Debug\telasTrab.pdb
+E:\PUC MINAS\1º Período\Disciplinas\Lab. Algoritmos e Técnicas de Programação\TP1\TP1\telasTrab\obj\Debug\telasTrab.menuPrincipal.resources
