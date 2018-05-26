@@ -50,5 +50,13 @@ namespace telasTrab
         {
             timeHoradiaSemana2.Value = timeHoradiaSemana1.Value.AddHours(4);
         }
+
+        private void gravarCliente_Click(object sender, EventArgs e)
+        {
+            DateTimePicker dateTimePicker1 = new DateTimePicker();
+            string data = dateTimePicker1.Value.ToString();
+            string nomeCliente = tbNomeCliente.Text;
+            MessageBox.Show(nomeCliente,data);
+        }
     }
 }
