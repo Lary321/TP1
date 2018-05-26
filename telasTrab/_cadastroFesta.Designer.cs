@@ -121,7 +121,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(93, 20);
             this.dateTimePicker1.TabIndex = 10;
-            this.dateTimePicker1.Value = new System.DateTime(2018, 5, 19, 15, 36, 35, 0);
+            this.dateTimePicker1.Value = new System.DateTime(2018, 5, 19, 0, 0, 0, 0);
             // 
             // gpHoraDiaSemana
             // 
