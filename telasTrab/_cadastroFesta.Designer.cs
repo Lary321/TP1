@@ -33,7 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btVoltar = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbNomeCliente = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.gpHoraDiaSemana = new System.Windows.Forms.GroupBox();
@@ -61,6 +61,7 @@
             gravarCliente.Text = "Gravar";
             gravarCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             gravarCliente.UseVisualStyleBackColor = true;
+            gravarCliente.Click += new System.EventHandler(this.gravarCliente_Click);
             // 
             // label2
             // 
@@ -94,12 +95,12 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Nome do cliente:";
             // 
-            // textBox1
+            // tbNomeCliente
             // 
-            this.textBox1.Location = new System.Drawing.Point(134, 111);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(294, 20);
-            this.textBox1.TabIndex = 8;
+            this.tbNomeCliente.Location = new System.Drawing.Point(134, 111);
+            this.tbNomeCliente.Name = "tbNomeCliente";
+            this.tbNomeCliente.Size = new System.Drawing.Size(294, 20);
+            this.tbNomeCliente.TabIndex = 8;
             // 
             // label3
             // 
@@ -120,7 +121,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(93, 20);
             this.dateTimePicker1.TabIndex = 10;
-            this.dateTimePicker1.Value = new System.DateTime(2018, 5, 19, 15, 36, 35, 0);
+            this.dateTimePicker1.Value = new System.DateTime(2018, 5, 19, 0, 0, 0, 0);
             // 
             // gpHoraDiaSemana
             // 
@@ -231,7 +232,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbNomeCliente);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btVoltar);
             this.Controls.Add(this.label2);
@@ -252,7 +253,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox btVoltar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbNomeCliente;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.GroupBox gpHoraDiaSemana;
