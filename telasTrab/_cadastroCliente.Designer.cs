@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(_cadastroCliente));
-            this.dtNascCliente = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,21 +41,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btVoltar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.codCliente = new System.Windows.Forms.TextBox();
+            this.codigoCliente = new System.Windows.Forms.Label();
+            this.dtNascCliente = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dtNascCliente
-            // 
-            this.dtNascCliente.CalendarFont = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
-            this.dtNascCliente.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNascCliente.Location = new System.Drawing.Point(29, 340);
-            this.dtNascCliente.MaxDate = new System.DateTime(2509, 12, 31, 0, 0, 0, 0);
-            this.dtNascCliente.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            this.dtNascCliente.Name = "dtNascCliente";
-            this.dtNascCliente.Size = new System.Drawing.Size(112, 20);
-            this.dtNascCliente.TabIndex = 16;
-            this.dtNascCliente.Value = new System.DateTime(2018, 5, 10, 0, 0, 0, 0);
             // 
             // label5
             // 
@@ -109,7 +97,7 @@
             // 
             this.enderecoCliente.Location = new System.Drawing.Point(30, 220);
             this.enderecoCliente.Name = "enderecoCliente";
-            this.enderecoCliente.Size = new System.Drawing.Size(257, 20);
+            this.enderecoCliente.Size = new System.Drawing.Size(380, 20);
             this.enderecoCliente.TabIndex = 18;
             // 
             // pictureBox2
@@ -132,11 +120,12 @@
             this.btGravarCliente.Text = "Gravar ";
             this.btGravarCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btGravarCliente.UseVisualStyleBackColor = true;
+            this.btGravarCliente.Click += new System.EventHandler(this.btGravarCliente_Click);
             // 
             // telefoneCliente
             // 
             this.telefoneCliente.Location = new System.Drawing.Point(29, 280);
-            this.telefoneCliente.Mask = "(00) 00000-0000";
+            this.telefoneCliente.Mask = "(00)00000-0000";
             this.telefoneCliente.Name = "telefoneCliente";
             this.telefoneCliente.Size = new System.Drawing.Size(88, 20);
             this.telefoneCliente.TabIndex = 22;
@@ -165,19 +154,30 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.Window;
-            this.label2.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(121, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(481, 23);
             this.label2.TabIndex = 12;
             this.label2.Text = "Para cadastrar um novo cliente, preencha os dados abaixo:";
             // 
-            // codCliente
+            // codigoCliente
             // 
-            this.codCliente.Location = new System.Drawing.Point(147, 85);
-            this.codCliente.Name = "codCliente";
-            this.codCliente.Size = new System.Drawing.Size(91, 20);
-            this.codCliente.TabIndex = 24;
+            this.codigoCliente.AutoSize = true;
+            this.codigoCliente.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codigoCliente.Location = new System.Drawing.Point(141, 82);
+            this.codigoCliente.Name = "codigoCliente";
+            this.codigoCliente.Size = new System.Drawing.Size(0, 23);
+            this.codigoCliente.TabIndex = 26;
+            // 
+            // dtNascCliente
+            // 
+            this.dtNascCliente.Location = new System.Drawing.Point(30, 340);
+            this.dtNascCliente.Mask = "00/00/0000";
+            this.dtNascCliente.Name = "dtNascCliente";
+            this.dtNascCliente.Size = new System.Drawing.Size(70, 20);
+            this.dtNascCliente.TabIndex = 27;
+            this.dtNascCliente.ValidatingType = typeof(System.DateTime);
             // 
             // _cadastroCliente
             // 
@@ -185,15 +185,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(704, 481);
+            this.Controls.Add(this.dtNascCliente);
+            this.Controls.Add(this.codigoCliente);
             this.Controls.Add(this.btVoltar);
-            this.Controls.Add(this.codCliente);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.telefoneCliente);
             this.Controls.Add(this.btGravarCliente);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.enderecoCliente);
-            this.Controls.Add(this.dtNascCliente);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
@@ -202,6 +202,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "_cadastroCliente";
             this.Text = "Cadastro Cliente";
+            this.Load += new System.EventHandler(this._cadastroCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -209,8 +210,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DateTimePicker dtNascCliente;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
@@ -223,6 +222,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btVoltar;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox codCliente;
+        private System.Windows.Forms.Label codigoCliente;
+        private System.Windows.Forms.MaskedTextBox dtNascCliente;
     }
 }
