@@ -97,9 +97,14 @@
             this.Controls.Add(this.relatorio);
             this.Controls.Add(this.pesquisarCadastro);
             this.Controls.Add(this.novoCadastro);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "menuPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Patati Patatá Buffet Infantil";
+            this.Load += new System.EventHandler(this.menuPrincipal_Load);
             this.ResumeLayout(false);
 
         }
