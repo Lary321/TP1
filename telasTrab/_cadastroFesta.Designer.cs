@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(_cadastroFesta));
             System.Windows.Forms.Button gravarCliente;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(_cadastroFesta));
             this.label2 = new System.Windows.Forms.Label();
             this.btVoltar = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,6 +49,18 @@
             this.gpHoraDiaSemana.SuspendLayout();
             this.gpHoraFimSemana.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // gravarCliente
+            // 
+            gravarCliente.Font = new System.Drawing.Font("Swis721 BlkCn BT", 12F);
+            gravarCliente.Image = ((System.Drawing.Image)(resources.GetObject("gravarCliente.Image")));
+            gravarCliente.Location = new System.Drawing.Point(180, 408);
+            gravarCliente.Name = "gravarCliente";
+            gravarCliente.Size = new System.Drawing.Size(118, 59);
+            gravarCliente.TabIndex = 15;
+            gravarCliente.Text = "Gravar";
+            gravarCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            gravarCliente.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -204,18 +216,6 @@
             this.cbHoraFestaSabado.Name = "cbHoraFestaSabado";
             this.cbHoraFestaSabado.Size = new System.Drawing.Size(182, 21);
             this.cbHoraFestaSabado.TabIndex = 15;
-            // 
-            // gravarCliente
-            // 
-            gravarCliente.Font = new System.Drawing.Font("Swis721 BlkCn BT", 12F);
-            gravarCliente.Image = ((System.Drawing.Image)(resources.GetObject("gravarCliente.Image")));
-            gravarCliente.Location = new System.Drawing.Point(180, 408);
-            gravarCliente.Name = "gravarCliente";
-            gravarCliente.Size = new System.Drawing.Size(118, 59);
-            gravarCliente.TabIndex = 15;
-            gravarCliente.Text = "Gravar";
-            gravarCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            gravarCliente.UseVisualStyleBackColor = true;
             // 
             // _cadastroFesta
             // 

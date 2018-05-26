@@ -16,7 +16,7 @@ namespace telasTrab
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new telaCadastro());
+            Application.Run(new menuPrincipal());
         }
     }
 }

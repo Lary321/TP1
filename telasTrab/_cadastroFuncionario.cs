@@ -33,10 +33,6 @@ namespace telasTrab
             telaCadastro.Show();
           */
             this.Hide();
-            telaCadastro telaMenuCadastro = new telaCadastro();
-            telaMenuCadastro.StartPosition = FormStartPosition.CenterScreen;
-            telaMenuCadastro.FormBorderStyle = FormBorderStyle.FixedSingle;
-            telaMenuCadastro.ShowDialog();
             this.Close();
 
 

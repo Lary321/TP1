@@ -23,5 +23,30 @@ namespace telasTrab
         {
 
         }
+
+        private void rTBrelatorioCliente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.Text == "Data")
+            {
+                gBdataFesta.Enabled = true;
+                gBnomeCliente.Enabled = false;
+            }
+            else
+            {
+                gBdataFesta.Enabled = false;
+                gBnomeCliente.Enabled = true;
+            }
+        }
+
+        private void btVoltar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
+        }
     }
 }

@@ -43,3 +43,20 @@ E:\PUC MINAS\1º Período\Disciplinas\Lab. Algoritmos e Técnicas de Programaç�
 E:\PUC MINAS\1º Período\Disciplinas\Lab. Algoritmos e Técnicas de Programação\TP1\TP1\telasTrab\obj\Debug\telasTrab.exe
 E:\PUC MINAS\1º Período\Disciplinas\Lab. Algoritmos e Técnicas de Programação\TP1\TP1\telasTrab\obj\Debug\telasTrab.pdb
 E:\PUC MINAS\1º Período\Disciplinas\Lab. Algoritmos e Técnicas de Programação\TP1\TP1\telasTrab\obj\Debug\telasTrab.menuPrincipal.resources
+C:\Users\lucinea\Desktop\FACUL_ARTHUR\1° periodo\ATP\TP1\TP1\telasTrab\bin\Debug\telasTrab.exe.config
+C:\Users\lucinea\Desktop\FACUL_ARTHUR\1° periodo\ATP\TP1\TP1\telasTrab\bin\Debug\telasTrab.exe
+C:\Users\lucinea\Desktop\FACUL_ARTHUR\1° periodo\ATP\TP1\TP1\telasTrab\bin\Debug\telasTrab.pdb
+C:\Users\lucinea\Desktop\FACUL_ARTHUR\1° periodo\ATP\TP1\TP1\telasTrab\obj\Debug\telasTrab.csprojResolveAssemblyReference.cache
+C:\Users\lucinea\Desktop\FACUL_ARTHUR\1° periodo\ATP\TP1\TP1\telasTrab\obj\Debug\telasTrab.menuPrincipal.resources
+C:\Users\lucinea\Desktop\FACUL_ARTHUR\1° periodo\ATP\TP1\TP1\telasTrab\obj\Debug\telasTrab.telaCadastro.resources
+C:\Users\lucinea\Desktop\FACUL_ARTHUR\1° periodo\ATP\TP1\TP1\telasTrab\obj\Debug\telasTrab.telaConsulta.resources
+C:\Users\lucinea\Desktop\FACUL_ARTHUR\1° periodo\ATP\TP1\TP1\telasTrab\obj\Debug\telasTrab.telaRelatorio.resources
+C:\Users\lucinea\Desktop\FACUL_ARTHUR\1° periodo\ATP\TP1\TP1\telasTrab\obj\Debug\telasTrab.Properties.Resources.resources
+C:\Users\lucinea\Desktop\FACUL_ARTHUR\1° periodo\ATP\TP1\TP1\telasTrab\obj\Debug\telasTrab._cadastroCliente.resources
+C:\Users\lucinea\Desktop\FACUL_ARTHUR\1° periodo\ATP\TP1\TP1\telasTrab\obj\Debug\telasTrab._cadastroFesta.resources
+C:\Users\lucinea\Desktop\FACUL_ARTHUR\1° periodo\ATP\TP1\TP1\telasTrab\obj\Debug\telasTrab._cadastroFornecedor.resources
+C:\Users\lucinea\Desktop\FACUL_ARTHUR\1° periodo\ATP\TP1\TP1\telasTrab\obj\Debug\telasTrab._cadastroFuncionario.resources
+C:\Users\lucinea\Desktop\FACUL_ARTHUR\1° periodo\ATP\TP1\TP1\telasTrab\obj\Debug\telasTrab.csproj.GenerateResource.Cache
+C:\Users\lucinea\Desktop\FACUL_ARTHUR\1° periodo\ATP\TP1\TP1\telasTrab\obj\Debug\telasTrab.csproj.CoreCompileInputs.cache
+C:\Users\lucinea\Desktop\FACUL_ARTHUR\1° periodo\ATP\TP1\TP1\telasTrab\obj\Debug\telasTrab.exe
+C:\Users\lucinea\Desktop\FACUL_ARTHUR\1° periodo\ATP\TP1\TP1\telasTrab\obj\Debug\telasTrab.pdb

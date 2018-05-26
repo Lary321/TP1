@@ -35,6 +35,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.btGerarPesquisa = new System.Windows.Forms.Button();
+            this.btVoltar = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.btVoltar)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -101,12 +103,23 @@
             this.btGerarPesquisa.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btGerarPesquisa.UseVisualStyleBackColor = true;
             // 
+            // btVoltar
+            // 
+            this.btVoltar.Image = ((System.Drawing.Image)(resources.GetObject("btVoltar.Image")));
+            this.btVoltar.Location = new System.Drawing.Point(16, 445);
+            this.btVoltar.Name = "btVoltar";
+            this.btVoltar.Size = new System.Drawing.Size(73, 41);
+            this.btVoltar.TabIndex = 11;
+            this.btVoltar.TabStop = false;
+            this.btVoltar.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // telaConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(611, 451);
+            this.ClientSize = new System.Drawing.Size(611, 498);
+            this.Controls.Add(this.btVoltar);
             this.Controls.Add(this.btGerarPesquisa);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.textBox1);
@@ -117,6 +130,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "telaConsulta";
             this.Text = "Consultas";
+            ((System.ComponentModel.ISupportInitialize)(this.btVoltar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,5 +143,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button btGerarPesquisa;
+        private System.Windows.Forms.PictureBox btVoltar;
     }
 }

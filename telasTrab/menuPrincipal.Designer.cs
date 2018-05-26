@@ -97,6 +97,7 @@
             this.Controls.Add(this.relatorio);
             this.Controls.Add(this.pesquisarCadastro);
             this.Controls.Add(this.novoCadastro);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "menuPrincipal";
             this.Text = "Patati Patatá Buffet Infantil";
             this.ResumeLayout(false);

@@ -20,9 +20,6 @@ namespace telasTrab
         private void btVoltar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            telaCadastro telaMenuCadastro = new telaCadastro();
-            telaMenuCadastro.StartPosition = FormStartPosition.CenterScreen;
-            telaMenuCadastro.ShowDialog();
             this.Close();
         }
     }

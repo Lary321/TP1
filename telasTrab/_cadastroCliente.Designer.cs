@@ -40,7 +40,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btGravarFuncionario = new System.Windows.Forms.Button();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.mTBtelefoneCliente = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.btVoltar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -48,11 +48,12 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
-            this.dateTimePicker1.Location = new System.Drawing.Point(29, 359);
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(37, 357);
             this.dateTimePicker1.MaxDate = new System.DateTime(2509, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker1.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(141, 20);
             this.dateTimePicker1.TabIndex = 16;
             this.dateTimePicker1.Value = new System.DateTime(2018, 5, 10, 0, 0, 0, 0);
             // 
@@ -152,12 +153,13 @@
             this.btGravarFuncionario.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btGravarFuncionario.UseVisualStyleBackColor = true;
             // 
-            // maskedTextBox1
+            // mTBtelefoneCliente
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(29, 190);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 22;
+            this.mTBtelefoneCliente.Location = new System.Drawing.Point(29, 209);
+            this.mTBtelefoneCliente.Mask = "(00)00000-0000";
+            this.mTBtelefoneCliente.Name = "mTBtelefoneCliente";
+            this.mTBtelefoneCliente.Size = new System.Drawing.Size(185, 20);
+            this.mTBtelefoneCliente.TabIndex = 22;
             // 
             // _cadastroCliente
             // 
@@ -165,7 +167,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(704, 481);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.mTBtelefoneCliente);
             this.Controls.Add(this.btGravarFuncionario);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label3);
@@ -200,6 +202,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btGravarFuncionario;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox mTBtelefoneCliente;
     }
 }
