@@ -32,6 +32,7 @@ namespace telasTrab
             arquivo.Close();
             FileStream arquivo2 = new FileStream("clientes.txt", FileMode.Open);
             StreamReader ler = new StreamReader(arquivo2);
+
             string linha = " ";
             string[] dadosDoCliente;
 
@@ -44,7 +45,7 @@ namespace telasTrab
                     codigo = Convert.ToInt32(dadosDoCliente[0]);
                 }
             }
-
+            arquivo2.Close();
         }
 
         private void _cadastroCliente_Load(object sender, EventArgs e)
@@ -68,17 +69,22 @@ namespace telasTrab
         private void btGravarCliente_Click(object sender, EventArgs e)
         {
             Cliente cliente = new Cliente();
+
             cliente.codigo = codigoCliente.Text;
             cliente.nome = nomeCliente.Text;
             cliente.endereco = enderecoCliente.Text;
             cliente.telefone = telefoneCliente.Text;
             cliente.dataNasc = dtNascCliente.Text;
+
             FileStream arquivo3 = new FileStream("clientes.txt", FileMode.Append);
             StreamWriter escreve = new StreamWriter(arquivo3);
-            escreve.WriteLine(cliente.codigo + '*' + cliente.nome + '*' + cliente.endereco + '*' + cliente.telefone + '*' + cliente.dataNasc);
+
+            escreve.WriteLine(cliente.codigo + '*' + cliente.nome + '*' + cliente.endereco + '*' + cliente.telefone +
+                '*' + cliente.dataNasc);
             escreve.Close();
             MessageBox.Show("Cliente cadastrado com Sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
+            codigo++;
         }
     }
 }
