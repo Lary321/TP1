@@ -33,7 +33,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btVoltar = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tbNomeCliente = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.gpHoraDiaSemana = new System.Windows.Forms.GroupBox();
@@ -44,6 +43,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.gpHoraFimSemana = new System.Windows.Forms.GroupBox();
             this.cbHoraFestaSabado = new System.Windows.Forms.ComboBox();
+            this.cbNomeCliente = new System.Windows.Forms.ComboBox();
             gravarCliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.btVoltar)).BeginInit();
             this.gpHoraDiaSemana.SuspendLayout();
@@ -94,13 +94,6 @@
             this.label1.Size = new System.Drawing.Size(120, 19);
             this.label1.TabIndex = 7;
             this.label1.Text = "Nome do cliente:";
-            // 
-            // tbNomeCliente
-            // 
-            this.tbNomeCliente.Location = new System.Drawing.Point(134, 111);
-            this.tbNomeCliente.Name = "tbNomeCliente";
-            this.tbNomeCliente.Size = new System.Drawing.Size(294, 20);
-            this.tbNomeCliente.TabIndex = 8;
             // 
             // label3
             // 
@@ -218,12 +211,23 @@
             this.cbHoraFestaSabado.Size = new System.Drawing.Size(182, 21);
             this.cbHoraFestaSabado.TabIndex = 15;
             // 
+            // cbNomeCliente
+            // 
+            this.cbNomeCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbNomeCliente.FormattingEnabled = true;
+            this.cbNomeCliente.Location = new System.Drawing.Point(134, 113);
+            this.cbNomeCliente.Name = "cbNomeCliente";
+            this.cbNomeCliente.Size = new System.Drawing.Size(259, 21);
+            this.cbNomeCliente.TabIndex = 16;
+            this.cbNomeCliente.SelectedIndexChanged += new System.EventHandler(this.cbNomeCliente_SelectedIndexChanged);
+            // 
             // _cadastroFesta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(481, 479);
+            this.Controls.Add(this.cbNomeCliente);
             this.Controls.Add(gravarCliente);
             this.Controls.Add(this.gpHoraFimSemana);
             this.Controls.Add(this.gpHoraDiaSemana);
@@ -232,7 +236,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.tbNomeCliente);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btVoltar);
             this.Controls.Add(this.label2);
@@ -253,7 +256,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox btVoltar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbNomeCliente;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.GroupBox gpHoraDiaSemana;
@@ -264,5 +266,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBoxDiaSemana;
+        private System.Windows.Forms.ComboBox cbNomeCliente;
     }
 }
