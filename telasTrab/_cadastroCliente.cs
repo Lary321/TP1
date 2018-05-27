@@ -14,7 +14,7 @@ namespace telasTrab
 {
     public partial class _cadastroCliente : Form
     {
-        static int codigo = 1;
+        static int codigo = 0;
 
         public struct Cliente
         {
@@ -28,10 +28,11 @@ namespace telasTrab
         public _cadastroCliente()
         {
             InitializeComponent();
-            FileStream arquivo = new FileStream("clientes.txt", FileMode.OpenOrCreate);
+            FileStream arquivo = new FileStream("clientes.txt", FileMode.Append);
             arquivo.Close();
             FileStream arquivo2 = new FileStream("clientes.txt", FileMode.Open);
             StreamReader ler = new StreamReader(arquivo2);
+
             string linha = " ";
             string[] dadosDoCliente;
 
@@ -44,7 +45,7 @@ namespace telasTrab
                     codigo = Convert.ToInt32(dadosDoCliente[0]);
                 }
             }
-
+            arquivo2.Close();
         }
 
         private void _cadastroCliente_Load(object sender, EventArgs e)
@@ -68,17 +69,42 @@ namespace telasTrab
         private void btGravarCliente_Click(object sender, EventArgs e)
         {
             Cliente cliente = new Cliente();
+
             cliente.codigo = codigoCliente.Text;
             cliente.nome = nomeCliente.Text;
             cliente.endereco = enderecoCliente.Text;
             cliente.telefone = telefoneCliente.Text;
-            cliente.dataNasc = dtNascCliente.Text;
+            cliente.dataNasc = dTPnascimentoCliente.Value.Date.ToString("dd/MM/yyyy"); ;
+
             FileStream arquivo3 = new FileStream("clientes.txt", FileMode.Append);
             StreamWriter escreve = new StreamWriter(arquivo3);
-            escreve.WriteLine(cliente.codigo + '*' + cliente.nome + '*' + cliente.endereco + '*' + cliente.telefone + '*' + cliente.dataNasc);
+
+            escreve.Write(cliente.codigo + '*' + cliente.nome + '*' + cliente.endereco + '*' + cliente.telefone + 
+                '*' + cliente.dataNasc);
+            escreve.WriteLine(" ");
             escreve.Close();
-            MessageBox.Show("Cliente cadastrado com Sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
+
+            MessageBox.Show("Cliente cadastrado com Sucesso!", "Aviso", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+
+            if (MessageBox.Show("Deseja cadastrar outro cliente?", "Aviso", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                codigo++;
+                codigoCliente.Text = codigo.ToString();
+                nomeCliente.Text = string.Empty;
+                enderecoCliente.Text = string.Empty;
+                telefoneCliente.Text = string.Empty;
+            }
+            else
+            {
+                codigo++;
+                this.Close();
+            }
+            
+            //this.Close(); 
         }
+
+     
     }
 }

@@ -55,7 +55,7 @@ namespace telasTrab
         {
            
             string data;
-            data = dateTimePicker1.Value.Date.ToString();
+            data = dateTimePicker1.Value.Date.ToString("dd-MM-yyyy");
             string nomeCliente = tbNomeCliente.Text;
             MessageBox.Show(nomeCliente,data,MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
         }
