@@ -42,7 +42,7 @@
             this.btVoltar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.codigoCliente = new System.Windows.Forms.Label();
-            this.dTPnascimentoCliente = new System.Windows.Forms.DateTimePicker();
+            this.dataNascCliente = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,7 +113,7 @@
             // 
             this.btGravarCliente.Font = new System.Drawing.Font("Candara", 12.25F, System.Drawing.FontStyle.Bold);
             this.btGravarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btGravarCliente.Image")));
-            this.btGravarCliente.Location = new System.Drawing.Point(30, 382);
+            this.btGravarCliente.Location = new System.Drawing.Point(30, 397);
             this.btGravarCliente.Name = "btGravarCliente";
             this.btGravarCliente.Size = new System.Drawing.Size(117, 61);
             this.btGravarCliente.TabIndex = 21;
@@ -170,14 +170,14 @@
             this.codigoCliente.Size = new System.Drawing.Size(0, 23);
             this.codigoCliente.TabIndex = 26;
             // 
-            // dTPnascimentoCliente
+            // dataNascCliente
             // 
-            this.dTPnascimentoCliente.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dTPnascimentoCliente.Location = new System.Drawing.Point(30, 350);
-            this.dTPnascimentoCliente.Name = "dTPnascimentoCliente";
-            this.dTPnascimentoCliente.Size = new System.Drawing.Size(200, 20);
-            this.dTPnascimentoCliente.TabIndex = 27;
-            this.dTPnascimentoCliente.Value = new System.DateTime(2018, 5, 26, 0, 0, 0, 0);
+            this.dataNascCliente.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dataNascCliente.Location = new System.Drawing.Point(30, 350);
+            this.dataNascCliente.Name = "dataNascCliente";
+            this.dataNascCliente.Size = new System.Drawing.Size(200, 20);
+            this.dataNascCliente.TabIndex = 27;
+            this.dataNascCliente.Value = new System.DateTime(2018, 5, 26, 0, 0, 0, 0);
             // 
             // _cadastroCliente
             // 
@@ -185,7 +185,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(704, 481);
-            this.Controls.Add(this.dTPnascimentoCliente);
+            this.Controls.Add(this.dataNascCliente);
             this.Controls.Add(this.codigoCliente);
             this.Controls.Add(this.btVoltar);
             this.Controls.Add(this.label6);
@@ -223,6 +223,6 @@
         private System.Windows.Forms.Button btVoltar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label codigoCliente;
-        private System.Windows.Forms.DateTimePicker dTPnascimentoCliente;
+        private System.Windows.Forms.DateTimePicker dataNascCliente;
     }
 }

@@ -54,12 +54,6 @@ namespace telasTrab
             codigoCliente.Text = codigo.ToString();
         }
 
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btVoltar_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -74,7 +68,7 @@ namespace telasTrab
             cliente.nome = nomeCliente.Text;
             cliente.endereco = enderecoCliente.Text;
             cliente.telefone = telefoneCliente.Text;
-            cliente.dataNasc = dTPnascimentoCliente.Value.Date.ToString("dd/MM/yyyy"); ;
+            cliente.dataNasc = dataNascCliente.Value.Date.ToString("dd/MM/yyyy");
 
             FileStream arquivo3 = new FileStream("clientes.txt", FileMode.Append);
             StreamWriter escreve = new StreamWriter(arquivo3);
@@ -84,7 +78,7 @@ namespace telasTrab
             escreve.WriteLine(" ");
             escreve.Close();
 
-            MessageBox.Show("Cliente cadastrado com Sucesso!", "Aviso", MessageBoxButtons.OK,
+            MessageBox.Show("Cliente cadastrado com sucesso!", "Aviso", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
 
             if (MessageBox.Show("Deseja cadastrar outro cliente?", "Aviso", MessageBoxButtons.YesNo,
@@ -101,10 +95,6 @@ namespace telasTrab
                 codigo++;
                 this.Close();
             }
-            
-            //this.Close(); 
         }
-
-     
     }
 }

@@ -8,64 +8,99 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace telasTrab
 {
     public partial class _cadastroFuncionario : Form
     {
+        int codigo;
+
+        struct Funcionario
+        {
+            public string codigo;
+            public string nome;
+            public string telefone;
+            public string funcao;
+            public string salario; // deixamos como string para utilizarmos os símbolos de notação de dinheiro "R$" já que não era preciso fazer cálculos com esse valor
+            public string tipo;
+        }
+
         public _cadastroFuncionario()
         {
             InitializeComponent();
+
+            FileStream arquivo = new FileStream("funcionarios.txt", FileMode.Append);
+            arquivo.Close();
+            FileStream arquivo2 = new FileStream("funcionarios.txt", FileMode.Open);
+            StreamReader ler = new StreamReader(arquivo2);
+
+            string linha = " ";
+            string[] dadosDoFuncionario;
+
+            while (linha != null)
+            {
+                linha = ler.ReadLine();
+                if (linha != null)
+                {
+                    dadosDoFuncionario = linha.Split('*');
+                    codigo = Convert.ToInt32(dadosDoFuncionario[0]);
+                }
+            }
+            arquivo2.Close();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void _cadastroFuncionario_Load(object sender, EventArgs e)
         {
-
+            codigo++;
+            codigoFuncionario.Text = codigo.ToString();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void btVoltar_Click(object sender, EventArgs e)
         {
-          /*this.Hide();
-            telaCadastro telaCadastro = new telaCadastro();
-            telaCadastro.Closed += (s, args) => this.Close(); |encontrei essa linha de codigo mas nao sei o que
-            significa|
-            telaCadastro.StartPosition = FormStartPosition.CenterScreen;
-            telaCadastro.Show();
-          */
             this.Hide();
             this.Close();
-
-
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void btGravarFuncionario_Click(object sender, EventArgs e)
         {
+            Funcionario funcionario = new Funcionario();
 
+            funcionario.codigo = codigoFuncionario.Text;
+            funcionario.nome = nomeFuncionario.Text;
+            funcionario.telefone = telefoneFuncionario.Text;
+            funcionario.tipo = tipoFuncionario.Text;
+            funcionario.funcao = funcaoFuncionario.Text;
+            funcionario.salario = salarioFuncionario.Text;
+
+            FileStream arquivo3 = new FileStream("funcionarios.txt", FileMode.Append);
+            StreamWriter escreve = new StreamWriter(arquivo3);
+
+            escreve.Write(funcionario.codigo + '*' + funcionario.nome + '*' + funcionario.telefone + '*' + funcionario.tipo +
+                '*' + funcionario.funcao + '*' + funcionario.salario);
+            escreve.WriteLine(" ");
+            escreve.Close();
+
+            MessageBox.Show("Funcionário(a) cadastrado(a) com sucesso!", "Aviso", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+
+            if (MessageBox.Show("Deseja cadastrar outro(a) funcionário(a)?", "Aviso", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                codigo++;
+                codigoFuncionario.Text = codigo.ToString();
+                nomeFuncionario.Text = string.Empty;
+                telefoneFuncionario.Text = string.Empty;
+                tipoFuncionario.Text = string.Empty;
+                funcaoFuncionario.Text = string.Empty;
+                salarioFuncionario.Text = string.Empty;
+            }
+            else
+            {
+                codigo++;
+                this.Close();
+            }
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
