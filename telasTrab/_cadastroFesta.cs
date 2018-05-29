@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,10 +13,28 @@ namespace telasTrab
 {
     public partial class _cadastroFesta : Form
     {
+        string[] todaLinha;
+        string linha;
+
         public _cadastroFesta()
         {
             InitializeComponent();
+
+            FileStream arquivo = new FileStream("clientes.txt", FileMode.Open);
+            StreamReader ler = new StreamReader(arquivo);
+            do
+            {
+                linha = ler.ReadLine();
+                if (linha != null)
+                {
+                    todaLinha = linha.Split('*');
+                    cbNomeCliente.Items.Add(todaLinha[1]);
+
+                }
+            } while (linha != null);
+            ler.Close();
         }
+
 
         private void _cadastroFesta_Load(object sender, EventArgs e)
         {
@@ -53,11 +72,24 @@ namespace telasTrab
 
         private void gravarCliente_Click(object sender, EventArgs e)
         {
+            
+            
            
+
+
+
+          
+
             string data;
-            data = dateTimePicker1.Value.Date.ToString("dd-MM-yyyy");
-            string nomeCliente = tbNomeCliente.Text;
-            MessageBox.Show(nomeCliente,data,MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+            data = dateTimePicker1.Value.Date.ToString("dd/MM/yyyy");
+           // string nomeCliente = tbNomeCliente.Text;
+        //    MessageBox.Show(nomeCliente,data,MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+        }
+
+        private void cbNomeCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+             
+            
         }
     }
 }

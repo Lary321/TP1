@@ -81,7 +81,7 @@ namespace telasTrab
             MessageBox.Show("Cliente cadastrado com sucesso!", "Aviso", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
 
-            if (MessageBox.Show("Deseja cadastrar outro cliente?", "Aviso", MessageBoxButtons.YesNo,
+            if (MessageBox.Show("Deseja cadastrar outro cliente?", "Aviso", MessageBoxButtons.YesNo, 
                 MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 codigo++;
