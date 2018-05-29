@@ -1,0 +1,5 @@
+if (novaReserva == reserva || novaReserva == reserva.AddHours(1) || novaReserva == reserva.AddHours(2) || novaReserva == reserva.AddHours(3) || novaReserva.AddHours(1) == reserva || novaReserva.AddHours(2) == reserva || novaReserva.AddHours(3) == reserva)
+{
+        MessageBox.Show("Horário indisponível!", "", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+	return;
+}

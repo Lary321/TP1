@@ -42,7 +42,7 @@
             this.btVoltar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.codigoCliente = new System.Windows.Forms.Label();
-            this.dtNascCliente = new System.Windows.Forms.MaskedTextBox();
+            this.dTPnascimentoCliente = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -170,14 +170,14 @@
             this.codigoCliente.Size = new System.Drawing.Size(0, 23);
             this.codigoCliente.TabIndex = 26;
             // 
-            // dtNascCliente
+            // dTPnascimentoCliente
             // 
-            this.dtNascCliente.Location = new System.Drawing.Point(30, 340);
-            this.dtNascCliente.Mask = "00/00/0000";
-            this.dtNascCliente.Name = "dtNascCliente";
-            this.dtNascCliente.Size = new System.Drawing.Size(70, 20);
-            this.dtNascCliente.TabIndex = 27;
-            this.dtNascCliente.ValidatingType = typeof(System.DateTime);
+            this.dTPnascimentoCliente.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dTPnascimentoCliente.Location = new System.Drawing.Point(30, 350);
+            this.dTPnascimentoCliente.Name = "dTPnascimentoCliente";
+            this.dTPnascimentoCliente.Size = new System.Drawing.Size(200, 20);
+            this.dTPnascimentoCliente.TabIndex = 27;
+            this.dTPnascimentoCliente.Value = new System.DateTime(2018, 5, 26, 0, 0, 0, 0);
             // 
             // _cadastroCliente
             // 
@@ -185,7 +185,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(704, 481);
-            this.Controls.Add(this.dtNascCliente);
+            this.Controls.Add(this.dTPnascimentoCliente);
             this.Controls.Add(this.codigoCliente);
             this.Controls.Add(this.btVoltar);
             this.Controls.Add(this.label6);
@@ -223,6 +223,6 @@
         private System.Windows.Forms.Button btVoltar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label codigoCliente;
-        private System.Windows.Forms.MaskedTextBox dtNascCliente;
+        private System.Windows.Forms.DateTimePicker dTPnascimentoCliente;
     }
 }
