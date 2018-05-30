@@ -41,8 +41,12 @@ namespace telasTrab
 
         public struct Festa
         {
-            public string nomeCliente, dataFesta, diaSemanaFesta, horarioFesta,
-                qtdConvidados, valorPagamento;
+            public string nomeCliente;
+            public string dataFesta;
+            public string diaSemanaFesta;
+            public string horarioFesta;
+            public string qtdConvidados;
+            public string valorPagamento;
             public double valorFinalPagamento;
         }
 

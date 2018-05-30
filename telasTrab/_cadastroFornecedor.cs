@@ -7,14 +7,52 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace telasTrab
 {
     public partial class _cadastroFornecedor : Form
     {
+        int codigo;
+
+        struct Fornecedor
+        {
+            public string codigo;
+            public string nome;
+            public string telefone;
+            public string produtoFornecido;
+        }
+
         public _cadastroFornecedor()
         {
             InitializeComponent();
+
+            outroProduto.Enabled = false;
+
+            FileStream arquivo = new FileStream("fornecedores.txt", FileMode.Append);
+            arquivo.Close();
+            FileStream arquivo2 = new FileStream("fornecedores.txt", FileMode.Open);
+            StreamReader ler = new StreamReader(arquivo2);
+
+            string linha = " ";
+            string[] dadosDoFornecedor;
+
+            while (linha != null)
+            {
+                linha = ler.ReadLine();
+                if (linha != null)
+                {
+                    dadosDoFornecedor = linha.Split('*');
+                    codigo = Convert.ToInt32(dadosDoFornecedor[0]);
+                }
+            }
+            arquivo2.Close();
+        }
+
+        private void _cadastroFornecedor_Load(object sender, EventArgs e)
+        {
+            codigo++;
+            codigoFornecedor.Text = codigo.ToString();
         }
 
         private void btVoltar_Click(object sender, EventArgs e)
@@ -22,5 +60,60 @@ namespace telasTrab
             this.Hide();
             this.Close();
         }
+
+        private void produtoFornecido_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (produtoFornecido.Text != "Outros")
+            {
+                outroProduto.Enabled = false;
+            }
+            else
+            {
+                outroProduto.Enabled = true;
+            }
+        }
+
+        private void btGravarFornecedor_Click(object sender, EventArgs e)
+        {
+            Fornecedor fornecedor = new Fornecedor();
+
+            fornecedor.codigo = codigoFornecedor.Text;
+            fornecedor.nome = nomeFornecedor.Text;
+            fornecedor.telefone = telefoneFornecedor.Text;
+
+            if (produtoFornecido.Text == "Outros")
+            {
+                fornecedor.produtoFornecido = outroProduto.Text;
+            } else
+            {                
+                fornecedor.produtoFornecido = produtoFornecido.Text;
+            }
+
+            FileStream arquivo3 = new FileStream("fornecedores.txt", FileMode.Append);
+            StreamWriter escreve = new StreamWriter(arquivo3);
+
+            escreve.Write(fornecedor.codigo + '*' + fornecedor.nome + '*' + fornecedor.telefone + '*' + fornecedor.produtoFornecido);
+            escreve.WriteLine(" ");
+            escreve.Close();
+
+            MessageBox.Show("Fornecedor cadastrado com sucesso!", "Aviso", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+
+            if (MessageBox.Show("Deseja cadastrar outro fornecedor?", "Aviso", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                codigo++;
+                codigoFornecedor.Text = codigo.ToString();
+                nomeFornecedor.Text = string.Empty;
+                telefoneFornecedor.Text = string.Empty;
+                produtoFornecido.Text = string.Empty;               
+            }
+            else
+            {
+                codigo++;
+                this.Close();
+            }
+        }
+
     }
 }

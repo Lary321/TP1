@@ -41,7 +41,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.funcaoFuncionario = new System.Windows.Forms.ComboBox();
             this.btVoltar = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
+            this.codFuncionario = new System.Windows.Forms.Label();
             this.codigoFuncionario = new System.Windows.Forms.Label();
             this.salarioFuncionario = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
@@ -56,10 +56,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label1.Font = new System.Drawing.Font("Candara", 12.25F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(20, 124);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 20);
+            this.label1.Size = new System.Drawing.Size(58, 21);
             this.label1.TabIndex = 1;
             this.label1.Text = "Nome:";
             // 
@@ -77,10 +77,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label4.Font = new System.Drawing.Font("Candara", 12.25F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(20, 189);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 20);
+            this.label4.Size = new System.Drawing.Size(78, 21);
             this.label4.TabIndex = 7;
             this.label4.Text = "Telefone:";
             // 
@@ -112,20 +112,20 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label6.Font = new System.Drawing.Font("Candara", 12.25F, System.Drawing.FontStyle.Bold);
             this.label6.Location = new System.Drawing.Point(219, 253);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 20);
+            this.label6.Size = new System.Drawing.Size(47, 21);
             this.label6.TabIndex = 13;
             this.label6.Text = "Tipo:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label3.Font = new System.Drawing.Font("Candara", 12.25F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(20, 319);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 20);
+            this.label3.Size = new System.Drawing.Size(64, 21);
             this.label3.TabIndex = 15;
             this.label3.Text = "Salário:";
             // 
@@ -140,10 +140,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label5.Font = new System.Drawing.Font("Candara", 12.25F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(20, 254);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 20);
+            this.label5.Size = new System.Drawing.Size(66, 21);
             this.label5.TabIndex = 17;
             this.label5.Text = "Função:";
             // 
@@ -180,15 +180,15 @@
             this.btVoltar.UseVisualStyleBackColor = true;
             this.btVoltar.Click += new System.EventHandler(this.btVoltar_Click);
             // 
-            // label7
+            // codFuncionario
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label7.Location = new System.Drawing.Point(20, 84);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(150, 20);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "Código Funcionário:";
+            this.codFuncionario.AutoSize = true;
+            this.codFuncionario.Font = new System.Drawing.Font("Candara", 12.25F, System.Drawing.FontStyle.Bold);
+            this.codFuncionario.Location = new System.Drawing.Point(20, 84);
+            this.codFuncionario.Name = "codFuncionario";
+            this.codFuncionario.Size = new System.Drawing.Size(155, 21);
+            this.codFuncionario.TabIndex = 20;
+            this.codFuncionario.Text = "Código Funcionário:";
             // 
             // codigoFuncionario
             // 
@@ -216,7 +216,7 @@
             this.ClientSize = new System.Drawing.Size(704, 481);
             this.Controls.Add(this.salarioFuncionario);
             this.Controls.Add(this.codigoFuncionario);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.codFuncionario);
             this.Controls.Add(this.btVoltar);
             this.Controls.Add(this.funcaoFuncionario);
             this.Controls.Add(this.label5);
@@ -252,7 +252,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox funcaoFuncionario;
         private System.Windows.Forms.Button btVoltar;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label codFuncionario;
         private System.Windows.Forms.Label codigoFuncionario;
         private System.Windows.Forms.MaskedTextBox salarioFuncionario;
     }

@@ -101,6 +101,5 @@ namespace telasTrab
                 this.Close();
             }
         }
-
     }
 }
