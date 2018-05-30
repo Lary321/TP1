@@ -185,7 +185,7 @@
             "Sexta-feira",
             "Sábado",
             "Domingo"});
-            this.cbDiaSemana.Location = new System.Drawing.Point(149, 169);
+            this.cbDiaSemana.Location = new System.Drawing.Point(137, 174);
             this.cbDiaSemana.Name = "cbDiaSemana";
             this.cbDiaSemana.Size = new System.Drawing.Size(121, 21);
             this.cbDiaSemana.TabIndex = 13;
@@ -254,7 +254,7 @@
             "50",
             "80",
             "100"});
-            this.cbQtdConvidados.Location = new System.Drawing.Point(181, 362);
+            this.cbQtdConvidados.Location = new System.Drawing.Point(186, 363);
             this.cbQtdConvidados.Name = "cbQtdConvidados";
             this.cbQtdConvidados.Size = new System.Drawing.Size(52, 21);
             this.cbQtdConvidados.TabIndex = 18;
@@ -281,7 +281,7 @@
             "Parcelado 2x",
             "Parcelado 3x",
             "Parcelado 4x ou mais"});
-            this.cBformaPagamento.Location = new System.Drawing.Point(168, 467);
+            this.cBformaPagamento.Location = new System.Drawing.Point(181, 466);
             this.cBformaPagamento.Name = "cBformaPagamento";
             this.cBformaPagamento.Size = new System.Drawing.Size(136, 21);
             this.cBformaPagamento.TabIndex = 20;
@@ -337,9 +337,9 @@
             // 
             this.gBpagamentoSimNao.Controls.Add(this.rBpagamentoSim);
             this.gBpagamentoSimNao.Controls.Add(this.rBpagamentoNao);
-            this.gBpagamentoSimNao.Location = new System.Drawing.Point(357, 402);
+            this.gBpagamentoSimNao.Location = new System.Drawing.Point(379, 402);
             this.gBpagamentoSimNao.Name = "gBpagamentoSimNao";
-            this.gBpagamentoSimNao.Size = new System.Drawing.Size(134, 42);
+            this.gBpagamentoSimNao.Size = new System.Drawing.Size(132, 42);
             this.gBpagamentoSimNao.TabIndex = 26;
             this.gBpagamentoSimNao.TabStop = false;
             this.gBpagamentoSimNao.Enter += new System.EventHandler(this.gBpagamentoSimNao_Enter);

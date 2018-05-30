@@ -15,6 +15,7 @@ namespace telasTrab
     public partial class _cadastroCliente : Form
     {
         static int codigo = 0;
+        
 
         public struct Cliente
         {
@@ -45,13 +46,17 @@ namespace telasTrab
                     codigo = Convert.ToInt32(dadosDoCliente[0]);
                 }
             }
+            //codigo++;
             arquivo2.Close();
+            codigoCliente.Text = codigo.ToString();
         }
 
         private void _cadastroCliente_Load(object sender, EventArgs e)
         {
             codigo++;
-            codigoCliente.Text = codigo.ToString();
+            
+
+           codigoCliente.Text = codigo.ToString();
         }
 
         private void btVoltar_Click(object sender, EventArgs e)
