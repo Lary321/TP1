@@ -44,13 +44,15 @@
             this.codFuncionario = new System.Windows.Forms.Label();
             this.codigoFuncionario = new System.Windows.Forms.Label();
             this.salarioFuncionario = new System.Windows.Forms.MaskedTextBox();
+            this.outraFuncao = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // nomeFuncionario
             // 
+            this.nomeFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.nomeFuncionario.Location = new System.Drawing.Point(25, 149);
             this.nomeFuncionario.Name = "nomeFuncionario";
-            this.nomeFuncionario.Size = new System.Drawing.Size(380, 20);
+            this.nomeFuncionario.Size = new System.Drawing.Size(380, 23);
             this.nomeFuncionario.TabIndex = 0;
             // 
             // label1
@@ -100,20 +102,21 @@
             // tipoFuncionario
             // 
             this.tipoFuncionario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tipoFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.tipoFuncionario.FormattingEnabled = true;
             this.tipoFuncionario.Items.AddRange(new object[] {
             "Fixo(a)",
             "Temporário(a)"});
-            this.tipoFuncionario.Location = new System.Drawing.Point(224, 279);
+            this.tipoFuncionario.Location = new System.Drawing.Point(25, 344);
             this.tipoFuncionario.Name = "tipoFuncionario";
-            this.tipoFuncionario.Size = new System.Drawing.Size(159, 21);
+            this.tipoFuncionario.Size = new System.Drawing.Size(159, 24);
             this.tipoFuncionario.TabIndex = 12;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Candara", 12.25F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(219, 253);
+            this.label6.Location = new System.Drawing.Point(20, 321);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 21);
             this.label6.TabIndex = 13;
@@ -123,7 +126,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Candara", 12.25F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(20, 319);
+            this.label3.Location = new System.Drawing.Point(200, 321);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 21);
             this.label3.TabIndex = 15;
@@ -131,10 +134,11 @@
             // 
             // telefoneFuncionario
             // 
+            this.telefoneFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.telefoneFuncionario.Location = new System.Drawing.Point(25, 214);
             this.telefoneFuncionario.Mask = "(00)00000-0000";
             this.telefoneFuncionario.Name = "telefoneFuncionario";
-            this.telefoneFuncionario.Size = new System.Drawing.Size(91, 20);
+            this.telefoneFuncionario.Size = new System.Drawing.Size(91, 23);
             this.telefoneFuncionario.TabIndex = 16;
             // 
             // label5
@@ -150,6 +154,7 @@
             // funcaoFuncionario
             // 
             this.funcaoFuncionario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.funcaoFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.funcaoFuncionario.FormattingEnabled = true;
             this.funcaoFuncionario.Items.AddRange(new object[] {
             "Animador(a) de Festa",
@@ -164,11 +169,13 @@
             "Monitor(a)",
             "Recepcionista",
             "Secretário(a)",
-            "Segurança"});
+            "Segurança",
+            "Outro(a)"});
             this.funcaoFuncionario.Location = new System.Drawing.Point(25, 279);
             this.funcaoFuncionario.Name = "funcaoFuncionario";
-            this.funcaoFuncionario.Size = new System.Drawing.Size(159, 21);
+            this.funcaoFuncionario.Size = new System.Drawing.Size(159, 24);
             this.funcaoFuncionario.TabIndex = 18;
+            this.funcaoFuncionario.SelectedIndexChanged += new System.EventHandler(this.funcaoFuncionario_SelectedIndexChanged);
             // 
             // btVoltar
             // 
@@ -201,11 +208,20 @@
             // 
             // salarioFuncionario
             // 
-            this.salarioFuncionario.Location = new System.Drawing.Point(24, 342);
+            this.salarioFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.salarioFuncionario.Location = new System.Drawing.Point(205, 344);
             this.salarioFuncionario.Mask = "$ 0000,00";
             this.salarioFuncionario.Name = "salarioFuncionario";
-            this.salarioFuncionario.Size = new System.Drawing.Size(92, 20);
+            this.salarioFuncionario.Size = new System.Drawing.Size(92, 23);
             this.salarioFuncionario.TabIndex = 22;
+            // 
+            // outraFuncao
+            // 
+            this.outraFuncao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.outraFuncao.Location = new System.Drawing.Point(204, 279);
+            this.outraFuncao.Name = "outraFuncao";
+            this.outraFuncao.Size = new System.Drawing.Size(201, 23);
+            this.outraFuncao.TabIndex = 23;
             // 
             // _cadastroFuncionario
             // 
@@ -214,6 +230,7 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(704, 481);
+            this.Controls.Add(this.outraFuncao);
             this.Controls.Add(this.salarioFuncionario);
             this.Controls.Add(this.codigoFuncionario);
             this.Controls.Add(this.codFuncionario);
@@ -255,5 +272,6 @@
         private System.Windows.Forms.Label codFuncionario;
         private System.Windows.Forms.Label codigoFuncionario;
         private System.Windows.Forms.MaskedTextBox salarioFuncionario;
+        private System.Windows.Forms.TextBox outraFuncao;
     }
 }
