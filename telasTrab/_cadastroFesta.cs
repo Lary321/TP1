@@ -48,17 +48,18 @@ namespace telasTrab
             cBformaPagamento.SelectedIndex = 0;
             labelValorTotal.Text = "0";
             labelValorEstipulado.Text = "0";
+
+            gBpagamentoSimNao.Enabled = false;
         }
 
         private void btVoltar_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            this.Close();
+            
         }
 
         private void comboBoxDiaSemana_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbDiaSemana.Text == "Sábado")
+            if (cbDiaSemana.Text == "Sábado" || cbDiaSemana.Text == "Domingo")
             {
                 cbHoraFestaSabado.Enabled = true;
                 timeHoradiaSemana1.Enabled = false;
@@ -218,6 +219,7 @@ namespace telasTrab
             Festa festa = new Festa();
             festa.diaSemanaFesta = cbDiaSemana.Text;
 
+           
             
 
             //verificando qtd convidados e dia da semana informando o preço
@@ -488,6 +490,8 @@ namespace telasTrab
         {
             Festa festa = new Festa();
             festa.diaSemanaFesta = cbDiaSemana.Text;
+            gBpagamentoSimNao.Enabled = true;
+
             //verificando qtd convidados e dia da semana informando o preço
             if (cbQtdConvidados.Text == "30")
             {
@@ -591,6 +595,12 @@ namespace telasTrab
         private void gBalteracoesPagamento_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
         }
     }
 }

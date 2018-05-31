@@ -29,6 +29,7 @@ namespace telasTrab
         public _cadastroCliente()
         {
             InitializeComponent();
+            telefoneCliente.SelectionStart = 0;
             FileStream arquivo = new FileStream("clientes.txt", FileMode.OpenOrCreate);
             arquivo.Close();
             FileStream arquivo2 = new FileStream("clientes.txt", FileMode.Open);
@@ -64,6 +65,7 @@ namespace telasTrab
 
         private void btGravarCliente_Click(object sender, EventArgs e)
         {
+
             Cliente cliente = new Cliente();
 
             cliente.codigo = codigoCliente.Text;
@@ -97,6 +99,11 @@ namespace telasTrab
                 codigo++;
                 this.Close();
             }
+        }
+
+        private void telefoneCliente_MouseClick(object sender, MouseEventArgs e)
+        {
+            telefoneCliente.SelectionStart = 0;
         }
     }
 }

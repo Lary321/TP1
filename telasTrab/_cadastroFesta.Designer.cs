@@ -31,7 +31,6 @@
             System.Windows.Forms.Button gravarCliente;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(_cadastroFesta));
             this.label2 = new System.Windows.Forms.Label();
-            this.btVoltar = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dTPdataFesta = new System.Windows.Forms.DateTimePicker();
@@ -56,8 +55,8 @@
             this.labelValorEstipulado = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.labelValorTotal = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             gravarCliente = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.btVoltar)).BeginInit();
             this.gpHoraDiaSemana.SuspendLayout();
             this.gpHoraFimSemana.SuspendLayout();
             this.gBpagamentoSimNao.SuspendLayout();
@@ -65,12 +64,12 @@
             // 
             // gravarCliente
             // 
-            gravarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            gravarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             gravarCliente.Image = ((System.Drawing.Image)(resources.GetObject("gravarCliente.Image")));
             gravarCliente.Location = new System.Drawing.Point(204, 552);
             gravarCliente.Name = "gravarCliente";
             gravarCliente.Size = new System.Drawing.Size(118, 59);
-            gravarCliente.TabIndex = 15;
+            gravarCliente.TabIndex = 9;
             gravarCliente.Text = "Gravar";
             gravarCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             gravarCliente.UseVisualStyleBackColor = true;
@@ -86,16 +85,6 @@
             this.label2.Size = new System.Drawing.Size(409, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "Insira as seguintes infomações para o cadastro da festa:";
-            // 
-            // btVoltar
-            // 
-            this.btVoltar.Image = ((System.Drawing.Image)(resources.GetObject("btVoltar.Image")));
-            this.btVoltar.Location = new System.Drawing.Point(12, 12);
-            this.btVoltar.Name = "btVoltar";
-            this.btVoltar.Size = new System.Drawing.Size(76, 42);
-            this.btVoltar.TabIndex = 6;
-            this.btVoltar.TabStop = false;
-            this.btVoltar.Click += new System.EventHandler(this.btVoltar_Click);
             // 
             // label1
             // 
@@ -126,7 +115,7 @@
             this.dTPdataFesta.Location = new System.Drawing.Point(134, 120);
             this.dTPdataFesta.Name = "dTPdataFesta";
             this.dTPdataFesta.Size = new System.Drawing.Size(99, 20);
-            this.dTPdataFesta.TabIndex = 10;
+            this.dTPdataFesta.TabIndex = 2;
             this.dTPdataFesta.Value = new System.DateTime(2018, 5, 19, 0, 0, 0, 0);
             // 
             // gpHoraDiaSemana
@@ -136,7 +125,7 @@
             this.gpHoraDiaSemana.Location = new System.Drawing.Point(12, 239);
             this.gpHoraDiaSemana.Name = "gpHoraDiaSemana";
             this.gpHoraDiaSemana.Size = new System.Drawing.Size(244, 100);
-            this.gpHoraDiaSemana.TabIndex = 11;
+            this.gpHoraDiaSemana.TabIndex = 4;
             this.gpHoraDiaSemana.TabStop = false;
             // 
             // timeHoradiaSemana2
@@ -147,7 +136,7 @@
             this.timeHoradiaSemana2.Name = "timeHoradiaSemana2";
             this.timeHoradiaSemana2.ShowUpDown = true;
             this.timeHoradiaSemana2.Size = new System.Drawing.Size(81, 20);
-            this.timeHoradiaSemana2.TabIndex = 15;
+            this.timeHoradiaSemana2.TabIndex = 2;
             this.timeHoradiaSemana2.Value = new System.DateTime(2018, 5, 23, 16, 0, 0, 0);
             // 
             // timeHoradiaSemana1
@@ -158,7 +147,7 @@
             this.timeHoradiaSemana1.Name = "timeHoradiaSemana1";
             this.timeHoradiaSemana1.ShowUpDown = true;
             this.timeHoradiaSemana1.Size = new System.Drawing.Size(81, 20);
-            this.timeHoradiaSemana1.TabIndex = 14;
+            this.timeHoradiaSemana1.TabIndex = 1;
             this.timeHoradiaSemana1.Value = new System.DateTime(2018, 5, 23, 12, 0, 0, 0);
             this.timeHoradiaSemana1.ValueChanged += new System.EventHandler(this.timeHoradiaSemana1_ValueChanged);
             // 
@@ -177,6 +166,7 @@
             // 
             this.cbDiaSemana.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDiaSemana.FormattingEnabled = true;
+            this.cbDiaSemana.ItemHeight = 13;
             this.cbDiaSemana.Items.AddRange(new object[] {
             "Segunda-feira",
             "Terça-feira",
@@ -188,7 +178,7 @@
             this.cbDiaSemana.Location = new System.Drawing.Point(137, 174);
             this.cbDiaSemana.Name = "cbDiaSemana";
             this.cbDiaSemana.Size = new System.Drawing.Size(121, 21);
-            this.cbDiaSemana.TabIndex = 13;
+            this.cbDiaSemana.TabIndex = 3;
             this.cbDiaSemana.SelectedIndexChanged += new System.EventHandler(this.comboBoxDiaSemana_SelectedIndexChanged);
             // 
             // label5
@@ -208,7 +198,7 @@
             this.gpHoraFimSemana.Location = new System.Drawing.Point(262, 239);
             this.gpHoraFimSemana.Name = "gpHoraFimSemana";
             this.gpHoraFimSemana.Size = new System.Drawing.Size(249, 100);
-            this.gpHoraFimSemana.TabIndex = 14;
+            this.gpHoraFimSemana.TabIndex = 5;
             this.gpHoraFimSemana.TabStop = false;
             // 
             // cbHoraFestaSabado
@@ -222,7 +212,7 @@
             this.cbHoraFestaSabado.Location = new System.Drawing.Point(24, 41);
             this.cbHoraFestaSabado.Name = "cbHoraFestaSabado";
             this.cbHoraFestaSabado.Size = new System.Drawing.Size(205, 21);
-            this.cbHoraFestaSabado.TabIndex = 15;
+            this.cbHoraFestaSabado.TabIndex = 1;
             // 
             // cbNomeCliente
             // 
@@ -231,7 +221,7 @@
             this.cbNomeCliente.Location = new System.Drawing.Point(134, 72);
             this.cbNomeCliente.Name = "cbNomeCliente";
             this.cbNomeCliente.Size = new System.Drawing.Size(259, 21);
-            this.cbNomeCliente.TabIndex = 16;
+            this.cbNomeCliente.TabIndex = 1;
             this.cbNomeCliente.SelectedIndexChanged += new System.EventHandler(this.cbNomeCliente_SelectedIndexChanged);
             // 
             // label6
@@ -257,7 +247,7 @@
             this.cbQtdConvidados.Location = new System.Drawing.Point(186, 363);
             this.cbQtdConvidados.Name = "cbQtdConvidados";
             this.cbQtdConvidados.Size = new System.Drawing.Size(52, 21);
-            this.cbQtdConvidados.TabIndex = 18;
+            this.cbQtdConvidados.TabIndex = 6;
             this.cbQtdConvidados.SelectedIndexChanged += new System.EventHandler(this.cbQtdConvidados_SelectedIndexChanged);
             // 
             // label7
@@ -276,6 +266,7 @@
             this.cBformaPagamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBformaPagamento.Enabled = false;
             this.cBformaPagamento.FormattingEnabled = true;
+            this.cBformaPagamento.ItemHeight = 13;
             this.cBformaPagamento.Items.AddRange(new object[] {
             "À vista",
             "Parcelado 2x",
@@ -284,7 +275,7 @@
             this.cBformaPagamento.Location = new System.Drawing.Point(181, 466);
             this.cBformaPagamento.Name = "cBformaPagamento";
             this.cBformaPagamento.Size = new System.Drawing.Size(136, 21);
-            this.cBformaPagamento.TabIndex = 20;
+            this.cBformaPagamento.TabIndex = 8;
             this.cBformaPagamento.SelectedIndexChanged += new System.EventHandler(this.cBformaPagamento_SelectedIndexChanged);
             // 
             // label8
@@ -315,7 +306,7 @@
             this.rBpagamentoSim.Location = new System.Drawing.Point(18, 14);
             this.rBpagamentoSim.Name = "rBpagamentoSim";
             this.rBpagamentoSim.Size = new System.Drawing.Size(42, 17);
-            this.rBpagamentoSim.TabIndex = 24;
+            this.rBpagamentoSim.TabIndex = 1;
             this.rBpagamentoSim.TabStop = true;
             this.rBpagamentoSim.Text = "Sim";
             this.rBpagamentoSim.UseVisualStyleBackColor = true;
@@ -327,7 +318,7 @@
             this.rBpagamentoNao.Location = new System.Drawing.Point(82, 14);
             this.rBpagamentoNao.Name = "rBpagamentoNao";
             this.rBpagamentoNao.Size = new System.Drawing.Size(45, 17);
-            this.rBpagamentoNao.TabIndex = 25;
+            this.rBpagamentoNao.TabIndex = 2;
             this.rBpagamentoNao.TabStop = true;
             this.rBpagamentoNao.Text = "Não";
             this.rBpagamentoNao.UseVisualStyleBackColor = true;
@@ -340,7 +331,7 @@
             this.gBpagamentoSimNao.Location = new System.Drawing.Point(379, 402);
             this.gBpagamentoSimNao.Name = "gBpagamentoSimNao";
             this.gBpagamentoSimNao.Size = new System.Drawing.Size(132, 42);
-            this.gBpagamentoSimNao.TabIndex = 26;
+            this.gBpagamentoSimNao.TabIndex = 7;
             this.gBpagamentoSimNao.TabStop = false;
             this.gBpagamentoSimNao.Enter += new System.EventHandler(this.gBpagamentoSimNao_Enter);
             // 
@@ -373,12 +364,23 @@
             this.labelValorTotal.Size = new System.Drawing.Size(0, 20);
             this.labelValorTotal.TabIndex = 29;
             // 
+            // button1
+            // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(50, 50);
+            this.button1.TabIndex = 30;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // _cadastroFesta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(523, 623);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.labelValorTotal);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.labelValorEstipulado);
@@ -399,13 +401,11 @@
             this.Controls.Add(this.dTPdataFesta);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btVoltar);
             this.Controls.Add(this.label2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "_cadastroFesta";
             this.Text = "Cadastro Festa";
             this.Load += new System.EventHandler(this._cadastroFesta_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.btVoltar)).EndInit();
             this.gpHoraDiaSemana.ResumeLayout(false);
             this.gpHoraFimSemana.ResumeLayout(false);
             this.gBpagamentoSimNao.ResumeLayout(false);
@@ -418,7 +418,6 @@
         #endregion
 
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox btVoltar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dTPdataFesta;
@@ -443,5 +442,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label labelValorTotal;
         private System.Windows.Forms.ComboBox cBformaPagamento;
+        private System.Windows.Forms.Button button1;
     }
 }
