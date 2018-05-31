@@ -55,7 +55,7 @@
             this.labelValorEstipulado = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.labelValorTotal = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btVoltar = new System.Windows.Forms.Button();
             gravarCliente = new System.Windows.Forms.Button();
             this.gpHoraDiaSemana.SuspendLayout();
             this.gpHoraFimSemana.SuspendLayout();
@@ -364,15 +364,15 @@
             this.labelValorTotal.Size = new System.Drawing.Size(0, 20);
             this.labelValorTotal.TabIndex = 29;
             // 
-            // button1
+            // btVoltar
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 50);
-            this.button1.TabIndex = 30;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btVoltar.Image = ((System.Drawing.Image)(resources.GetObject("btVoltar.Image")));
+            this.btVoltar.Location = new System.Drawing.Point(12, 12);
+            this.btVoltar.Name = "btVoltar";
+            this.btVoltar.Size = new System.Drawing.Size(50, 50);
+            this.btVoltar.TabIndex = 30;
+            this.btVoltar.UseVisualStyleBackColor = true;
+            this.btVoltar.Click += new System.EventHandler(this.button1_Click);
             // 
             // _cadastroFesta
             // 
@@ -380,7 +380,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(523, 623);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btVoltar);
             this.Controls.Add(this.labelValorTotal);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.labelValorEstipulado);
@@ -442,6 +442,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label labelValorTotal;
         private System.Windows.Forms.ComboBox cBformaPagamento;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btVoltar;
     }
 }
