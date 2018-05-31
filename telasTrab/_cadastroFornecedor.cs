@@ -7,13 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 using System.IO;
 
 namespace telasTrab
 {
     public partial class _cadastroFornecedor : Form
     {
-        int codigo;
+        int codigo = 0;
+
 
         struct Fornecedor
         {
@@ -26,10 +28,7 @@ namespace telasTrab
         public _cadastroFornecedor()
         {
             InitializeComponent();
-
-            outroProduto.Enabled = false;
-
-            FileStream arquivo = new FileStream("fornecedores.txt", FileMode.Append);
+            FileStream arquivo = new FileStream("fornecedores.txt", FileMode.OpenOrCreate);
             arquivo.Close();
             FileStream arquivo2 = new FileStream("fornecedores.txt", FileMode.Open);
             StreamReader ler = new StreamReader(arquivo2);
@@ -47,9 +46,10 @@ namespace telasTrab
                 }
             }
             arquivo2.Close();
+            codigoFornecedor.Text = codigo.ToString();
         }
 
-        private void _cadastroFornecedor_Load(object sender, EventArgs e)
+        private void _cadastroCliente_Load(object sender, EventArgs e)
         {
             codigo++;
             codigoFornecedor.Text = codigo.ToString();
@@ -84,8 +84,9 @@ namespace telasTrab
             if (produtoFornecido.Text == "Outros")
             {
                 fornecedor.produtoFornecido = outroProduto.Text;
-            } else
-            {                
+            }
+            else
+            {
                 fornecedor.produtoFornecido = produtoFornecido.Text;
             }
 
@@ -96,17 +97,19 @@ namespace telasTrab
             escreve.WriteLine(" ");
             escreve.Close();
 
+            escreve.Close();
+
             MessageBox.Show("Fornecedor cadastrado com sucesso!", "Aviso", MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+               MessageBoxIcon.Information);
 
             if (MessageBox.Show("Deseja cadastrar outro fornecedor?", "Aviso", MessageBoxButtons.YesNo,
-                MessageBoxIcon.Information) == DialogResult.Yes)
+               MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 codigo++;
                 codigoFornecedor.Text = codigo.ToString();
                 nomeFornecedor.Text = string.Empty;
                 telefoneFornecedor.Text = string.Empty;
-                produtoFornecido.Text = string.Empty;               
+                produtoFornecido.Text = string.Empty;
             }
             else
             {
@@ -114,6 +117,5 @@ namespace telasTrab
                 this.Close();
             }
         }
-
     }
 }

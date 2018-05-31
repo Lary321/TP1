@@ -167,10 +167,10 @@
             // codigoFornecedor
             // 
             this.codigoFornecedor.AutoSize = true;
-            this.codigoFornecedor.Font = new System.Drawing.Font("Candara", 12.25F, System.Drawing.FontStyle.Bold);
+            this.codigoFornecedor.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
             this.codigoFornecedor.Location = new System.Drawing.Point(446, 65);
             this.codigoFornecedor.Name = "codigoFornecedor";
-            this.codigoFornecedor.Size = new System.Drawing.Size(0, 21);
+            this.codigoFornecedor.Size = new System.Drawing.Size(0, 23);
             this.codigoFornecedor.TabIndex = 24;
             // 
             // _cadastroFornecedor

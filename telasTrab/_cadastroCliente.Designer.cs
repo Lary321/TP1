@@ -165,7 +165,7 @@
             // 
             this.codigoCliente.AutoSize = true;
             this.codigoCliente.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codigoCliente.Location = new System.Drawing.Point(141, 82);
+            this.codigoCliente.Location = new System.Drawing.Point(147, 82);
             this.codigoCliente.Name = "codigoCliente";
             this.codigoCliente.Size = new System.Drawing.Size(0, 23);
             this.codigoCliente.TabIndex = 26;

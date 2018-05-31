@@ -14,7 +14,7 @@ namespace telasTrab
 {
     public partial class _cadastroCliente : Form
     {
-        static int codigo = 0;
+        int codigo = 0;
         
 
         public struct Cliente
@@ -29,7 +29,7 @@ namespace telasTrab
         public _cadastroCliente()
         {
             InitializeComponent();
-            FileStream arquivo = new FileStream("clientes.txt", FileMode.Append);
+            FileStream arquivo = new FileStream("clientes.txt", FileMode.OpenOrCreate);
             arquivo.Close();
             FileStream arquivo2 = new FileStream("clientes.txt", FileMode.Open);
             StreamReader ler = new StreamReader(arquivo2);
@@ -44,18 +44,15 @@ namespace telasTrab
                 {
                     dadosDoCliente = linha.Split('*');
                     codigo = Convert.ToInt32(dadosDoCliente[0]);
-                }
+                } 
             }
-            //codigo++;
             arquivo2.Close();
             codigoCliente.Text = codigo.ToString();
         }
 
         private void _cadastroCliente_Load(object sender, EventArgs e)
         {
-            codigo++;
-            
-
+           codigo++;         
            codigoCliente.Text = codigo.ToString();
         }
 

@@ -14,7 +14,7 @@ namespace telasTrab
 {
     public partial class _cadastroFuncionario : Form
     {
-        int codigo;
+        public static int codigo = 0;
 
         struct Funcionario
         {
@@ -30,7 +30,7 @@ namespace telasTrab
         {
             InitializeComponent();
 
-            FileStream arquivo = new FileStream("funcionarios.txt", FileMode.Append);
+            FileStream arquivo = new FileStream("funcionarios.txt", FileMode.OpenOrCreate);
             arquivo.Close();
             FileStream arquivo2 = new FileStream("funcionarios.txt", FileMode.Open);
             StreamReader ler = new StreamReader(arquivo2);
@@ -48,6 +48,7 @@ namespace telasTrab
                 }
             }
             arquivo2.Close();
+            codigoFuncionario.Text = codigo.ToString();
         }
 
         private void _cadastroFuncionario_Load(object sender, EventArgs e)
