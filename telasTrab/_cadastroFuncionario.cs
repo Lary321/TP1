@@ -30,6 +30,8 @@ namespace telasTrab
         {
             InitializeComponent();
 
+            outraFuncao.Enabled = false;
+
             FileStream arquivo = new FileStream("funcionarios.txt", FileMode.OpenOrCreate);
             arquivo.Close();
             FileStream arquivo2 = new FileStream("funcionarios.txt", FileMode.Open);
@@ -63,6 +65,19 @@ namespace telasTrab
             this.Close();
         }
 
+        private void funcaoFuncionario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (funcaoFuncionario.Text == "Outro(a)")
+            {
+                outraFuncao.Enabled = true;
+            }
+            else
+            {
+                outraFuncao.Enabled = false;
+            }
+        }
+
+
         private void btGravarFuncionario_Click(object sender, EventArgs e)
         {
             Funcionario funcionario = new Funcionario();
@@ -71,7 +86,16 @@ namespace telasTrab
             funcionario.nome = nomeFuncionario.Text;
             funcionario.telefone = telefoneFuncionario.Text;
             funcionario.tipo = tipoFuncionario.Text;
-            funcionario.funcao = funcaoFuncionario.Text;
+
+            if (funcaoFuncionario.Text == "Outro(a)")
+            {
+                funcionario.funcao = outraFuncao.Text;
+            }
+            else
+            {
+                funcionario.funcao = funcaoFuncionario.Text;
+            }
+
             funcionario.salario = salarioFuncionario.Text;
 
             FileStream arquivo3 = new FileStream("funcionarios.txt", FileMode.Append);
