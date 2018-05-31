@@ -78,10 +78,11 @@
             // 
             // nomeCliente
             // 
+            this.nomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nomeCliente.Location = new System.Drawing.Point(30, 155);
             this.nomeCliente.Name = "nomeCliente";
-            this.nomeCliente.Size = new System.Drawing.Size(380, 20);
-            this.nomeCliente.TabIndex = 10;
+            this.nomeCliente.Size = new System.Drawing.Size(380, 22);
+            this.nomeCliente.TabIndex = 1;
             // 
             // label3
             // 
@@ -95,10 +96,11 @@
             // 
             // enderecoCliente
             // 
+            this.enderecoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enderecoCliente.Location = new System.Drawing.Point(30, 220);
             this.enderecoCliente.Name = "enderecoCliente";
-            this.enderecoCliente.Size = new System.Drawing.Size(380, 20);
-            this.enderecoCliente.TabIndex = 18;
+            this.enderecoCliente.Size = new System.Drawing.Size(380, 22);
+            this.enderecoCliente.TabIndex = 2;
             // 
             // pictureBox2
             // 
@@ -116,7 +118,7 @@
             this.btGravarCliente.Location = new System.Drawing.Point(30, 397);
             this.btGravarCliente.Name = "btGravarCliente";
             this.btGravarCliente.Size = new System.Drawing.Size(117, 61);
-            this.btGravarCliente.TabIndex = 21;
+            this.btGravarCliente.TabIndex = 5;
             this.btGravarCliente.Text = "Gravar ";
             this.btGravarCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btGravarCliente.UseVisualStyleBackColor = true;
@@ -124,11 +126,13 @@
             // 
             // telefoneCliente
             // 
+            this.telefoneCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.telefoneCliente.Location = new System.Drawing.Point(29, 280);
             this.telefoneCliente.Mask = "(00)00000-0000";
             this.telefoneCliente.Name = "telefoneCliente";
-            this.telefoneCliente.Size = new System.Drawing.Size(88, 20);
-            this.telefoneCliente.TabIndex = 22;
+            this.telefoneCliente.Size = new System.Drawing.Size(88, 22);
+            this.telefoneCliente.TabIndex = 3;
+            this.telefoneCliente.MouseClick += new System.Windows.Forms.MouseEventHandler(this.telefoneCliente_MouseClick);
             // 
             // label6
             // 
@@ -172,11 +176,12 @@
             // 
             // dataNascCliente
             // 
+            this.dataNascCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataNascCliente.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dataNascCliente.Location = new System.Drawing.Point(30, 350);
             this.dataNascCliente.Name = "dataNascCliente";
-            this.dataNascCliente.Size = new System.Drawing.Size(200, 20);
-            this.dataNascCliente.TabIndex = 27;
+            this.dataNascCliente.Size = new System.Drawing.Size(200, 22);
+            this.dataNascCliente.TabIndex = 4;
             this.dataNascCliente.Value = new System.DateTime(2018, 5, 26, 0, 0, 0, 0);
             // 
             // _cadastroCliente
