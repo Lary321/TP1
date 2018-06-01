@@ -60,11 +60,11 @@
     <Compile Include="telaCadastro.Designer.cs">
       <DependentUpon>telaCadastro.cs</DependentUpon>
     </Compile>
-    <Compile Include="telaConsulta.cs">
+    <Compile Include="telaPesquisa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="telaConsulta.Designer.cs">
-      <DependentUpon>telaConsulta.cs</DependentUpon>
+    <Compile Include="telaPesquisa.Designer.cs">
+      <DependentUpon>telaPesquisa.cs</DependentUpon>
     </Compile>
     <Compile Include="telaRelatorio.cs">
       <SubType>Form</SubType>
@@ -104,8 +104,8 @@
     <EmbeddedResource Include="telaCadastro.resx">
       <DependentUpon>telaCadastro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="telaConsulta.resx">
-      <DependentUpon>telaConsulta.cs</DependentUpon>
+    <EmbeddedResource Include="telaPesquisa.resx">
+      <DependentUpon>telaPesquisa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="telaRelatorio.resx">
       <DependentUpon>telaRelatorio.cs</DependentUpon>

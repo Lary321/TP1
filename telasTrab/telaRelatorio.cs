@@ -67,7 +67,7 @@ namespace telasTrab
 
             if (rBRelatorioCliente.Checked == true)
             {
-                string pesquisa;
+                string pesquisa = " ";
                 pesquisa = gBnomeCliente.Text;
                 while (linha != null)
                 {
@@ -107,6 +107,7 @@ namespace telasTrab
                         }
                     }
                     cont = 0;
+                  
                 }
                 ler.Close();
                 arquivo.Close();
