@@ -56,7 +56,18 @@ namespace telasTrab
             labelValorTotal.Text = "0";
             labelValorEstipulado.Text = "0";
             dTPdataFesta.Value = DateTime.Now;
+            cbDiaSemana.SelectedIndex = 0;
 
+            //declarando variaveis
+            Festa festa = new Festa();
+            festa.dataFesta = " ";
+            festa.diaSemanaFesta = " ";
+            festa.horarioFesta = " ";
+            festa.nomeCliente = " ";
+            festa.qtdConvidados = " ";
+            festa.statusPagamento = " ";
+
+ 
             gBpagamentoSimNao.Enabled = false;
         }
 
@@ -323,39 +334,6 @@ namespace telasTrab
                 escreve.Close();
                 arquivo1.Close();
             }
-
-
-
-            /*
-            Festa festa = new Festa();
-            //pegando valores dos campos
-            festa.nomeCliente = cbNomeCliente.Text;
-            festa.dataFesta = dTPdataFesta.Value.Date.ToString("dd/MM/yyyy");
-            festa.diaSemanaFesta = cbDiaSemana.Text;
-            festa.qtdConvidados = cbQtdConvidados.Text;
-
-
-
-            //verificando horário da festa referente ao dia
-            if (festa.diaSemanaFesta == "Sábado")
-            {
-                festa.horarioFesta = cbHoraFestaSabado.Text;
-            }
-            else
-            {
-                festa.horarioFesta = (timeHoradiaSemana1.Text) + "a" + (timeHoradiaSemana2.Text);
-            }
-
-
-            FileStream arquivo = new FileStream("festas.txt", FileMode.Append);
-            StreamWriter escreve = new StreamWriter(arquivo);
-
-
-            escreve.Write(festa.nomeCliente + '*' + festa.dataFesta + '*' + festa.diaSemanaFesta + '*' +
-                festa.horarioFesta + '*' + festa.status);
-            escreve.WriteLine(" ");
-            escreve.Close();
-            */
         }
 
         private void cbNomeCliente_SelectedIndexChanged(object sender, EventArgs e)
@@ -754,6 +732,5 @@ namespace telasTrab
             this.Hide();
             this.Close();
         }
-
     }
 }
