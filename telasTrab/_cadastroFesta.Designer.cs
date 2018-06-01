@@ -73,7 +73,7 @@
             gravarCliente.Text = "Gravar";
             gravarCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             gravarCliente.UseVisualStyleBackColor = true;
-            gravarCliente.Click += new System.EventHandler(this.gravarCliente_Click);
+            gravarCliente.Click += new System.EventHandler(this.gravarFesta_Click);
             // 
             // label2
             // 

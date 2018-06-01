@@ -8,12 +8,12 @@ namespace telasTrab
     {
         string[] todaLinha;
         string linha;
-      
+
 
         public _cadastroFesta()
         {
             InitializeComponent();
-            FileStream arq = new FileStream("festa.txt", FileMode.Append);
+            FileStream arq = new FileStream("festas.txt", FileMode.Append);
             arq.Close();
 
             if (!(File.Exists("clientes.txt")))
@@ -35,6 +35,7 @@ namespace telasTrab
                 }
             } while (linha != null);
             ler.Close();
+            arquivo.Close();
         }
 
         public struct Festa
@@ -48,7 +49,7 @@ namespace telasTrab
             public double valorFinalPagamento;
             public string statusPagamento;
         }
-        
+
         private void _cadastroFesta_Load(object sender, EventArgs e)
         {
             cBformaPagamento.SelectedIndex = 0;
@@ -62,7 +63,7 @@ namespace telasTrab
         private void comboBoxDiaSemana_SelectedIndexChanged(object sender, EventArgs e)
         {
             //alterando dia da semana
-            if (cbDiaSemana.Text == "Sábado" )
+            if (cbDiaSemana.Text == "Sábado")
             {
                 cbHoraFestaSabado.Enabled = true;
                 timeHoradiaSemana1.Enabled = false;
@@ -180,7 +181,7 @@ namespace telasTrab
 
 
         //gravando contrato festa
-        private void gravarCliente_Click(object sender, EventArgs e)
+        private void gravarFesta_Click(object sender, EventArgs e)
         {
             Festa festa = new Festa();
 
@@ -195,7 +196,7 @@ namespace telasTrab
             {
                 festa.nomeCliente = cbNomeCliente.Text;
             }
-            
+
             //verificando se dia da semana foi selecionado
             if (cbDiaSemana.SelectedIndex.Equals(-1))
             {
@@ -205,7 +206,7 @@ namespace telasTrab
             }
             else
             {
-                festa.diaSemanaFesta = cbDiaSemana.Text;   
+                festa.diaSemanaFesta = cbDiaSemana.Text;
             }
 
             //verificando horario
@@ -220,7 +221,7 @@ namespace telasTrab
             }
             else
             {
-                FileStream arquivo4 = new FileStream("festa.txt", FileMode.Open);
+                FileStream arquivo4 = new FileStream("festas.txt", FileMode.Open);
                 StreamReader ler = new StreamReader(arquivo4);
                 do
                 {
@@ -232,6 +233,7 @@ namespace telasTrab
 
                 } while (linha != null);
                 ler.Close();
+
 
                 //verificando se o horário esta disponível
                 if (cbHoraFestaSabado.Enabled == true)
@@ -265,8 +267,8 @@ namespace telasTrab
                         festa.horarioFesta = (timeHoradiaSemana1.Text) + "a" + (timeHoradiaSemana2.Text);
                     }
                 }
+                arquivo4.Close();
             }
-
             //verificando qtd convidados
             if (cbQtdConvidados.SelectedIndex.Equals(-1))
             {
@@ -282,19 +284,19 @@ namespace telasTrab
             //verificando se foi pago ou nao
             if (gBpagamentoSimNao.Enabled == true)
             {
-                if((rBpagamentoNao.Checked == false) && (rBpagamentoSim.Checked == false))
+                if ((rBpagamentoNao.Checked == false) && (rBpagamentoSim.Checked == false))
                 {
-                    MessageBox.Show("Selecione se irá pagar agora ou não!", "Aviso", MessageBoxButtons.OK,
+                    MessageBox.Show("Por gentileza, informe o momento em que o pagamento será realizado!", "Aviso", MessageBoxButtons.OK,
                         MessageBoxIcon.Exclamation);
                     gBpagamentoSimNao.Focus();
                 }
                 else
-                { 
+                {
                     if (rBpagamentoNao.Checked == true)
                     {
                         festa.statusPagamento = "PENDENTE";
                     }
-                    if(rBpagamentoSim.Checked == true)
+                    if (rBpagamentoSim.Checked == true)
                     {
                         festa.statusPagamento = "PAGO";
                     }
@@ -305,11 +307,11 @@ namespace telasTrab
 
 
             // CADASTRANDO FESTA
-            if ((festa.nomeCliente != " ") && (festa.dataFesta != " ") && (festa.diaSemanaFesta != " ") && 
+            if ((festa.nomeCliente != " ") && (festa.dataFesta != " ") && (festa.diaSemanaFesta != " ") &&
                 (festa.horarioFesta != " ") && (festa.statusPagamento != " "))
             {
-                FileStream arquivo = new FileStream("festa.txt", FileMode.Append);
-                StreamWriter escreve = new StreamWriter(arquivo);
+                FileStream arquivo1 = new FileStream("festas.txt", FileMode.Append);
+                StreamWriter escreve = new StreamWriter(arquivo1);
 
 
                 escreve.Write(festa.nomeCliente + '*' + festa.dataFesta + '*' + festa.diaSemanaFesta + '*' +
@@ -317,10 +319,12 @@ namespace telasTrab
                 escreve.WriteLine(" ");
 
                 MessageBox.Show("Dados gravados com sucesso!", "Aviso", MessageBoxButtons.OK,
-                       MessageBoxIcon.Asterisk);               
+                       MessageBoxIcon.Asterisk);
+                escreve.Close();
+                arquivo1.Close();
             }
-            
-            
+
+
 
             /*
             Festa festa = new Festa();
@@ -343,7 +347,7 @@ namespace telasTrab
             }
 
 
-            FileStream arquivo = new FileStream("festa.txt", FileMode.Append);
+            FileStream arquivo = new FileStream("festas.txt", FileMode.Append);
             StreamWriter escreve = new StreamWriter(arquivo);
 
 
@@ -458,7 +462,7 @@ namespace telasTrab
         //se radio button 'Não' é selecionado
         private void rBpagamentoNao_CheckedChanged(object sender, EventArgs e)
         {
-            
+
             cBformaPagamento.Enabled = false;
             labelValorTotal.Text = labelValorEstipulado.Text;
 
@@ -568,7 +572,7 @@ namespace telasTrab
 
             }
 
-           
+
             festa.diaSemanaFesta = cbDiaSemana.Text;
             //verificando qtd convidados e dia da semana informando o preço
             if (cbQtdConvidados.Text == "30")
@@ -737,7 +741,7 @@ namespace telasTrab
 
         private void gBpagamentoSimNao_Enter(object sender, EventArgs e)
         {
-            
+
         }
 
         private void gBalteracoesPagamento_Enter(object sender, EventArgs e)
@@ -750,5 +754,6 @@ namespace telasTrab
             this.Hide();
             this.Close();
         }
+
     }
 }

@@ -59,7 +59,7 @@ namespace telasTrab
 
         private void btGerarRelatorio_Click(object sender, EventArgs e)
         {
-            FileStream arquivo = new FileStream("festa.txt", FileMode.Open);
+            FileStream arquivo = new FileStream("festas.txt", FileMode.Open);
             StreamReader ler = new StreamReader(arquivo);
             string linha = " ";
             string[] dadosDaFesta;
@@ -67,7 +67,7 @@ namespace telasTrab
 
             if (rBRelatorioCliente.Checked == true)
             {
-                string pesquisa = Console.ReadLine();
+                string pesquisa;
                 pesquisa = gBnomeCliente.Text;
                 while (linha != null)
                 {
@@ -85,31 +85,31 @@ namespace telasTrab
                             var fonte = iTextSharp.text.FontFactory.GetFont("Times New Roman", 12);
                             var contentByte = pdfWriter.DirectContent;
 
+                            // Inserindo imagem no relatorio em pdf
                             var imagem = iTextSharp.text.Image.GetInstance("E:/PUC MINAS/1º Período/Disciplinas/Lab. Algoritmos e Técnicas de Programação/TP1/TP1/_imagens/imagemRelatorioCliente.png");
                             imagem.ScaleToFit(700, 200);
                             imagem.SetAbsolutePosition(32, 625);
                             imagem.Alignment = iTextSharp.text.Image.ALIGN_CENTER;
                             contentByte.AddImage(imagem);
 
+                            // inserindo os dados da festa no relatorio em pdf
                             var paragrafo = new iTextSharp.text.Paragraph();
-                            paragrafo = new iTextSharp.text.Paragraph("Nome do Cliente: " + dadosDaFesta[0] + "Data da Festa: " + dadosDaFesta[1] , fonte);
+                            paragrafo = new iTextSharp.text.Paragraph("Nome do Cliente: " + dadosDaFesta[0] + "Data da Festa: " + dadosDaFesta[1] + "Horário da Festa: " + dadosDaFesta[3] + "Status do Pagamento: " + dadosDaFesta[4], fonte);
                             paragrafo.Alignment = iTextSharp.text.Element.ALIGN_JUSTIFIED;
                             relatorio.Add(paragrafo);
                             relatorio.Close();
                             System.Diagnostics.Process.Start("Relatorio_cliente.pdf");
-
                         }
                         else if (linha == null && cont < 1)
                         {
-                            Console.WriteLine("Cliente não cadastrado!");
+                            MessageBox.Show("Não existem festas associadas à este cliente!", "Aviso", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
                         }
                     }
                     cont = 0;
                 }
-            }
-            else if (rBRelatorioData.Checked == true)
-            {
-
+                ler.Close();
+                arquivo.Close();
             }
         }
     }
