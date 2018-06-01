@@ -1,6 +1,6 @@
 ﻿namespace telasTrab
 {
-    partial class telaPesquisa
+    partial class telaConsulta
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaPesquisa));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaConsulta));
             this.label1 = new System.Windows.Forms.Label();
             this.tipoPessoaPesquisada = new System.Windows.Forms.ComboBox();
             this.frasePesquisa = new System.Windows.Forms.Label();
@@ -43,11 +43,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Candara", 14F);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(104, 15);
+            this.label1.Location = new System.Drawing.Point(119, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(238, 19);
+            this.label1.Size = new System.Drawing.Size(286, 23);
             this.label1.TabIndex = 3;
             this.label1.Text = "Selecione uma opção de pesquisa:";
             // 
@@ -61,7 +61,7 @@
             "Cliente",
             "Fornecedor",
             "Funcionário"});
-            this.tipoPessoaPesquisada.Location = new System.Drawing.Point(348, 12);
+            this.tipoPessoaPesquisada.Location = new System.Drawing.Point(411, 14);
             this.tipoPessoaPesquisada.Name = "tipoPessoaPesquisada";
             this.tipoPessoaPesquisada.Size = new System.Drawing.Size(157, 24);
             this.tipoPessoaPesquisada.TabIndex = 6;
@@ -72,7 +72,7 @@
             this.frasePesquisa.AutoSize = true;
             this.frasePesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.frasePesquisa.ForeColor = System.Drawing.Color.Black;
-            this.frasePesquisa.Location = new System.Drawing.Point(117, 54);
+            this.frasePesquisa.Location = new System.Drawing.Point(145, 56);
             this.frasePesquisa.Name = "frasePesquisa";
             this.frasePesquisa.Size = new System.Drawing.Size(0, 20);
             this.frasePesquisa.TabIndex = 7;
@@ -80,7 +80,7 @@
             // pesquisaTextBox
             // 
             this.pesquisaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.pesquisaTextBox.Location = new System.Drawing.Point(168, 77);
+            this.pesquisaTextBox.Location = new System.Drawing.Point(214, 95);
             this.pesquisaTextBox.Name = "pesquisaTextBox";
             this.pesquisaTextBox.Size = new System.Drawing.Size(282, 23);
             this.pesquisaTextBox.TabIndex = 8;
@@ -89,10 +89,10 @@
             // 
             this.mostrarPesquisa.BackColor = System.Drawing.Color.LightYellow;
             this.mostrarPesquisa.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mostrarPesquisa.Location = new System.Drawing.Point(14, 181);
+            this.mostrarPesquisa.Location = new System.Drawing.Point(14, 190);
             this.mostrarPesquisa.Name = "mostrarPesquisa";
             this.mostrarPesquisa.ReadOnly = true;
-            this.mostrarPesquisa.Size = new System.Drawing.Size(580, 305);
+            this.mostrarPesquisa.Size = new System.Drawing.Size(678, 279);
             this.mostrarPesquisa.TabIndex = 9;
             this.mostrarPesquisa.Text = "";
             // 
@@ -101,7 +101,7 @@
             this.btGerarPesquisa.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btGerarPesquisa.ForeColor = System.Drawing.SystemColors.MenuText;
             this.btGerarPesquisa.Image = ((System.Drawing.Image)(resources.GetObject("btGerarPesquisa.Image")));
-            this.btGerarPesquisa.Location = new System.Drawing.Point(250, 106);
+            this.btGerarPesquisa.Location = new System.Drawing.Point(295, 124);
             this.btGerarPesquisa.Name = "btGerarPesquisa";
             this.btGerarPesquisa.Size = new System.Drawing.Size(110, 60);
             this.btGerarPesquisa.TabIndex = 10;
@@ -125,12 +125,12 @@
             this.btVoltar.UseVisualStyleBackColor = true;
             this.btVoltar.Click += new System.EventHandler(this.btVoltar_Click);
             // 
-            // telaPesquisa
+            // telaConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(611, 498);
+            this.ClientSize = new System.Drawing.Size(704, 481);
             this.Controls.Add(this.btVoltar);
             this.Controls.Add(this.btGerarPesquisa);
             this.Controls.Add(this.mostrarPesquisa);
@@ -140,7 +140,7 @@
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.Window;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "telaPesquisa";
+            this.Name = "telaConsulta";
             this.Text = "Pesquisas";
             this.ResumeLayout(false);
             this.PerformLayout();

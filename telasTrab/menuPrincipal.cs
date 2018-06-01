@@ -33,7 +33,7 @@ namespace telasTrab
 
         private void pesquisarCadastro_Click(object sender, EventArgs e)
         {
-            telaPesquisa telaConsulta = new telaPesquisa();
+            telaConsulta telaConsulta = new telaConsulta();
             telaConsulta.StartPosition = FormStartPosition.CenterScreen;
             telaConsulta.FormBorderStyle = FormBorderStyle.FixedSingle;
             telaConsulta.ControlBox = false;
@@ -59,9 +59,7 @@ namespace telasTrab
             else
             {
                 return;
-            }
-            
-            
+            }                       
         }
 
         private void menuPrincipal_Load(object sender, EventArgs e)

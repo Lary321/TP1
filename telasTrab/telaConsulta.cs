@@ -11,9 +11,9 @@ using System.IO;
 
 namespace telasTrab
 {
-    public partial class telaPesquisa : Form
+    public partial class telaConsulta : Form
     {
-        public telaPesquisa()
+        public telaConsulta()
         {
             InitializeComponent();
         }
