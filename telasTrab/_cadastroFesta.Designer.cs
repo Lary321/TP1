@@ -333,7 +333,6 @@
             this.gBpagamentoSimNao.Size = new System.Drawing.Size(132, 42);
             this.gBpagamentoSimNao.TabIndex = 7;
             this.gBpagamentoSimNao.TabStop = false;
-            this.gBpagamentoSimNao.Enter += new System.EventHandler(this.gBpagamentoSimNao_Enter);
             // 
             // labelValorEstipulado
             // 

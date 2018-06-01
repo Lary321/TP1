@@ -205,6 +205,7 @@ namespace telasTrab
             escreve.WriteLine(" ");
             escreve.Close();
 
+            arquivo.Close();
         }
 
         private void cbNomeCliente_SelectedIndexChanged(object sender, EventArgs e)
@@ -585,11 +586,6 @@ namespace telasTrab
                 labelValorTotal.Text = festa.valorPagamento;
 
             }
-        }
-
-        private void gBpagamentoSimNao_Enter(object sender, EventArgs e)
-        {
-            
         }
 
         private void gBalteracoesPagamento_Enter(object sender, EventArgs e)
