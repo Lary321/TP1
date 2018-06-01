@@ -45,7 +45,6 @@
             this.cbNomeCliente = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cbQtdConvidados = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.cBformaPagamento = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -53,9 +52,10 @@
             this.rBpagamentoNao = new System.Windows.Forms.RadioButton();
             this.gBpagamentoSimNao = new System.Windows.Forms.GroupBox();
             this.labelValorEstipulado = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.labelValorTotal = new System.Windows.Forms.Label();
             this.btVoltar = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             gravarCliente = new System.Windows.Forms.Button();
             this.gpHoraDiaSemana.SuspendLayout();
             this.gpHoraFimSemana.SuspendLayout();
@@ -250,17 +250,6 @@
             this.cbQtdConvidados.TabIndex = 6;
             this.cbQtdConvidados.SelectedIndexChanged += new System.EventHandler(this.cbQtdConvidados_SelectedIndexChanged);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.SystemColors.Window;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label7.Location = new System.Drawing.Point(8, 467);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(166, 20);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Forma de pagamento:";
-            // 
             // cBformaPagamento
             // 
             this.cBformaPagamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -343,17 +332,6 @@
             this.labelValorEstipulado.Size = new System.Drawing.Size(0, 20);
             this.labelValorEstipulado.TabIndex = 27;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.SystemColors.Window;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label11.Location = new System.Drawing.Point(8, 520);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(164, 20);
-            this.label11.TabIndex = 28;
-            this.label11.Text = "Valor total a ser pago:";
-            // 
             // labelValorTotal
             // 
             this.labelValorTotal.AutoSize = true;
@@ -372,6 +350,28 @@
             this.btVoltar.TabIndex = 30;
             this.btVoltar.UseVisualStyleBackColor = true;
             this.btVoltar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.SystemColors.Window;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label7.Location = new System.Drawing.Point(8, 467);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(166, 20);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Forma de pagamento:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.SystemColors.Window;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label11.Location = new System.Drawing.Point(8, 520);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(164, 20);
+            this.label11.TabIndex = 28;
+            this.label11.Text = "Valor total a ser pago:";
             // 
             // _cadastroFesta
             // 
@@ -431,16 +431,16 @@
         private System.Windows.Forms.ComboBox cbNomeCliente;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbQtdConvidados;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.RadioButton rBpagamentoSim;
         private System.Windows.Forms.RadioButton rBpagamentoNao;
         private System.Windows.Forms.GroupBox gBpagamentoSimNao;
         private System.Windows.Forms.Label labelValorEstipulado;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label labelValorTotal;
         private System.Windows.Forms.ComboBox cBformaPagamento;
         private System.Windows.Forms.Button btVoltar;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label11;
     }
 }
