@@ -59,7 +59,7 @@
             // 
             gravarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             gravarCliente.Image = ((System.Drawing.Image)(resources.GetObject("gravarCliente.Image")));
-            gravarCliente.Location = new System.Drawing.Point(207, 507);
+            gravarCliente.Location = new System.Drawing.Point(189, 507);
             gravarCliente.Name = "gravarCliente";
             gravarCliente.Size = new System.Drawing.Size(118, 59);
             gravarCliente.TabIndex = 9;
@@ -200,8 +200,8 @@
             this.cbHoraFestaSabado.Enabled = false;
             this.cbHoraFestaSabado.FormattingEnabled = true;
             this.cbHoraFestaSabado.Items.AddRange(new object[] {
-            "12:00:00a16:00:00",
-            "18:00:00a22:00:00"});
+            "12:00:00 as 16:00:00",
+            "18:00:00 as 22:00:00"});
             this.cbHoraFestaSabado.Location = new System.Drawing.Point(24, 41);
             this.cbHoraFestaSabado.Name = "cbHoraFestaSabado";
             this.cbHoraFestaSabado.Size = new System.Drawing.Size(205, 21);

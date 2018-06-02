@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace telasTrab
 {
@@ -70,13 +71,18 @@ namespace telasTrab
         // Botão para acessar a tela de cadastro das festas 
         private void btCadastroFesta_Click(object sender, EventArgs e)
         {
-           
-            _cadastroFesta telaFesta = new _cadastroFesta();
-            telaFesta.StartPosition = FormStartPosition.CenterScreen;
-            telaFesta.FormBorderStyle = FormBorderStyle.FixedSingle;
-            telaFesta.ControlBox = false;
-            telaFesta.ShowDialog();
-            
+            if (File.Exists("clientes.txt"))
+            {
+                _cadastroFesta telaFesta = new _cadastroFesta();
+                telaFesta.StartPosition = FormStartPosition.CenterScreen;
+                telaFesta.FormBorderStyle = FormBorderStyle.FixedSingle;
+                telaFesta.ControlBox = false;
+                telaFesta.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Não é possível cadastrar festas!\nFaça o cadastro de pelo menos um cliente!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }            
         }
 
         // Botão para voltar para a tela anterior (menu principal) 
