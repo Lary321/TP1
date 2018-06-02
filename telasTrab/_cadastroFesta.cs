@@ -172,7 +172,7 @@ namespace telasTrab
                         if (linha != null)
                         {
                             todaLinha = linha.Split('*');
-                            //VERIFICANDO SE HORÁRIO ESTA DISPONIVEL
+                            //VERIFICANDO SE HORÁRIO ESTÁ DISPONIVEL
 
                             if ((todaLinha[2] == dTPdataFesta.Value.Date.ToString("dd/MM/yyyy")) && (todaLinha[4] == horarioFesta))
                             {
