@@ -164,7 +164,7 @@ namespace telasTrab
                 string horarioFesta = " ";
                 int cont = 0;
                 if (cbHoraFestaSabado.Enabled == true)//no sabado
->>>>>>> 640d59a8690e68a0c7ad6432c160d0e295baba5a
+>>>>>>> 640d59a8690e68a0c7ad6432c160d0e295ba
                 {
                     horarioFesta = cbHoraFestaSabado.Text;
                     while (linha != null)
