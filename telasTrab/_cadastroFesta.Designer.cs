@@ -31,24 +31,24 @@
             System.Windows.Forms.Button gravarCliente;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(_cadastroFesta));
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelNomeCliente = new System.Windows.Forms.Label();
+            this.labelDtFesta = new System.Windows.Forms.Label();
             this.dTPdataFesta = new System.Windows.Forms.DateTimePicker();
             this.gpHoraDiaSemana = new System.Windows.Forms.GroupBox();
             this.timeHoradiaSemana2 = new System.Windows.Forms.DateTimePicker();
             this.timeHoradiaSemana1 = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelDiaDaSemana = new System.Windows.Forms.Label();
             this.cbDiaSemana = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labelHrFesta = new System.Windows.Forms.Label();
             this.gpHoraFimSemana = new System.Windows.Forms.GroupBox();
             this.cbHoraFestaSabado = new System.Windows.Forms.ComboBox();
             this.cbNomeCliente = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelQtdConvidados = new System.Windows.Forms.Label();
             this.cbQtdConvidados = new System.Windows.Forms.ComboBox();
             this.btVoltar = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
+            this.labelTemaFesta = new System.Windows.Forms.Label();
             this.tbTemaFesta = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.labelCodFesta = new System.Windows.Forms.Label();
             this.codigoFesta = new System.Windows.Forms.Label();
             gravarCliente = new System.Windows.Forms.Button();
             this.gpHoraDiaSemana.SuspendLayout();
@@ -79,27 +79,27 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Insira as seguintes infomações para o cadastro da festa:";
             // 
-            // label1
+            // labelNomeCliente
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Window;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.Location = new System.Drawing.Point(11, 124);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 20);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Nome do cliente:";
+            this.labelNomeCliente.AutoSize = true;
+            this.labelNomeCliente.BackColor = System.Drawing.SystemColors.Window;
+            this.labelNomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.labelNomeCliente.Location = new System.Drawing.Point(11, 124);
+            this.labelNomeCliente.Name = "labelNomeCliente";
+            this.labelNomeCliente.Size = new System.Drawing.Size(127, 20);
+            this.labelNomeCliente.TabIndex = 7;
+            this.labelNomeCliente.Text = "Nome do cliente:";
             // 
-            // label3
+            // labelDtFesta
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.Window;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(11, 173);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 20);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Data da festa:";
+            this.labelDtFesta.AutoSize = true;
+            this.labelDtFesta.BackColor = System.Drawing.SystemColors.Window;
+            this.labelDtFesta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.labelDtFesta.Location = new System.Drawing.Point(11, 173);
+            this.labelDtFesta.Name = "labelDtFesta";
+            this.labelDtFesta.Size = new System.Drawing.Size(110, 20);
+            this.labelDtFesta.TabIndex = 9;
+            this.labelDtFesta.Text = "Data da festa:";
             // 
             // dTPdataFesta
             // 
@@ -144,16 +144,16 @@
             this.timeHoradiaSemana1.Value = new System.DateTime(2018, 5, 23, 12, 0, 0, 0);
             this.timeHoradiaSemana1.ValueChanged += new System.EventHandler(this.timeHoradiaSemana1_ValueChanged);
             // 
-            // label4
+            // labelDiaDaSemana
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.Window;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label4.Location = new System.Drawing.Point(11, 225);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 20);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Dia da Semana:";
+            this.labelDiaDaSemana.AutoSize = true;
+            this.labelDiaDaSemana.BackColor = System.Drawing.SystemColors.Window;
+            this.labelDiaDaSemana.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.labelDiaDaSemana.Location = new System.Drawing.Point(11, 225);
+            this.labelDiaDaSemana.Name = "labelDiaDaSemana";
+            this.labelDiaDaSemana.Size = new System.Drawing.Size(123, 20);
+            this.labelDiaDaSemana.TabIndex = 12;
+            this.labelDiaDaSemana.Text = "Dia da Semana:";
             // 
             // cbDiaSemana
             // 
@@ -174,16 +174,16 @@
             this.cbDiaSemana.TabIndex = 3;
             this.cbDiaSemana.SelectedIndexChanged += new System.EventHandler(this.comboBoxDiaSemana_SelectedIndexChanged);
             // 
-            // label5
+            // labelHrFesta
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.Window;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label5.Location = new System.Drawing.Point(11, 270);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(127, 20);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Horário da festa:";
+            this.labelHrFesta.AutoSize = true;
+            this.labelHrFesta.BackColor = System.Drawing.SystemColors.Window;
+            this.labelHrFesta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.labelHrFesta.Location = new System.Drawing.Point(11, 270);
+            this.labelHrFesta.Name = "labelHrFesta";
+            this.labelHrFesta.Size = new System.Drawing.Size(127, 20);
+            this.labelHrFesta.TabIndex = 13;
+            this.labelHrFesta.Text = "Horário da festa:";
             // 
             // gpHoraFimSemana
             // 
@@ -217,16 +217,16 @@
             this.cbNomeCliente.TabIndex = 1;
             this.cbNomeCliente.SelectedIndexChanged += new System.EventHandler(this.cbNomeCliente_SelectedIndexChanged);
             // 
-            // label6
+            // labelQtdConvidados
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.Window;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label6.Location = new System.Drawing.Point(11, 413);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(180, 20);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "Quantidade convidados:";
+            this.labelQtdConvidados.AutoSize = true;
+            this.labelQtdConvidados.BackColor = System.Drawing.SystemColors.Window;
+            this.labelQtdConvidados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.labelQtdConvidados.Location = new System.Drawing.Point(11, 413);
+            this.labelQtdConvidados.Name = "labelQtdConvidados";
+            this.labelQtdConvidados.Size = new System.Drawing.Size(180, 20);
+            this.labelQtdConvidados.TabIndex = 17;
+            this.labelQtdConvidados.Text = "Quantidade convidados:";
             // 
             // cbQtdConvidados
             // 
@@ -253,34 +253,34 @@
             this.btVoltar.UseVisualStyleBackColor = true;
             this.btVoltar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label7
+            // labelTemaFesta
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.SystemColors.Window;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label7.Location = new System.Drawing.Point(15, 458);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(115, 20);
-            this.label7.TabIndex = 31;
-            this.label7.Text = "Tema da festa:";
+            this.labelTemaFesta.AutoSize = true;
+            this.labelTemaFesta.BackColor = System.Drawing.SystemColors.Window;
+            this.labelTemaFesta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.labelTemaFesta.Location = new System.Drawing.Point(11, 458);
+            this.labelTemaFesta.Name = "labelTemaFesta";
+            this.labelTemaFesta.Size = new System.Drawing.Size(115, 20);
+            this.labelTemaFesta.TabIndex = 31;
+            this.labelTemaFesta.Text = "Tema da festa:";
             // 
             // tbTemaFesta
             // 
-            this.tbTemaFesta.Location = new System.Drawing.Point(137, 457);
+            this.tbTemaFesta.Location = new System.Drawing.Point(132, 458);
             this.tbTemaFesta.Name = "tbTemaFesta";
             this.tbTemaFesta.Size = new System.Drawing.Size(259, 20);
             this.tbTemaFesta.TabIndex = 32;
             // 
-            // label8
+            // labelCodFesta
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.SystemColors.Window;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label8.Location = new System.Drawing.Point(11, 83);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(125, 20);
-            this.label8.TabIndex = 33;
-            this.label8.Text = "Código da festa:";
+            this.labelCodFesta.AutoSize = true;
+            this.labelCodFesta.BackColor = System.Drawing.SystemColors.Window;
+            this.labelCodFesta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.labelCodFesta.Location = new System.Drawing.Point(11, 83);
+            this.labelCodFesta.Name = "labelCodFesta";
+            this.labelCodFesta.Size = new System.Drawing.Size(125, 20);
+            this.labelCodFesta.TabIndex = 33;
+            this.labelCodFesta.Text = "Código da festa:";
             // 
             // codigoFesta
             // 
@@ -299,22 +299,22 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(523, 578);
             this.Controls.Add(this.codigoFesta);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.labelCodFesta);
             this.Controls.Add(this.tbTemaFesta);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.labelTemaFesta);
             this.Controls.Add(this.btVoltar);
             this.Controls.Add(this.cbQtdConvidados);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.labelQtdConvidados);
             this.Controls.Add(this.cbNomeCliente);
             this.Controls.Add(gravarCliente);
             this.Controls.Add(this.gpHoraFimSemana);
             this.Controls.Add(this.gpHoraDiaSemana);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.labelHrFesta);
             this.Controls.Add(this.cbDiaSemana);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.labelDiaDaSemana);
             this.Controls.Add(this.dTPdataFesta);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelDtFesta);
+            this.Controls.Add(this.labelNomeCliente);
             this.Controls.Add(this.label2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "_cadastroFesta";
@@ -330,24 +330,24 @@
         #endregion
 
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelNomeCliente;
+        private System.Windows.Forms.Label labelDtFesta;
         private System.Windows.Forms.DateTimePicker dTPdataFesta;
         private System.Windows.Forms.GroupBox gpHoraDiaSemana;
         private System.Windows.Forms.GroupBox gpHoraFimSemana;
         private System.Windows.Forms.ComboBox cbHoraFestaSabado;
         private System.Windows.Forms.DateTimePicker timeHoradiaSemana2;
         private System.Windows.Forms.DateTimePicker timeHoradiaSemana1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelHrFesta;
+        private System.Windows.Forms.Label labelDiaDaSemana;
         private System.Windows.Forms.ComboBox cbDiaSemana;
         private System.Windows.Forms.ComboBox cbNomeCliente;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelQtdConvidados;
         private System.Windows.Forms.ComboBox cbQtdConvidados;
         private System.Windows.Forms.Button btVoltar;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label labelTemaFesta;
         private System.Windows.Forms.TextBox tbTemaFesta;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labelCodFesta;
         private System.Windows.Forms.Label codigoFesta;
     }
 }
