@@ -6,8 +6,7 @@ namespace telasTrab
 {
     public partial class _cadastroFesta : Form
     {
-        string[] todaLinha;
-        string linha = "";
+        
         int codigo = 0;
 
         public struct Festa
@@ -120,6 +119,8 @@ namespace telasTrab
         private void gravarFesta_Click(object sender, EventArgs e)
         {
             Festa festa = new Festa();
+            string[] todaLinha;
+            string linha = "";
 
             //verificando se cliente foi selecionado 
             if (cbNomeCliente.SelectedIndex.Equals(-1))
@@ -147,8 +148,6 @@ namespace telasTrab
             }
 
             //verificando horario
-            
-
             if (cbHoraFestaSabado.Enabled == true)
             {
                 if (cbHoraFestaSabado.SelectedIndex.Equals(-1))
@@ -158,7 +157,6 @@ namespace telasTrab
                     cbHoraFestaSabado.Focus();
                 }
             }
-            
             else
             {
                 FileStream arquivoHrFesta = new FileStream("festas.txt", FileMode.Open);
@@ -171,55 +169,45 @@ namespace telasTrab
                     if (linha != null)
                     {
                         todaLinha = linha.Split('*');
+                        //VERIFICANDO SE HORÁRIO ESTA DISPONIVEL
+                        if (cbHoraFestaSabado.Enabled == true)//no sabado
+                        {
+                            if ((todaLinha[2] == dTPdataFesta.Value.ToString("dd/MM/yyyy")) && (todaLinha[4] == cbHoraFestaSabado.Text))
+                            {
+                                MessageBox.Show("Horário Indisponível!", "Aviso", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                                festa.horarioFesta = " ";
+                                festa.dataFesta = " ";
+                            }
+                            else
+                            {
+                                festa.dataFesta = dTPdataFesta.Value.ToString("dd/MM/yyyy");
+                                festa.horarioFesta = cbHoraFestaSabado.Text;
+                            }
+                        }
+
+                        if ((timeHoradiaSemana1.Enabled == true) && (timeHoradiaSemana1.Enabled == true))//dia de semana
+                        {
+
+                            if (todaLinha[2] == dTPdataFesta.Value.ToString("dd/MM/yyyy"))
+                            {
+                                MessageBox.Show("Dia ou Horário Indisponível!", "Aviso", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                                festa.horarioFesta = " ";
+                                festa.dataFesta = " ";
+                            }
+                            else
+                            {
+                                festa.dataFesta = dTPdataFesta.Value.ToString("dd/MM/yyyy");
+                                festa.horarioFesta = (timeHoradiaSemana1.Text) + "a" + (timeHoradiaSemana2.Text);
+                            }
+                        }
                     }
+                    
                 }
                 arquivoHrFesta.Close();
-
-
-                //verificando se o horário esta disponível
-                if (cbHoraFestaSabado.Enabled == true)
-                {
-                    
-                    if ((todaLinha[2] == dTPdataFesta.Value.ToString("dd/MM/yyyy")) 
-                        && (todaLinha[4] == cbHoraFestaSabado.Text))
-                    {
-                        MessageBox.Show("Horário Indisponível!", "Aviso", MessageBoxButtons.OK,
-                            MessageBoxIcon.Warning);
-                        festa.horarioFesta = " ";
-                    }
-                    else
-                    {
-                        festa.dataFesta = dTPdataFesta.Value.ToString("dd/MM/yyyy");
-                        festa.horarioFesta = cbHoraFestaSabado.Text;
-                    }
-                }
-
-                if ((timeHoradiaSemana1.Enabled == true) && (timeHoradiaSemana1.Enabled == true))
-                {
-                
-                    DateTime horarioFesta = DateTime.Parse(todaLinha[4]);
-                    DateTime horario = DateTime.Parse(timeHoradiaSemana1.Text);
-                    
-
-
-                    if ((todaLinha[2] == dTPdataFesta.Value.ToString("dd/MM/yyyy"))
-                        && (((horarioFesta == horario) || (horarioFesta == horario.AddHours(1)) ||
-                        (horarioFesta == horario.AddHours(2)) || (horarioFesta ==
-                        horario.AddHours(3)) || (horarioFesta.AddHours(1) == horario) ||
-                        (horarioFesta.AddHours(2) == horario) || (horarioFesta.AddHours(3) == horario))))
-                    {
-                        MessageBox.Show("Horário Indisponível!", "Aviso", MessageBoxButtons.OK,
-                            MessageBoxIcon.Warning);
-                        festa.horarioFesta = " ";
-                    }
-                    else
-                    {
-                        festa.dataFesta = dTPdataFesta.Value.ToString("dd/MM/yyyy");
-                        festa.horarioFesta = (timeHoradiaSemana1.Text) + "a" + (timeHoradiaSemana2.Text);
-                    }
-                }
             }
-
+                
 
             //verificando se o tema foi preenchido
             if(tbTemaFesta.Text == string.Empty)
@@ -260,35 +248,26 @@ namespace telasTrab
             }
             else 
             {
-                if ((festa.nomeCliente != " ") && (festa.dataFesta != " ") && (festa.diaSemanaFesta != " ")
-                && (festa.qtdConvidados != " ") && (festa.horarioFesta != " ") && (festa.tema != " "))
+                if ((festa.nomeCliente != " ") && (festa.dataFesta != " ") && (festa.diaSemanaFesta != " ") && 
+                    (festa.qtdConvidados != " ") && (festa.horarioFesta != " ") && (festa.tema != " "))
                 { 
                     FileStream arquivo1 = new FileStream("festas.txt", FileMode.Append);
                     StreamWriter escreve = new StreamWriter(arquivo1);
-                    if (festa.diaSemanaFesta == "Sábado") {
-                        if(cbHoraFestaSabado.SelectedIndex == 0) { 
-                            escreve.Write(festa.codigoFesta + '*' + festa.nomeCliente + '*' + festa.dataFesta + '*' + festa.diaSemanaFesta + '*' +
-                                "12:00:00" + '*'+ "16:00:00" + '*' + festa.qtdConvidados + '*' + festa.tema + '*' + "PENDENTE");
-                            escreve.WriteLine(" ");
-                        }
-                        if (cbHoraFestaSabado.SelectedIndex == 1)
-                        {
-                            escreve.Write(festa.codigoFesta + '*' + festa.nomeCliente + '*' + festa.dataFesta + '*' + festa.diaSemanaFesta + '*' +
-                                "18:00:00" + '*' + "22:00:00" + '*' + festa.qtdConvidados + '*' + festa.tema + '*' + "PENDENTE");
-                            escreve.WriteLine(" ");
-                        }
-                    }
-                    else
-                    {
-                        escreve.Write(festa.codigoFesta + '*' + festa.nomeCliente + '*' + festa.dataFesta + '*' + festa.diaSemanaFesta + '*' +
-                              timeHoradiaSemana1.Text + '*' + timeHoradiaSemana2.Text + '*' + festa.qtdConvidados + '*' + festa.tema + '*' + "PENDENTE");
-                        escreve.WriteLine(" ");
-                    }
+                  
+
+                    ////////escrevendo no arquivo
+                    escreve.Write(festa.codigoFesta + '*' + festa.nomeCliente + '*' + festa.dataFesta + '*' + festa.diaSemanaFesta + '*' +
+                          festa.horarioFesta + '*' + festa.qtdConvidados + '*' + festa.tema + '*' + "PENDENTE");
+                    escreve.WriteLine(" ");
+                    /////////
+
 
                     MessageBox.Show("Dados gravados com sucesso!", "Aviso", MessageBoxButtons.OK,
                            MessageBoxIcon.Asterisk);
                     escreve.Close();
 
+
+                    //verificando se irá cadastrar outra festa
                     if (MessageBox.Show("Deseja cadastrar outra FESTA?", "Aviso", MessageBoxButtons.YesNo,
                         MessageBoxIcon.Information) == DialogResult.Yes)
                     {
