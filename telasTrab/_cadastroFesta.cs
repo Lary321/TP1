@@ -163,7 +163,7 @@ namespace telasTrab
             {
                 FileStream arquivoHrFesta = new FileStream("festas.txt", FileMode.Open);
                 StreamReader lerArq = new StreamReader(arquivoHrFesta);
-                
+
 
                 while (linha != null)
                 {
@@ -172,14 +172,16 @@ namespace telasTrab
                     {
                         todaLinha = linha.Split('*');
                     }
-                } 
+                }
                 arquivoHrFesta.Close();
 
 
                 //verificando se o horário esta disponível
                 if (cbHoraFestaSabado.Enabled == true)
                 {
-                    if ((todaLinha[2] == dTPdataFesta.Value.ToString("dd/MM/yyyy")) && (todaLinha[3] == cbHoraFestaSabado.Text))
+                    
+                    if ((todaLinha[2] == dTPdataFesta.Value.ToString("dd/MM/yyyy")) 
+                        && (todaLinha[4] == cbHoraFestaSabado.Text))
                     {
                         MessageBox.Show("Horário Indisponível!", "Aviso", MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);
@@ -194,9 +196,17 @@ namespace telasTrab
 
                 if ((timeHoradiaSemana1.Enabled == true) && (timeHoradiaSemana1.Enabled == true))
                 {
-                    festa.horarioFesta = (timeHoradiaSemana1.Text) + "a" + (timeHoradiaSemana2.Text);
-                    if ((todaLinha[1] == dTPdataFesta.Value.ToString("dd/MM/yyyy")) &&
-                        (todaLinha[3] == festa.horarioFesta))
+                
+                    DateTime horarioFesta = DateTime.Parse(todaLinha[4]);
+                    DateTime horario = DateTime.Parse(timeHoradiaSemana1.Text);
+                    
+
+
+                    if ((todaLinha[2] == dTPdataFesta.Value.ToString("dd/MM/yyyy"))
+                        && (((horarioFesta == horario) || (horarioFesta == horario.AddHours(1)) ||
+                        (horarioFesta == horario.AddHours(2)) || (horarioFesta ==
+                        horario.AddHours(3)) || (horarioFesta.AddHours(1) == horario) ||
+                        (horarioFesta.AddHours(2) == horario) || (horarioFesta.AddHours(3) == horario))))
                     {
                         MessageBox.Show("Horário Indisponível!", "Aviso", MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);
@@ -255,10 +265,25 @@ namespace telasTrab
                 { 
                     FileStream arquivo1 = new FileStream("festas.txt", FileMode.Append);
                     StreamWriter escreve = new StreamWriter(arquivo1);
-
-                    escreve.Write(festa.codigoFesta + '*' + festa.nomeCliente + '*' + festa.dataFesta + '*' + festa.diaSemanaFesta + '*' +
-                        festa.horarioFesta + '*' + festa.qtdConvidados + '*' + festa.tema + '*' + "PENDENTE");
-                    escreve.WriteLine(" ");
+                    if (festa.diaSemanaFesta == "Sábado") {
+                        if(cbHoraFestaSabado.SelectedIndex == 0) { 
+                            escreve.Write(festa.codigoFesta + '*' + festa.nomeCliente + '*' + festa.dataFesta + '*' + festa.diaSemanaFesta + '*' +
+                                "12:00:00" + '*'+ "16:00:00" + '*' + festa.qtdConvidados + '*' + festa.tema + '*' + "PENDENTE");
+                            escreve.WriteLine(" ");
+                        }
+                        if (cbHoraFestaSabado.SelectedIndex == 1)
+                        {
+                            escreve.Write(festa.codigoFesta + '*' + festa.nomeCliente + '*' + festa.dataFesta + '*' + festa.diaSemanaFesta + '*' +
+                                "18:00:00" + '*' + "22:00:00" + '*' + festa.qtdConvidados + '*' + festa.tema + '*' + "PENDENTE");
+                            escreve.WriteLine(" ");
+                        }
+                    }
+                    else
+                    {
+                        escreve.Write(festa.codigoFesta + '*' + festa.nomeCliente + '*' + festa.dataFesta + '*' + festa.diaSemanaFesta + '*' +
+                              timeHoradiaSemana1.Text + '*' + timeHoradiaSemana2.Text + '*' + festa.qtdConvidados + '*' + festa.tema + '*' + "PENDENTE");
+                        escreve.WriteLine(" ");
+                    }
 
                     MessageBox.Show("Dados gravados com sucesso!", "Aviso", MessageBoxButtons.OK,
                            MessageBoxIcon.Asterisk);
