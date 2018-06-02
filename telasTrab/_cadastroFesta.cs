@@ -7,8 +7,19 @@ namespace telasTrab
     public partial class _cadastroFesta : Form
     {
         string[] todaLinha;
-        string linha;
+        string linha = "";
+        int codigo = 0;
 
+        public struct Festa
+        {
+            public string codigoFesta;
+            public string nomeCliente;
+            public string dataFesta;
+            public string diaSemanaFesta;
+            public string horarioFesta;
+            public string qtdConvidados;
+            public string tema;
+        }
 
         public _cadastroFesta()
         {
@@ -22,39 +33,46 @@ namespace telasTrab
                 criaCliente.Close();
             }
 
-            FileStream arquivo = new FileStream("clientes.txt", FileMode.Open);
-            StreamReader ler = new StreamReader(arquivo);
+            string[] todaLinhaCliente;
+            string[] todaLinhaFesta;
+            string linhaCliente, linhaFesta = " ";
+
+            //inserindo clientes no combobox
+            FileStream arquivoCliente = new FileStream("clientes.txt", FileMode.Open);
+            StreamReader lerCliente = new StreamReader(arquivoCliente);
             do
             {
-                linha = ler.ReadLine();
-                if (linha != null)
+                linhaCliente = lerCliente.ReadLine();
+                if (linhaCliente != null)
                 {
-                    todaLinha = linha.Split('*');
-                    cbNomeCliente.Items.Add(todaLinha[1]);
-
+                    todaLinhaCliente = linhaCliente.Split('*');
+                    cbNomeCliente.Items.Add(todaLinhaCliente[1]);
                 }
-            } while (linha != null);
-            ler.Close();
-            arquivo.Close();
-        }
+            } while (linhaCliente != null);
+            arquivoCliente.Close();
 
-        public struct Festa
-        {
-            public string nomeCliente;
-            public string dataFesta;
-            public string diaSemanaFesta;
-            public string horarioFesta;
-            public string qtdConvidados;
-            public string valorPagamento;
-            public double valorFinalPagamento;
-            public string statusPagamento;
+            //vendo ultimo código de festa 
+            FileStream festaArq = new FileStream("festas.txt", FileMode.Open);
+            StreamReader lerArqFesta = new StreamReader(festaArq);
+
+            while (linhaFesta != null)
+            {
+                linhaFesta = lerArqFesta.ReadLine();
+                if (linhaFesta != null)
+                {
+                    todaLinhaFesta = linhaFesta.Split('*');
+                    codigo = Convert.ToInt32(todaLinhaFesta[0]);
+                } 
+            }
+            festaArq.Close();
+            codigoFesta.Text = codigo.ToString();
         }
 
         private void _cadastroFesta_Load(object sender, EventArgs e)
         {
-            cBformaPagamento.SelectedIndex = 0;
-            labelValorTotal.Text = "0";
-            labelValorEstipulado.Text = "0";
+            codigo++;
+            codigoFesta.Text = codigo.ToString();
+
             dTPdataFesta.Value = DateTime.Now;
             cbDiaSemana.SelectedIndex = 0;
 
@@ -65,10 +83,8 @@ namespace telasTrab
             festa.horarioFesta = " ";
             festa.nomeCliente = " ";
             festa.qtdConvidados = " ";
-            festa.statusPagamento = " ";
+            festa.tema = " ";
 
- 
-            gBpagamentoSimNao.Enabled = false;
         }
 
         private void comboBoxDiaSemana_SelectedIndexChanged(object sender, EventArgs e)
@@ -89,99 +105,8 @@ namespace telasTrab
 
             Festa festa = new Festa();
             festa.diaSemanaFesta = cbDiaSemana.Text;
-            //verificando qtd convidados e dia da semana informando o preço
-            if (cbQtdConvidados.Text == "30")
-            {
-                if (festa.diaSemanaFesta == "Segunda-feira" || festa.diaSemanaFesta == "Terça-feira" ||
-                    festa.diaSemanaFesta == "Quarta-feira" || festa.diaSemanaFesta == "Quinta-feira")
-                {
-                    festa.valorPagamento = "1899,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-                if (festa.diaSemanaFesta == "Sexta-feira" || festa.diaSemanaFesta == "Sábado" ||
-                     festa.diaSemanaFesta == "Domingo")
-                {
-                    festa.valorPagamento = "2090,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-            }
-            if (cbQtdConvidados.Text == "50")
-            {
-                if (festa.diaSemanaFesta == "Segunda-feira" || festa.diaSemanaFesta == "Terça-feira" ||
-                 festa.diaSemanaFesta == "Quarta-feira" || festa.diaSemanaFesta == "Quinta-feira")
-                {
-                    festa.valorPagamento = "2199,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-                if (festa.diaSemanaFesta == "Sexta-feira" || festa.diaSemanaFesta == "Sábado" ||
-                     festa.diaSemanaFesta == "Domingo")
-                {
-                    festa.valorPagamento = "2299,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-            }
-            if (cbQtdConvidados.Text == "80")
-            {
-                if (festa.diaSemanaFesta == "Segunda-feira" || festa.diaSemanaFesta == "Terça-feira" ||
-                 festa.diaSemanaFesta == "Quarta-feira" || festa.diaSemanaFesta == "Quinta-feira")
-                {
-                    festa.valorPagamento = "3199,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-                if (festa.diaSemanaFesta == "Sexta-feira" || festa.diaSemanaFesta == "Sábado" ||
-                     festa.diaSemanaFesta == "Domingo")
-                {
-                    festa.valorPagamento = "3499,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-            }
-            if (cbQtdConvidados.Text == "100")
-            {
-                if (festa.diaSemanaFesta == "Segunda-feira" || festa.diaSemanaFesta == "Terça-feira" ||
-                 festa.diaSemanaFesta == "Quarta-feira" || festa.diaSemanaFesta == "Quinta-feira")
-                {
-                    festa.valorPagamento = "3799,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-                if (festa.diaSemanaFesta == "Sexta-feira" || festa.diaSemanaFesta == "Sábado" ||
-                     festa.diaSemanaFesta == "Domingo")
-                {
-                    festa.valorPagamento = "3999,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-            }
+            festa.qtdConvidados = cbQtdConvidados.Text;
 
-            if (rBpagamentoSim.Checked == true)
-            {
-                if (cBformaPagamento.SelectedItem.ToString() == "À vista")
-                {
-                    festa.valorFinalPagamento = double.Parse(festa.valorPagamento) * 0.90;
-                    labelValorTotal.Text = festa.valorFinalPagamento.ToString();
-                }
-                if (cBformaPagamento.SelectedItem.ToString() == "Parcelado 2x")
-                {
-                    festa.valorFinalPagamento = double.Parse(festa.valorPagamento) * 0.95;
-                    labelValorTotal.Text = festa.valorFinalPagamento.ToString();
-                }
-                if (cBformaPagamento.SelectedItem.ToString() == "Parcelado 3x")
-                {
-                    festa.valorFinalPagamento = double.Parse(festa.valorPagamento) * 0.98;
-                    labelValorTotal.Text = festa.valorFinalPagamento.ToString();
-                }
-                if (cBformaPagamento.SelectedItem.ToString() == "Parcelado 4x ou mais")
-                {
-                    festa.valorFinalPagamento = double.Parse(festa.valorPagamento);
-                    labelValorTotal.Text = festa.valorFinalPagamento.ToString();
-                }
-
-            }
-            if (rBpagamentoNao.Checked == true)
-            {
-                festa.valorPagamento = labelValorEstipulado.Text;
-                festa.valorFinalPagamento = double.Parse(festa.valorPagamento);
-                labelValorTotal.Text = festa.valorPagamento;
-
-            }
         }
 
         private void timeHoradiaSemana1_ValueChanged(object sender, EventArgs e)
@@ -202,6 +127,7 @@ namespace telasTrab
                 MessageBox.Show("Selecione um cliente para o contrato!", "Aviso", MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
                 cbNomeCliente.Focus();
+                festa.nomeCliente = " ";
             }
             else
             {
@@ -221,6 +147,8 @@ namespace telasTrab
             }
 
             //verificando horario
+            
+
             if (cbHoraFestaSabado.Enabled == true)
             {
                 if (cbHoraFestaSabado.SelectedIndex.Equals(-1))
@@ -230,30 +158,34 @@ namespace telasTrab
                     cbHoraFestaSabado.Focus();
                 }
             }
+            
             else
             {
-                FileStream arquivo4 = new FileStream("festas.txt", FileMode.Open);
-                StreamReader ler = new StreamReader(arquivo4);
-                do
+                FileStream arquivoHrFesta = new FileStream("festas.txt", FileMode.Open);
+                StreamReader lerArq = new StreamReader(arquivoHrFesta);
+
+
+                while (linha != null)
                 {
-                    linha = ler.ReadLine();
+                    linha = lerArq.ReadLine();
                     if (linha != null)
                     {
                         todaLinha = linha.Split('*');
                     }
-
-                } while (linha != null);
-                ler.Close();
+                }
+                arquivoHrFesta.Close();
 
 
                 //verificando se o horário esta disponível
                 if (cbHoraFestaSabado.Enabled == true)
                 {
-                    if ((todaLinha[1] == dTPdataFesta.Value.ToString("dd/MM/yyyy")) &&
-                        (todaLinha[3] == cbHoraFestaSabado.Text))
+                    
+                    if ((todaLinha[2] == dTPdataFesta.Value.ToString("dd/MM/yyyy")) 
+                        && (todaLinha[4] == cbHoraFestaSabado.Text))
                     {
                         MessageBox.Show("Horário Indisponível!", "Aviso", MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);
+                        festa.horarioFesta = " ";
                     }
                     else
                     {
@@ -264,13 +196,21 @@ namespace telasTrab
 
                 if ((timeHoradiaSemana1.Enabled == true) && (timeHoradiaSemana1.Enabled == true))
                 {
-                    festa.horarioFesta = (timeHoradiaSemana1.Text) + "a" + (timeHoradiaSemana2.Text);
-                    if ((todaLinha[1] == dTPdataFesta.Value.ToString("dd/MM/yyyy")) &&
-                        (todaLinha[3] == festa.horarioFesta))
+                
+                    DateTime horarioFesta = DateTime.Parse(todaLinha[4]);
+                    DateTime horario = DateTime.Parse(timeHoradiaSemana1.Text);
+                    
+
+
+                    if ((todaLinha[2] == dTPdataFesta.Value.ToString("dd/MM/yyyy"))
+                        && (((horarioFesta == horario) || (horarioFesta == horario.AddHours(1)) ||
+                        (horarioFesta == horario.AddHours(2)) || (horarioFesta ==
+                        horario.AddHours(3)) || (horarioFesta.AddHours(1) == horario) ||
+                        (horarioFesta.AddHours(2) == horario) || (horarioFesta.AddHours(3) == horario))))
                     {
                         MessageBox.Show("Horário Indisponível!", "Aviso", MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);
-                        festa.horarioFesta = null;
+                        festa.horarioFesta = " ";
                     }
                     else
                     {
@@ -278,62 +218,96 @@ namespace telasTrab
                         festa.horarioFesta = (timeHoradiaSemana1.Text) + "a" + (timeHoradiaSemana2.Text);
                     }
                 }
-                arquivo4.Close();
             }
+
+
+            //verificando se o tema foi preenchido
+            if(tbTemaFesta.Text == string.Empty)
+            {
+                MessageBox.Show("Insira um tema pra festa!", "Aviso", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Exclamation);
+                tbTemaFesta.Focus();
+                festa.tema = " ";
+            }
+            else
+            {
+                festa.tema = tbTemaFesta.Text;
+            }
+
             //verificando qtd convidados
             if (cbQtdConvidados.SelectedIndex.Equals(-1))
             {
                 MessageBox.Show("Selecione uma quantidade de convidados para a festa!", "Aviso", MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
                 cbQtdConvidados.Focus();
+                festa.qtdConvidados = " ";
             }
             else
             {
                 festa.qtdConvidados = cbQtdConvidados.Text;
             }
 
-            //verificando se foi pago ou nao
-            if (gBpagamentoSimNao.Enabled == true)
+
+
+            // CADASTRANDO 
+            festa.codigoFesta = codigoFesta.Text;
+            if ((festa.nomeCliente == " ") && (festa.dataFesta == " ") && (festa.diaSemanaFesta == " ") &&
+                (festa.horarioFesta == " ") && (festa.qtdConvidados == " ") && (festa.tema == " "))
             {
-                if ((rBpagamentoNao.Checked == false) && (rBpagamentoSim.Checked == false))
-                {
-                    MessageBox.Show("Por gentileza, informe o momento em que o pagamento será realizado!", "Aviso", MessageBoxButtons.OK,
-                        MessageBoxIcon.Exclamation);
-                    gBpagamentoSimNao.Focus();
-                }
-                else
-                {
-                    if (rBpagamentoNao.Checked == true)
-                    {
-                        festa.statusPagamento = "PENDENTE";
-                    }
-                    if (rBpagamentoSim.Checked == true)
-                    {
-                        festa.statusPagamento = "PAGO";
-                    }
-                }
-            }
-
-
-
-
-            // CADASTRANDO FESTA
-            if ((festa.nomeCliente != " ") && (festa.dataFesta != " ") && (festa.diaSemanaFesta != " ") &&
-                (festa.horarioFesta != " ") && (festa.statusPagamento != " "))
-            {
-                FileStream arquivo1 = new FileStream("festas.txt", FileMode.Append);
-                StreamWriter escreve = new StreamWriter(arquivo1);
-
-
-                escreve.Write(festa.nomeCliente + '*' + festa.dataFesta + '*' + festa.diaSemanaFesta + '*' +
-                    festa.horarioFesta + '*' + festa.statusPagamento);
-                escreve.WriteLine(" ");
-
-                MessageBox.Show("Dados gravados com sucesso!", "Aviso", MessageBoxButtons.OK,
+                MessageBox.Show("Não foi possível gravar a festa, por\nfalta de dados.. ", "Aviso", MessageBoxButtons.OK,
                        MessageBoxIcon.Asterisk);
-                escreve.Close();
-                arquivo1.Close();
+                return;
             }
+            else 
+            {
+                if ((festa.nomeCliente != " ") && (festa.dataFesta != " ") && (festa.diaSemanaFesta != " ")
+                && (festa.qtdConvidados != " ") && (festa.horarioFesta != " ") && (festa.tema != " "))
+                { 
+                    FileStream arquivo1 = new FileStream("festas.txt", FileMode.Append);
+                    StreamWriter escreve = new StreamWriter(arquivo1);
+                    if (festa.diaSemanaFesta == "Sábado") {
+                        if(cbHoraFestaSabado.SelectedIndex == 0) { 
+                            escreve.Write(festa.codigoFesta + '*' + festa.nomeCliente + '*' + festa.dataFesta + '*' + festa.diaSemanaFesta + '*' +
+                                "12:00:00" + '*'+ "16:00:00" + '*' + festa.qtdConvidados + '*' + festa.tema + '*' + "PENDENTE");
+                            escreve.WriteLine(" ");
+                        }
+                        if (cbHoraFestaSabado.SelectedIndex == 1)
+                        {
+                            escreve.Write(festa.codigoFesta + '*' + festa.nomeCliente + '*' + festa.dataFesta + '*' + festa.diaSemanaFesta + '*' +
+                                "18:00:00" + '*' + "22:00:00" + '*' + festa.qtdConvidados + '*' + festa.tema + '*' + "PENDENTE");
+                            escreve.WriteLine(" ");
+                        }
+                    }
+                    else
+                    {
+                        escreve.Write(festa.codigoFesta + '*' + festa.nomeCliente + '*' + festa.dataFesta + '*' + festa.diaSemanaFesta + '*' +
+                              timeHoradiaSemana1.Text + '*' + timeHoradiaSemana2.Text + '*' + festa.qtdConvidados + '*' + festa.tema + '*' + "PENDENTE");
+                        escreve.WriteLine(" ");
+                    }
+
+                    MessageBox.Show("Dados gravados com sucesso!", "Aviso", MessageBoxButtons.OK,
+                           MessageBoxIcon.Asterisk);
+                    escreve.Close();
+
+                    if (MessageBox.Show("Deseja cadastrar outra FESTA?", "Aviso", MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Information) == DialogResult.Yes)
+                    {
+                        codigo++;
+                        codigoFesta.Text = codigo.ToString();
+
+                        cbNomeCliente.SelectedIndex = -1;
+                        cbDiaSemana.SelectedIndex = -1;
+                        cbQtdConvidados.SelectedIndex = -1;
+                        tbTemaFesta.Text = string.Empty;
+                    }
+                    else
+                    {
+                       codigo++;
+                       this.Close();
+                    }
+                }
+            }
+        
         }
 
         private void cbNomeCliente_SelectedIndexChanged(object sender, EventArgs e)
@@ -341,389 +315,15 @@ namespace telasTrab
 
 
         }
-        //se radio button 'Sim' é selecionado
-        private void rBpagamentoSim_CheckedChanged(object sender, EventArgs e)
-        {
-            cBformaPagamento.Enabled = true;
-            Festa festa = new Festa();
-            festa.diaSemanaFesta = cbDiaSemana.Text;
-
-
-            //verificando qtd convidados e dia da semana informando o preço
-            if (cbQtdConvidados.Text == "30")
-            {
-                if (festa.diaSemanaFesta == "Segunda-feira" || festa.diaSemanaFesta == "Terça-feira" ||
-                    festa.diaSemanaFesta == "Quarta-feira" || festa.diaSemanaFesta == "Quinta-feira")
-                {
-                    festa.valorPagamento = "1899,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-                if (festa.diaSemanaFesta == "Sexta-feira" || festa.diaSemanaFesta == "Sábado" ||
-                     festa.diaSemanaFesta == "Domingo")
-                {
-                    festa.valorPagamento = "2090,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-            }
-            if (cbQtdConvidados.Text == "50")
-            {
-                if (festa.diaSemanaFesta == "Segunda-feira" || festa.diaSemanaFesta == "Terça-feira" ||
-                 festa.diaSemanaFesta == "Quarta-feira" || festa.diaSemanaFesta == "Quinta-feira")
-                {
-                    festa.valorPagamento = "2199,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-                if (festa.diaSemanaFesta == "Sexta-feira" || festa.diaSemanaFesta == "Sábado" ||
-                     festa.diaSemanaFesta == "Domingo")
-                {
-                    festa.valorPagamento = "2299,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-            }
-            if (cbQtdConvidados.Text == "80")
-            {
-                if (festa.diaSemanaFesta == "Segunda-feira" || festa.diaSemanaFesta == "Terça-feira" ||
-                 festa.diaSemanaFesta == "Quarta-feira" || festa.diaSemanaFesta == "Quinta-feira")
-                {
-                    festa.valorPagamento = "3199,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-                if (festa.diaSemanaFesta == "Sexta-feira" || festa.diaSemanaFesta == "Sábado" ||
-                     festa.diaSemanaFesta == "Domingo")
-                {
-                    festa.valorPagamento = "3499,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-            }
-            if (cbQtdConvidados.Text == "100")
-            {
-                if (festa.diaSemanaFesta == "Segunda-feira" || festa.diaSemanaFesta == "Terça-feira" ||
-                 festa.diaSemanaFesta == "Quarta-feira" || festa.diaSemanaFesta == "Quinta-feira")
-                {
-                    festa.valorPagamento = "3799,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-                if (festa.diaSemanaFesta == "Sexta-feira" || festa.diaSemanaFesta == "Sábado" ||
-                     festa.diaSemanaFesta == "Domingo")
-                {
-                    festa.valorPagamento = "3999,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-            }
-
-            if (rBpagamentoSim.Checked == true)
-            {
-                if (cBformaPagamento.SelectedItem.ToString() == "À vista")
-                {
-                    festa.valorFinalPagamento = double.Parse(festa.valorPagamento) * 0.90;
-                    labelValorTotal.Text = festa.valorFinalPagamento.ToString();
-                }
-                if (cBformaPagamento.SelectedItem.ToString() == "Parcelado 2x")
-                {
-                    festa.valorFinalPagamento = double.Parse(festa.valorPagamento) * 0.95;
-                    labelValorTotal.Text = festa.valorFinalPagamento.ToString();
-                }
-                if (cBformaPagamento.SelectedItem.ToString() == "Parcelado 3x")
-                {
-                    festa.valorFinalPagamento = double.Parse(festa.valorPagamento) * 0.98;
-                    labelValorTotal.Text = festa.valorFinalPagamento.ToString();
-                }
-                if (cBformaPagamento.SelectedItem.ToString() == "Parcelado 4x ou mais")
-                {
-                    festa.valorFinalPagamento = double.Parse(festa.valorPagamento);
-                    labelValorTotal.Text = festa.valorFinalPagamento.ToString();
-                }
-
-            }
-        }
-
-        //se radio button 'Não' é selecionado
-        private void rBpagamentoNao_CheckedChanged(object sender, EventArgs e)
-        {
-
-            cBformaPagamento.Enabled = false;
-            labelValorTotal.Text = labelValorEstipulado.Text;
-
-            Festa festa = new Festa();
-            festa.diaSemanaFesta = cbDiaSemana.Text;
-            //verificando qtd convidados e dia da semana informando o preço
-            if (cbQtdConvidados.Text == "30")
-            {
-                if (festa.diaSemanaFesta == "Segunda-feira" || festa.diaSemanaFesta == "Terça-feira" ||
-                    festa.diaSemanaFesta == "Quarta-feira" || festa.diaSemanaFesta == "Quinta-feira")
-                {
-                    festa.valorPagamento = "1899,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-                if (festa.diaSemanaFesta == "Sexta-feira" || festa.diaSemanaFesta == "Sábado" ||
-                     festa.diaSemanaFesta == "Domingo")
-                {
-                    festa.valorPagamento = "2090,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-            }
-            if (cbQtdConvidados.Text == "50")
-            {
-                if (festa.diaSemanaFesta == "Segunda-feira" || festa.diaSemanaFesta == "Terça-feira" ||
-                 festa.diaSemanaFesta == "Quarta-feira" || festa.diaSemanaFesta == "Quinta-feira")
-                {
-                    festa.valorPagamento = "2199,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-                if (festa.diaSemanaFesta == "Sexta-feira" || festa.diaSemanaFesta == "Sábado" ||
-                     festa.diaSemanaFesta == "Domingo")
-                {
-                    festa.valorPagamento = "2299,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-            }
-            if (cbQtdConvidados.Text == "80")
-            {
-                if (festa.diaSemanaFesta == "Segunda-feira" || festa.diaSemanaFesta == "Terça-feira" ||
-                 festa.diaSemanaFesta == "Quarta-feira" || festa.diaSemanaFesta == "Quinta-feira")
-                {
-                    festa.valorPagamento = "3199,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-                if (festa.diaSemanaFesta == "Sexta-feira" || festa.diaSemanaFesta == "Sábado" ||
-                     festa.diaSemanaFesta == "Domingo")
-                {
-                    festa.valorPagamento = "3499,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-            }
-            if (cbQtdConvidados.Text == "100")
-            {
-                if (festa.diaSemanaFesta == "Segunda-feira" || festa.diaSemanaFesta == "Terça-feira" ||
-                 festa.diaSemanaFesta == "Quarta-feira" || festa.diaSemanaFesta == "Quinta-feira")
-                {
-                    festa.valorPagamento = "3799,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-                if (festa.diaSemanaFesta == "Sexta-feira" || festa.diaSemanaFesta == "Sábado" ||
-                     festa.diaSemanaFesta == "Domingo")
-                {
-                    festa.valorPagamento = "3999,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-            }
-
-
-
-        }
-
-        //comboBox forma de pagamento
-        private void cBformaPagamento_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Festa festa = new Festa();
-            festa.valorPagamento = labelValorEstipulado.Text;
-            //verificando se será feito pagamento ou não
-            if (rBpagamentoSim.Checked == true)
-            {
-                if (cBformaPagamento.SelectedItem.ToString() == "À vista")
-                {
-                    festa.valorFinalPagamento = double.Parse(festa.valorPagamento) * 0.90;
-                    labelValorTotal.Text = festa.valorFinalPagamento.ToString();
-                }
-                if (cBformaPagamento.SelectedItem.ToString() == "Parcelado 2x")
-                {
-                    festa.valorFinalPagamento = double.Parse(festa.valorPagamento) * 0.95;
-                    labelValorTotal.Text = festa.valorFinalPagamento.ToString();
-                }
-                if (cBformaPagamento.SelectedItem.ToString() == "Parcelado 3x")
-                {
-                    festa.valorFinalPagamento = double.Parse(festa.valorPagamento) * 0.98;
-                    labelValorTotal.Text = festa.valorFinalPagamento.ToString();
-                }
-                if (cBformaPagamento.SelectedItem.ToString() == "Parcelado 4x ou mais")
-                {
-                    festa.valorFinalPagamento = double.Parse(festa.valorPagamento);
-                    labelValorTotal.Text = festa.valorFinalPagamento.ToString();
-                }
-
-            }
-            if (rBpagamentoNao.Checked == true)
-            {
-                festa.valorPagamento = labelValorEstipulado.Text;
-                festa.valorFinalPagamento = double.Parse(festa.valorPagamento);
-                labelValorTotal.Text = festa.valorPagamento;
-
-            }
-
-
-            festa.diaSemanaFesta = cbDiaSemana.Text;
-            //verificando qtd convidados e dia da semana informando o preço
-            if (cbQtdConvidados.Text == "30")
-            {
-                if (festa.diaSemanaFesta == "Segunda-feira" || festa.diaSemanaFesta == "Terça-feira" ||
-                    festa.diaSemanaFesta == "Quarta-feira" || festa.diaSemanaFesta == "Quinta-feira")
-                {
-                    festa.valorPagamento = "1899,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-                if (festa.diaSemanaFesta == "Sexta-feira" || festa.diaSemanaFesta == "Sábado" ||
-                     festa.diaSemanaFesta == "Domingo")
-                {
-                    festa.valorPagamento = "2090,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-            }
-            if (cbQtdConvidados.Text == "50")
-            {
-                if (festa.diaSemanaFesta == "Segunda-feira" || festa.diaSemanaFesta == "Terça-feira" ||
-                 festa.diaSemanaFesta == "Quarta-feira" || festa.diaSemanaFesta == "Quinta-feira")
-                {
-                    festa.valorPagamento = "2199,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-                if (festa.diaSemanaFesta == "Sexta-feira" || festa.diaSemanaFesta == "Sábado" ||
-                     festa.diaSemanaFesta == "Domingo")
-                {
-                    festa.valorPagamento = "2299,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-            }
-            if (cbQtdConvidados.Text == "80")
-            {
-                if (festa.diaSemanaFesta == "Segunda-feira" || festa.diaSemanaFesta == "Terça-feira" ||
-                 festa.diaSemanaFesta == "Quarta-feira" || festa.diaSemanaFesta == "Quinta-feira")
-                {
-                    festa.valorPagamento = "3199,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-                if (festa.diaSemanaFesta == "Sexta-feira" || festa.diaSemanaFesta == "Sábado" ||
-                     festa.diaSemanaFesta == "Domingo")
-                {
-                    festa.valorPagamento = "3499,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-            }
-            if (cbQtdConvidados.Text == "100")
-            {
-                if (festa.diaSemanaFesta == "Segunda-feira" || festa.diaSemanaFesta == "Terça-feira" ||
-                 festa.diaSemanaFesta == "Quarta-feira" || festa.diaSemanaFesta == "Quinta-feira")
-                {
-                    festa.valorPagamento = "3799,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-                if (festa.diaSemanaFesta == "Sexta-feira" || festa.diaSemanaFesta == "Sábado" ||
-                     festa.diaSemanaFesta == "Domingo")
-                {
-                    festa.valorPagamento = "3999,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-            }
-        }
+        
 
         //comboBox qtd de convidados
         private void cbQtdConvidados_SelectedIndexChanged(object sender, EventArgs e)
         {
             Festa festa = new Festa();
             festa.diaSemanaFesta = cbDiaSemana.Text;
-            gBpagamentoSimNao.Enabled = true;
-
-            //verificando qtd convidados e dia da semana informando o preço
-            if (cbQtdConvidados.Text == "30")
-            {
-                if (festa.diaSemanaFesta == "Segunda-feira" || festa.diaSemanaFesta == "Terça-feira" ||
-                    festa.diaSemanaFesta == "Quarta-feira" || festa.diaSemanaFesta == "Quinta-feira")
-                {
-                    festa.valorPagamento = "1899,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-                if (festa.diaSemanaFesta == "Sexta-feira" || festa.diaSemanaFesta == "Sábado" ||
-                     festa.diaSemanaFesta == "Domingo")
-                {
-                    festa.valorPagamento = "2090,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-            }
-            if (cbQtdConvidados.Text == "50")
-            {
-                if (festa.diaSemanaFesta == "Segunda-feira" || festa.diaSemanaFesta == "Terça-feira" ||
-                 festa.diaSemanaFesta == "Quarta-feira" || festa.diaSemanaFesta == "Quinta-feira")
-                {
-                    festa.valorPagamento = "2199,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-                if (festa.diaSemanaFesta == "Sexta-feira" || festa.diaSemanaFesta == "Sábado" ||
-                     festa.diaSemanaFesta == "Domingo")
-                {
-                    festa.valorPagamento = "2299,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-            }
-            if (cbQtdConvidados.Text == "80")
-            {
-                if (festa.diaSemanaFesta == "Segunda-feira" || festa.diaSemanaFesta == "Terça-feira" ||
-                 festa.diaSemanaFesta == "Quarta-feira" || festa.diaSemanaFesta == "Quinta-feira")
-                {
-                    festa.valorPagamento = "3199,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-                if (festa.diaSemanaFesta == "Sexta-feira" || festa.diaSemanaFesta == "Sábado" ||
-                     festa.diaSemanaFesta == "Domingo")
-                {
-                    festa.valorPagamento = "3499,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-            }
-            if (cbQtdConvidados.Text == "100")
-            {
-                if (festa.diaSemanaFesta == "Segunda-feira" || festa.diaSemanaFesta == "Terça-feira" ||
-                 festa.diaSemanaFesta == "Quarta-feira" || festa.diaSemanaFesta == "Quinta-feira")
-                {
-                    festa.valorPagamento = "3799,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-                if (festa.diaSemanaFesta == "Sexta-feira" || festa.diaSemanaFesta == "Sábado" ||
-                     festa.diaSemanaFesta == "Domingo")
-                {
-                    festa.valorPagamento = "3999,00";
-                    labelValorEstipulado.Text = festa.valorPagamento.ToString();
-                }
-            }
-
-            if (rBpagamentoSim.Checked == true)
-            {
-                if (cBformaPagamento.SelectedItem.ToString() == "À vista")
-                {
-                    festa.valorFinalPagamento = double.Parse(festa.valorPagamento) * 0.90;
-                    labelValorTotal.Text = festa.valorFinalPagamento.ToString();
-                }
-                if (cBformaPagamento.SelectedItem.ToString() == "Parcelado 2x")
-                {
-                    festa.valorFinalPagamento = double.Parse(festa.valorPagamento) * 0.95;
-                    labelValorTotal.Text = festa.valorFinalPagamento.ToString();
-                }
-                if (cBformaPagamento.SelectedItem.ToString() == "Parcelado 3x")
-                {
-                    festa.valorFinalPagamento = double.Parse(festa.valorPagamento) * 0.98;
-                    labelValorTotal.Text = festa.valorFinalPagamento.ToString();
-                }
-                if (cBformaPagamento.SelectedItem.ToString() == "Parcelado 4x ou mais")
-                {
-                    festa.valorFinalPagamento = double.Parse(festa.valorPagamento);
-                    labelValorTotal.Text = festa.valorFinalPagamento.ToString();
-                }
-
-            }
-            if (rBpagamentoNao.Checked == true)
-            {
-                festa.valorPagamento = labelValorEstipulado.Text;
-                festa.valorFinalPagamento = double.Parse(festa.valorPagamento);
-                labelValorTotal.Text = festa.valorPagamento;
-
-            }
-        }
-
-        private void gBpagamentoSimNao_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gBalteracoesPagamento_Enter(object sender, EventArgs e)
-        {
+   
+            festa.qtdConvidados = cbQtdConvidados.Text;     
 
         }
 
@@ -732,5 +332,6 @@ namespace telasTrab
             this.Hide();
             this.Close();
         }
+        
     }
 }
