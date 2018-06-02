@@ -12,6 +12,7 @@ namespace telasTrab
 {
     public partial class menuPrincipal : Form
     {
+        // Inicialização do Menu Principal
         public menuPrincipal()
         {
             InitializeComponent();
@@ -20,17 +21,19 @@ namespace telasTrab
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
+        // Botão que abre o menu de cadastros
         private void novoCadastro_Click(object sender, EventArgs e)
         {
-            
+
             telaCadastro telaCadastro = new telaCadastro();
             telaCadastro.StartPosition = FormStartPosition.CenterScreen;
             telaCadastro.FormBorderStyle = FormBorderStyle.FixedSingle;
             telaCadastro.ControlBox = false;
             telaCadastro.ShowDialog();
-            
+
         }
 
+        // Botão que abre a tela de pesquisas 
         private void pesquisarCadastro_Click(object sender, EventArgs e)
         {
             telaConsulta telaConsulta = new telaConsulta();
@@ -40,6 +43,7 @@ namespace telasTrab
             telaConsulta.ShowDialog();
         }
 
+        // Botão que abre a tela de gerar relatórios 
         private void relatorio_Click(object sender, EventArgs e)
         {
             telaRelatorio telaRelatorio = new telaRelatorio();
@@ -49,22 +53,18 @@ namespace telasTrab
             telaRelatorio.ShowDialog();
         }
 
+        // Botão para sair do sistema 
         private void sair_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Deseja realmente sair?","Sair", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Deseja realmente sair?", "Sair", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                MessageBox.Show("Ate mais!","", MessageBoxButtons.OK);
+                MessageBox.Show("Ate mais!", "", MessageBoxButtons.OK);
                 Application.Exit();
             }
             else
             {
                 return;
-            }                       
-        }
-
-        private void menuPrincipal_Load(object sender, EventArgs e)
-        {
-
+            }
         }
     }
 }

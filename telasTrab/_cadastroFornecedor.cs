@@ -93,8 +93,7 @@ namespace telasTrab
             FileStream arquivo3 = new FileStream("fornecedores.txt", FileMode.Append);
             StreamWriter escreve = new StreamWriter(arquivo3);
 
-            escreve.Write(fornecedor.codigo + '*' + fornecedor.nome + '*' + fornecedor.telefone + '*' + fornecedor.produtoFornecido);
-            escreve.WriteLine(" ");
+            escreve.WriteLine(fornecedor.codigo + '*' + fornecedor.nome + '*' + fornecedor.telefone + '*' + fornecedor.produtoFornecido);
             escreve.Close();
 
             escreve.Close();

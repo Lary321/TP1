@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(_cadastroFornecedor));
-            this.btVoltar = new System.Windows.Forms.PictureBox();
             this.btGravarFornecedor = new System.Windows.Forms.Button();
             this.nomeForn = new System.Windows.Forms.Label();
             this.nomeFornecedor = new System.Windows.Forms.TextBox();
@@ -41,18 +40,8 @@
             this.produtoFornecido = new System.Windows.Forms.ComboBox();
             this.outroProduto = new System.Windows.Forms.TextBox();
             this.codigoFornecedor = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.btVoltar)).BeginInit();
+            this.btVoltar = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btVoltar
-            // 
-            this.btVoltar.Image = ((System.Drawing.Image)(resources.GetObject("btVoltar.Image")));
-            this.btVoltar.Location = new System.Drawing.Point(12, 12);
-            this.btVoltar.Name = "btVoltar";
-            this.btVoltar.Size = new System.Drawing.Size(76, 42);
-            this.btVoltar.TabIndex = 4;
-            this.btVoltar.TabStop = false;
-            this.btVoltar.Click += new System.EventHandler(this.btVoltar_Click);
             // 
             // btGravarFornecedor
             // 
@@ -107,11 +96,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Candara", 14F);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(159, 21);
+            this.label3.Location = new System.Drawing.Point(97, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(456, 20);
+            this.label3.Size = new System.Drawing.Size(518, 23);
             this.label3.TabIndex = 19;
             this.label3.Text = "Para cadastrar um novo fornecedor, preencha os dados abaixo:";
             // 
@@ -173,6 +162,16 @@
             this.codigoFornecedor.Size = new System.Drawing.Size(0, 23);
             this.codigoFornecedor.TabIndex = 24;
             // 
+            // btVoltar
+            // 
+            this.btVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btVoltar.BackgroundImage")));
+            this.btVoltar.Location = new System.Drawing.Point(12, 12);
+            this.btVoltar.Name = "btVoltar";
+            this.btVoltar.Size = new System.Drawing.Size(50, 50);
+            this.btVoltar.TabIndex = 25;
+            this.btVoltar.UseVisualStyleBackColor = true;
+            this.btVoltar.Click += new System.EventHandler(this.btVoltar_Click);
+            // 
             // _cadastroFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,6 +179,7 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(704, 481);
+            this.Controls.Add(this.btVoltar);
             this.Controls.Add(this.codigoFornecedor);
             this.Controls.Add(this.outroProduto);
             this.Controls.Add(this.produtoFornecido);
@@ -191,19 +191,15 @@
             this.Controls.Add(this.nomeForn);
             this.Controls.Add(this.nomeFornecedor);
             this.Controls.Add(this.btGravarFornecedor);
-            this.Controls.Add(this.btVoltar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "_cadastroFornecedor";
             this.Text = "Cadastro Fornecedor";
-            ((System.ComponentModel.ISupportInitialize)(this.btVoltar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox btVoltar;
         private System.Windows.Forms.Button btGravarFornecedor;
         private System.Windows.Forms.Label nomeForn;
         private System.Windows.Forms.TextBox nomeFornecedor;
@@ -215,5 +211,6 @@
         private System.Windows.Forms.ComboBox produtoFornecido;
         private System.Windows.Forms.TextBox outroProduto;
         private System.Windows.Forms.Label codigoFornecedor;
+        private System.Windows.Forms.Button btVoltar;
     }
 }

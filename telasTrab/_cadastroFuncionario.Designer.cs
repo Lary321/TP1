@@ -69,10 +69,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.Window;
-            this.label2.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Candara", 14F);
             this.label2.Location = new System.Drawing.Point(105, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(519, 23);
+            this.label2.Size = new System.Drawing.Size(518, 23);
             this.label2.TabIndex = 2;
             this.label2.Text = "Para cadastrar um novo funcionário, preencha os dados abaixo:";
             // 

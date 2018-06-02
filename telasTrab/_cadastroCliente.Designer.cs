@@ -35,7 +35,6 @@
             this.nomeCliente = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.enderecoCliente = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btGravarCliente = new System.Windows.Forms.Button();
             this.telefoneCliente = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -43,36 +42,35 @@
             this.label2 = new System.Windows.Forms.Label();
             this.codigoCliente = new System.Windows.Forms.Label();
             this.dataNascCliente = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label5.Font = new System.Drawing.Font("Candara", 12.25F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(25, 315);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(158, 20);
+            this.label5.Size = new System.Drawing.Size(159, 21);
             this.label5.TabIndex = 15;
             this.label5.Text = "Data de Nascimento:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label4.Font = new System.Drawing.Font("Candara", 12.25F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(25, 255);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 20);
+            this.label4.Size = new System.Drawing.Size(78, 21);
             this.label4.TabIndex = 14;
             this.label4.Text = "Telefone:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label1.Font = new System.Drawing.Font("Candara", 12.25F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(25, 130);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 20);
+            this.label1.Size = new System.Drawing.Size(58, 21);
             this.label1.TabIndex = 11;
             this.label1.Text = "Nome:";
             // 
@@ -81,16 +79,16 @@
             this.nomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nomeCliente.Location = new System.Drawing.Point(30, 155);
             this.nomeCliente.Name = "nomeCliente";
-            this.nomeCliente.Size = new System.Drawing.Size(380, 22);
+            this.nomeCliente.Size = new System.Drawing.Size(370, 22);
             this.nomeCliente.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label3.Font = new System.Drawing.Font("Candara", 12.25F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(25, 195);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 20);
+            this.label3.Size = new System.Drawing.Size(84, 21);
             this.label3.TabIndex = 19;
             this.label3.Text = "Endereço:";
             // 
@@ -99,17 +97,8 @@
             this.enderecoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enderecoCliente.Location = new System.Drawing.Point(30, 220);
             this.enderecoCliente.Name = "enderecoCliente";
-            this.enderecoCliente.Size = new System.Drawing.Size(380, 22);
+            this.enderecoCliente.Size = new System.Drawing.Size(370, 22);
             this.enderecoCliente.TabIndex = 2;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(451, 130);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(184, 283);
-            this.pictureBox2.TabIndex = 20;
-            this.pictureBox2.TabStop = false;
             // 
             // btGravarCliente
             // 
@@ -130,17 +119,17 @@
             this.telefoneCliente.Location = new System.Drawing.Point(29, 280);
             this.telefoneCliente.Mask = "(00)00000-0000";
             this.telefoneCliente.Name = "telefoneCliente";
-            this.telefoneCliente.Size = new System.Drawing.Size(88, 22);
+            this.telefoneCliente.Size = new System.Drawing.Size(100, 22);
             this.telefoneCliente.TabIndex = 3;
             this.telefoneCliente.MouseClick += new System.Windows.Forms.MouseEventHandler(this.telefoneCliente_MouseClick);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label6.Font = new System.Drawing.Font("Candara", 12.25F, System.Drawing.FontStyle.Bold);
             this.label6.Location = new System.Drawing.Point(25, 85);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(116, 20);
+            this.label6.Size = new System.Drawing.Size(119, 21);
             this.label6.TabIndex = 23;
             this.label6.Text = "Código Cliente:";
             // 
@@ -158,7 +147,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.Window;
-            this.label2.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Candara", 14.25F);
             this.label2.Location = new System.Drawing.Point(121, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(481, 23);
@@ -189,6 +178,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(704, 481);
             this.Controls.Add(this.dataNascCliente);
             this.Controls.Add(this.codigoCliente);
@@ -196,7 +186,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.telefoneCliente);
             this.Controls.Add(this.btGravarCliente);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.enderecoCliente);
             this.Controls.Add(this.label5);
@@ -208,7 +197,6 @@
             this.Name = "_cadastroCliente";
             this.Text = "Cadastro Cliente";
             this.Load += new System.EventHandler(this._cadastroCliente_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,7 +209,6 @@
         private System.Windows.Forms.TextBox nomeCliente;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox enderecoCliente;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btGravarCliente;
         private System.Windows.Forms.MaskedTextBox telefoneCliente;
         private System.Windows.Forms.Label label6;

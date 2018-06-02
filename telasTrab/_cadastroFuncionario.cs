@@ -101,9 +101,8 @@ namespace telasTrab
             FileStream arquivo3 = new FileStream("funcionarios.txt", FileMode.Append);
             StreamWriter escreve = new StreamWriter(arquivo3);
 
-            escreve.Write(funcionario.codigo + '*' + funcionario.nome + '*' + funcionario.telefone + '*' + funcionario.tipo +
+            escreve.WriteLine(funcionario.codigo + '*' + funcionario.nome + '*' + funcionario.telefone + '*' + funcionario.tipo +
                 '*' + funcionario.funcao + '*' + funcionario.salario);
-            escreve.WriteLine(" ");
             escreve.Close();
 
             MessageBox.Show("Funcionário(a) cadastrado(a) com sucesso!", "Aviso", MessageBoxButtons.OK,

@@ -104,7 +104,6 @@
             this.Name = "menuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Patati Patatá Buffet Infantil";
-            this.Load += new System.EventHandler(this.menuPrincipal_Load);
             this.ResumeLayout(false);
 
         }

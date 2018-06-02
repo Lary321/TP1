@@ -77,7 +77,7 @@ namespace telasTrab
             FileStream arquivo3 = new FileStream("clientes.txt", FileMode.Append);
             StreamWriter escreve = new StreamWriter(arquivo3);
 
-            escreve.Write(cliente.codigo + '*' + cliente.nome + '*' + cliente.endereco + '*' + cliente.telefone + 
+            escreve.WriteLine(cliente.codigo + '*' + cliente.nome + '*' + cliente.endereco + '*' + cliente.telefone + 
                 '*' + cliente.dataNasc);
             escreve.WriteLine(" ");
             escreve.Close();
@@ -85,6 +85,7 @@ namespace telasTrab
             MessageBox.Show("Cliente cadastrado com sucesso!", "Aviso", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
 
+            
             if (MessageBox.Show("Deseja cadastrar outro cliente?", "Aviso", MessageBoxButtons.YesNo, 
                 MessageBoxIcon.Information) == DialogResult.Yes)
             {

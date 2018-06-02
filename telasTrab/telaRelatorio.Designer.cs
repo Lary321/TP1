@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaRelatorio));
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pesquisaNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btGerarRelatorio = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.gBnomeCliente = new System.Windows.Forms.GroupBox();
             this.gBdataFesta = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.pesquisaData = new System.Windows.Forms.DateTimePicker();
             this.gBRelatorioClienteData = new System.Windows.Forms.GroupBox();
             this.rBRelatorioCliente = new System.Windows.Forms.RadioButton();
             this.rBRelatorioData = new System.Windows.Forms.RadioButton();
@@ -46,12 +46,12 @@
             this.gBRelatorioClienteData.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // pesquisaNome
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 50);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(267, 20);
-            this.textBox1.TabIndex = 0;
+            this.pesquisaNome.Location = new System.Drawing.Point(6, 50);
+            this.pesquisaNome.Name = "pesquisaNome";
+            this.pesquisaNome.Size = new System.Drawing.Size(267, 20);
+            this.pesquisaNome.TabIndex = 0;
             // 
             // label2
             // 
@@ -90,7 +90,7 @@
             // 
             // gBnomeCliente
             // 
-            this.gBnomeCliente.Controls.Add(this.textBox1);
+            this.gBnomeCliente.Controls.Add(this.pesquisaNome);
             this.gBnomeCliente.Controls.Add(this.label2);
             this.gBnomeCliente.Enabled = false;
             this.gBnomeCliente.Location = new System.Drawing.Point(215, 66);
@@ -102,7 +102,7 @@
             // gBdataFesta
             // 
             this.gBdataFesta.Controls.Add(this.label3);
-            this.gBdataFesta.Controls.Add(this.dateTimePicker1);
+            this.gBdataFesta.Controls.Add(this.pesquisaData);
             this.gBdataFesta.Enabled = false;
             this.gBdataFesta.Location = new System.Drawing.Point(215, 66);
             this.gBdataFesta.Name = "gBdataFesta";
@@ -121,13 +121,13 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Informe a data da festa:";
             // 
-            // dateTimePicker1
+            // pesquisaData
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(10, 50);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(263, 20);
-            this.dateTimePicker1.TabIndex = 8;
+            this.pesquisaData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.pesquisaData.Location = new System.Drawing.Point(10, 50);
+            this.pesquisaData.Name = "pesquisaData";
+            this.pesquisaData.Size = new System.Drawing.Size(263, 20);
+            this.pesquisaData.TabIndex = 8;
             // 
             // gBRelatorioClienteData
             // 
@@ -203,7 +203,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox pesquisaNome;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btGerarRelatorio;
         private System.Windows.Forms.Label label1;
@@ -211,7 +211,7 @@
         private System.Windows.Forms.GroupBox gBRelatorioClienteData;
         private System.Windows.Forms.RadioButton rBRelatorioCliente;
         private System.Windows.Forms.RadioButton rBRelatorioData;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker pesquisaData;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox gBdataFesta;
         private System.Windows.Forms.Button btVoltar;

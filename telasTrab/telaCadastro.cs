@@ -12,6 +12,7 @@ namespace telasTrab
 {
     public partial class telaCadastro : Form
     {
+        // Função construtora da classe telaCadastro 
         public telaCadastro()
         {
             InitializeComponent();
@@ -20,11 +21,7 @@ namespace telasTrab
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        // Botão para acessar a tela de cadastros dos funcionários 
         private void btCadastroFuncionario_Click(object sender, EventArgs e)
         {
             
@@ -46,12 +43,7 @@ namespace telasTrab
 
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            this.Close();
-        }
-
+        // Botão para acessar a tela de cadastros dos fornecedores 
         private void btCadastroFornecedor_Click(object sender, EventArgs e)
         {
             
@@ -63,6 +55,7 @@ namespace telasTrab
            
         }
 
+        // Botão para acessar a tela de cadastro dos clientes 
         private void btCadastroCliente_Click(object sender, EventArgs e)
         {
           
@@ -74,6 +67,7 @@ namespace telasTrab
             
         }
 
+        // Botão para acessar a tela de cadastro das festas 
         private void btCadastroFesta_Click(object sender, EventArgs e)
         {
            
@@ -85,9 +79,11 @@ namespace telasTrab
             
         }
 
-        private void telaCadastro_Load(object sender, EventArgs e)
+        // Botão para voltar para a tela anterior (menu principal) 
+        private void btVoltar_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            this.Close();
         }
     }
 }
