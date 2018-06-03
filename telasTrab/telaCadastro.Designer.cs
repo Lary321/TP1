@@ -113,6 +113,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "telaCadastro";
             this.Text = "Cadastro";
+            this.Load += new System.EventHandler(this.telaCadastro_Load);
             this.ResumeLayout(false);
 
         }

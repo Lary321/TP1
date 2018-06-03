@@ -66,5 +66,14 @@ namespace telasTrab
                 return;
             }
         }
+
+        private void atualizarContrato_Click(object sender, EventArgs e)
+        {
+            _geraContrato geraContrato = new _geraContrato();
+            geraContrato.StartPosition = FormStartPosition.CenterScreen;
+            geraContrato.FormBorderStyle = FormBorderStyle.FixedSingle;
+            geraContrato.ControlBox = false;
+            geraContrato.ShowDialog();
+        }
     }
 }

@@ -98,6 +98,12 @@
     <Compile Include="_cadastroFuncionario.Designer.cs">
       <DependentUpon>_cadastroFuncionario.cs</DependentUpon>
     </Compile>
+    <Compile Include="_geraContrato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_geraContrato.Designer.cs">
+      <DependentUpon>_geraContrato.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="menuPrincipal.resx">
       <DependentUpon>menuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="_cadastroFuncionario.resx">
       <DependentUpon>_cadastroFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_geraContrato.resx">
+      <DependentUpon>_geraContrato.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -33,6 +33,7 @@
             this.pesquisarCadastro = new System.Windows.Forms.Button();
             this.relatorio = new System.Windows.Forms.Button();
             this.sair = new System.Windows.Forms.Button();
+            this.atualizarContrato = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // novoCadastro
@@ -78,7 +79,7 @@
             // 
             this.sair.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sair.BackgroundImage")));
             this.sair.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sair.Location = new System.Drawing.Point(359, 395);
+            this.sair.Location = new System.Drawing.Point(582, 12);
             this.sair.Name = "sair";
             this.sair.Size = new System.Drawing.Size(110, 60);
             this.sair.TabIndex = 5;
@@ -87,12 +88,26 @@
             this.sair.UseVisualStyleBackColor = true;
             this.sair.Click += new System.EventHandler(this.sair_Click);
             // 
+            // atualizarContrato
+            // 
+            this.atualizarContrato.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
+            this.atualizarContrato.Image = ((System.Drawing.Image)(resources.GetObject("atualizarContrato.Image")));
+            this.atualizarContrato.Location = new System.Drawing.Point(297, 395);
+            this.atualizarContrato.Name = "atualizarContrato";
+            this.atualizarContrato.Size = new System.Drawing.Size(190, 60);
+            this.atualizarContrato.TabIndex = 6;
+            this.atualizarContrato.Text = "Atualizar Contrato";
+            this.atualizarContrato.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.atualizarContrato.UseVisualStyleBackColor = true;
+            this.atualizarContrato.Click += new System.EventHandler(this.atualizarContrato_Click);
+            // 
             // menuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(704, 481);
+            this.Controls.Add(this.atualizarContrato);
             this.Controls.Add(this.sair);
             this.Controls.Add(this.relatorio);
             this.Controls.Add(this.pesquisarCadastro);
@@ -114,5 +129,6 @@
         private System.Windows.Forms.Button pesquisarCadastro;
         private System.Windows.Forms.Button relatorio;
         private System.Windows.Forms.Button sair;
+        private System.Windows.Forms.Button atualizarContrato;
     }
 }

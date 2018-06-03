@@ -85,5 +85,10 @@ namespace telasTrab
             this.Hide();
             this.Close();
         }
+
+        private void telaCadastro_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

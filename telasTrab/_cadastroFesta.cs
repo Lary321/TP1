@@ -7,7 +7,7 @@ namespace telasTrab
     public partial class _cadastroFesta : Form
     {
 
-        int codigo = 1000;
+        int codigo = 0;
 
         public struct Festa
         {
@@ -268,7 +268,7 @@ namespace telasTrab
 
                 ////////escrevendo no arquivo
                 escreve.Write(festa.codigoFesta + '*' + festa.nomeCliente + '*' + festa.dataFesta + '*' + festa.diaSemanaFesta + '*' +
-                                          festa.horarioFesta + '*' + festa.qtdConvidados + '*' + festa.tema + '*' + "PENDENTE");
+                                          festa.horarioFesta + '*' + festa.qtdConvidados + '*' + festa.tema + '*' + "A PAGAR");
                 escreve.WriteLine(" ");
                 /////////
 
