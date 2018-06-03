@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(_geraContrato));
             System.Windows.Forms.Button gravarCliente;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(_geraContrato));
             this.btVoltar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.cbFestas = new System.Windows.Forms.ComboBox();
@@ -39,9 +39,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.labelPagamento = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.codigoContrato = new System.Windows.Forms.Label();
             gravarCliente = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // gravarCliente
+            // 
+            gravarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            gravarCliente.Image = ((System.Drawing.Image)(resources.GetObject("gravarCliente.Image")));
+            gravarCliente.Location = new System.Drawing.Point(183, 292);
+            gravarCliente.Name = "gravarCliente";
+            gravarCliente.Size = new System.Drawing.Size(118, 59);
+            gravarCliente.TabIndex = 21;
+            gravarCliente.Text = "Confirmar";
+            gravarCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            gravarCliente.UseVisualStyleBackColor = true;
+            gravarCliente.Click += new System.EventHandler(this.gravarCliente_Click);
             // 
             // btVoltar
             // 
@@ -123,19 +135,6 @@
             this.label3.TabIndex = 20;
             this.label3.Text = "Informe a forma de pagamento:";
             // 
-            // gravarCliente
-            // 
-            gravarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            gravarCliente.Image = ((System.Drawing.Image)(resources.GetObject("gravarCliente.Image")));
-            gravarCliente.Location = new System.Drawing.Point(183, 292);
-            gravarCliente.Name = "gravarCliente";
-            gravarCliente.Size = new System.Drawing.Size(118, 59);
-            gravarCliente.TabIndex = 21;
-            gravarCliente.Text = "Confirmar";
-            gravarCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            gravarCliente.UseVisualStyleBackColor = true;
-            gravarCliente.Click += new System.EventHandler(this.gravarCliente_Click);
-            // 
             // labelPagamento
             // 
             this.labelPagamento.AutoSize = true;
@@ -155,22 +154,12 @@
             this.label4.TabIndex = 23;
             this.label4.Text = "Valor a ser pago:";
             // 
-            // codigoContrato
-            // 
-            this.codigoContrato.AutoSize = true;
-            this.codigoContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codigoContrato.Location = new System.Drawing.Point(36, 70);
-            this.codigoContrato.Name = "codigoContrato";
-            this.codigoContrato.Size = new System.Drawing.Size(0, 16);
-            this.codigoContrato.TabIndex = 24;
-            // 
             // _geraContrato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(487, 363);
-            this.Controls.Add(this.codigoContrato);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.labelPagamento);
             this.Controls.Add(gravarCliente);
@@ -200,6 +189,5 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelPagamento;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label codigoContrato;
     }
 }

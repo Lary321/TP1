@@ -8,6 +8,16 @@ namespace telasTrab
     {
 
         int codigo = 0;
+        int codigoContrato = 0;
+        public struct Contrato
+        {
+            public string valor;
+            public string status;
+            public string qtdConvidados;
+            public string diaSemana;
+            public string codigoFesta;
+            public string codigoContrato;
+        }
 
         public struct Festa
         {
@@ -18,6 +28,7 @@ namespace telasTrab
             public string horarioFesta;
             public string qtdConvidados;
             public string tema;
+            public string codigoCliente;
         }
 
         public _cadastroFesta()
@@ -25,6 +36,11 @@ namespace telasTrab
             InitializeComponent();
             FileStream arq = new FileStream("festas.txt", FileMode.OpenOrCreate);
             arq.Close();
+
+            ////////////////////////////
+            FileStream abrindoContrato = new FileStream("contratos.txt", FileMode.OpenOrCreate);
+            abrindoContrato.Close();
+            ////////////////////////////
 
             if (!(File.Exists("clientes.txt")))
             {
@@ -50,6 +66,13 @@ namespace telasTrab
             } while (linhaCliente != null);
             arquivoCliente.Close();
 
+
+          
+
+            
+            
+
+
             //vendo ultimo código de festa 
             FileStream festaArq = new FileStream("festas.txt", FileMode.Open);
             StreamReader lerArqFesta = new StreamReader(festaArq);
@@ -69,8 +92,12 @@ namespace telasTrab
 
         private void _cadastroFesta_Load(object sender, EventArgs e)
         {
+            
+
             codigo++;
             codigoFesta.Text = codigo.ToString();
+
+            
 
             dTPdataFesta.Value = DateTime.Now;
             cbDiaSemana.SelectedIndex = 0;
@@ -134,6 +161,7 @@ namespace telasTrab
             }
 
             //verificando se dia da semana foi selecionado
+            Contrato contrato = new Contrato();
             if (cbDiaSemana.SelectedIndex.Equals(-1))
             {
                 MessageBox.Show("Selecione um dia da semana para a festa!", "Aviso", MessageBoxButtons.OK,
@@ -143,6 +171,7 @@ namespace telasTrab
             else
             {
                 festa.diaSemanaFesta = cbDiaSemana.Text;
+                contrato.diaSemana = festa.diaSemanaFesta;
             }
 
             //verificando horario
@@ -157,6 +186,8 @@ namespace telasTrab
             }
             else
             {
+                
+
                 FileStream arquivoHrFesta = new FileStream("festas.txt", FileMode.Open);
                 StreamReader lerArq = new StreamReader(arquivoHrFesta);
                 string[] todaLinha;
@@ -223,6 +254,7 @@ namespace telasTrab
 
                 arquivoHrFesta.Close();
             }
+            
 
             //verificando se o tema foi preenchido
             if (tbTemaFesta.Text == string.Empty)
@@ -248,6 +280,7 @@ namespace telasTrab
             else
             {
                 festa.qtdConvidados = cbQtdConvidados.Text;
+                contrato.qtdConvidados = festa.qtdConvidados;
             }
 
             // CADASTRANDO 
@@ -265,12 +298,130 @@ namespace telasTrab
                 FileStream arquivo1 = new FileStream("festas.txt", FileMode.Append);
                 StreamWriter escreve = new StreamWriter(arquivo1);
 
+                FileStream arquivoCliente2 = new FileStream("clientes.txt", FileMode.Open);
+                StreamReader lerCliente2 = new StreamReader(arquivoCliente2);
 
+                string[] todaLinhaCliente2;
+                string linhaCliente2;
+
+
+                do
+                {
+                    linhaCliente2 = lerCliente2.ReadLine();
+                    if (linhaCliente2 != null)
+                    {
+                        todaLinhaCliente2 = linhaCliente2.Split('*');
+                        if(todaLinhaCliente2[1] == festa.nomeCliente) { 
+                            festa.codigoCliente = todaLinhaCliente2[0].ToString();
+                        }
+                    }
+                } while (linhaCliente2 != null);
+
+                arquivoCliente2.Close();
+                lerCliente2.Close();
+                contrato.codigoFesta = festa.codigoFesta;
                 ////////escrevendo no arquivo
                 escreve.Write(festa.codigoFesta + '*' + festa.nomeCliente + '*' + festa.dataFesta + '*' + festa.diaSemanaFesta + '*' +
-                                          festa.horarioFesta + '*' + festa.qtdConvidados + '*' + festa.tema + '*' + "A PAGAR");
+                                          festa.horarioFesta + '*' + festa.qtdConvidados + '*' + festa.tema + '*' + festa.codigoCliente);
                 escreve.WriteLine(" ");
-                /////////
+
+
+                ///////////////////////////////////////////////////
+                //CRIANDO CONTRATO
+                //CODIGO CONTRATO
+
+                string[] todaLinhaContrato;
+                string linhaContra = " ";
+                FileStream contratoArq = new FileStream("contratos.txt", FileMode.Open);
+                StreamReader lerArqContra = new StreamReader(contratoArq);
+
+
+                while (linhaContra != null)
+                {
+                    linhaContra = lerArqContra.ReadLine();
+                    if (linhaContra != null)
+                    {
+                        todaLinhaContrato = linhaContra.Split('*');
+                        codigoContrato = Convert.ToInt32(todaLinhaContrato[0]);
+                    }
+                }
+
+
+                lerArqContra.Close();
+
+                codigoContrato++;
+                contrato.codigoContrato = codigoContrato.ToString();
+
+                //declarando variáveis contrato
+                contrato.codigoFesta = festa.codigoFesta;
+
+
+                if (contrato.qtdConvidados == "30")
+                {
+                    if (contrato.diaSemana == "Segunda-feira" || contrato.diaSemana == "Terça-feira" ||
+                        contrato.diaSemana == "Quarta-feira" || contrato.diaSemana == "Quinta-feira")
+                    {
+                        contrato.valor = "1899,00";
+                    }
+                    if (contrato.diaSemana == "Sexta-feira" || contrato.diaSemana == "Sábado" ||
+                         contrato.diaSemana == "Domingo")
+                    {
+                        contrato.valor = "2090,00";
+                    }
+                }
+                if (contrato.qtdConvidados == "50")
+                {
+                    if (contrato.diaSemana == "Segunda-feira" || contrato.diaSemana == "Terça-feira" ||
+                     contrato.diaSemana == "Quarta-feira" || contrato.diaSemana == "Quinta-feira")
+                    {
+                        contrato.valor = "2199,00";
+                    }
+                    if (contrato.diaSemana == "Sexta-feira" || contrato.diaSemana == "Sábado" ||
+                         contrato.diaSemana == "Domingo")
+                    {
+                        contrato.valor = "2299,00";
+                    }
+                }
+                if (contrato.qtdConvidados == "80")
+                {
+                    if (contrato.diaSemana == "Segunda-feira" || contrato.diaSemana == "Terça-feira" ||
+                        contrato.diaSemana == "Quarta-feira" || contrato.diaSemana == "Quinta-feira")
+                    {
+                        contrato.valor = "3199,00";
+                    }
+                    if (contrato.diaSemana == "Sexta-feira" || contrato.diaSemana == "Sábado" ||
+                         contrato.diaSemana == "Domingo")
+                    {
+                        contrato.valor = "3499,00";
+
+                    }
+                }
+                if (contrato.qtdConvidados == "100")
+                {
+                    if (contrato.diaSemana == "Segunda-feira" || contrato.diaSemana == "Terça-feira" ||
+                     contrato.diaSemana == "Quarta-feira" || contrato.diaSemana == "Quinta-feira")
+                    {
+                        contrato.valor = "3799,00";
+
+                    }
+                    if (contrato.diaSemana == "Sexta-feira" || contrato.diaSemana == "Sábado" ||
+                         contrato.diaSemana == "Domingo")
+                    {
+                        contrato.valor = "3999,00";
+
+                    }
+                }
+
+                FileStream contratoArq2 = new FileStream("contratos.txt", FileMode.Append);
+                StreamWriter lerArqContra2 = new StreamWriter(contratoArq2);
+
+                lerArqContra2.WriteLine(contrato.codigoContrato + '*' + contrato.valor + '*' + " " + '*' + " " + '*' + " " +
+                    '*' + "PENDENTE" + '*' + contrato.codigoFesta);
+
+                lerArqContra2.Close();
+                 /////////////////////////////////////////////////
+
+
 
 
                 MessageBox.Show("Dados gravados com sucesso!", "Aviso", MessageBoxButtons.OK,
@@ -296,6 +447,9 @@ namespace telasTrab
                     this.Close();
                 }
             }
+
+           
+            
         }
 
         private void cbNomeCliente_SelectedIndexChanged(object sender, EventArgs e)
