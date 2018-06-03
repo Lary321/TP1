@@ -41,7 +41,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.funcaoFuncionario = new System.Windows.Forms.ComboBox();
             this.btVoltar = new System.Windows.Forms.Button();
-            this.codFuncionario = new System.Windows.Forms.Label();
+            this.codFunc = new System.Windows.Forms.Label();
             this.codigoFuncionario = new System.Windows.Forms.Label();
             this.salarioFuncionario = new System.Windows.Forms.MaskedTextBox();
             this.outraFuncao = new System.Windows.Forms.TextBox();
@@ -138,7 +138,7 @@
             this.telefoneFuncionario.Location = new System.Drawing.Point(25, 214);
             this.telefoneFuncionario.Mask = "(00)00000-0000";
             this.telefoneFuncionario.Name = "telefoneFuncionario";
-            this.telefoneFuncionario.Size = new System.Drawing.Size(91, 23);
+            this.telefoneFuncionario.Size = new System.Drawing.Size(95, 23);
             this.telefoneFuncionario.TabIndex = 16;
             // 
             // label5
@@ -187,15 +187,15 @@
             this.btVoltar.UseVisualStyleBackColor = true;
             this.btVoltar.Click += new System.EventHandler(this.btVoltar_Click);
             // 
-            // codFuncionario
+            // codFunc
             // 
-            this.codFuncionario.AutoSize = true;
-            this.codFuncionario.Font = new System.Drawing.Font("Candara", 12.25F, System.Drawing.FontStyle.Bold);
-            this.codFuncionario.Location = new System.Drawing.Point(20, 84);
-            this.codFuncionario.Name = "codFuncionario";
-            this.codFuncionario.Size = new System.Drawing.Size(155, 21);
-            this.codFuncionario.TabIndex = 20;
-            this.codFuncionario.Text = "Código Funcionário:";
+            this.codFunc.AutoSize = true;
+            this.codFunc.Font = new System.Drawing.Font("Candara", 12.25F, System.Drawing.FontStyle.Bold);
+            this.codFunc.Location = new System.Drawing.Point(20, 84);
+            this.codFunc.Name = "codFunc";
+            this.codFunc.Size = new System.Drawing.Size(155, 21);
+            this.codFunc.TabIndex = 20;
+            this.codFunc.Text = "Código Funcionário:";
             // 
             // codigoFuncionario
             // 
@@ -233,7 +233,7 @@
             this.Controls.Add(this.outraFuncao);
             this.Controls.Add(this.salarioFuncionario);
             this.Controls.Add(this.codigoFuncionario);
-            this.Controls.Add(this.codFuncionario);
+            this.Controls.Add(this.codFunc);
             this.Controls.Add(this.btVoltar);
             this.Controls.Add(this.funcaoFuncionario);
             this.Controls.Add(this.label5);
@@ -269,7 +269,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox funcaoFuncionario;
         private System.Windows.Forms.Button btVoltar;
-        private System.Windows.Forms.Label codFuncionario;
+        private System.Windows.Forms.Label codFunc;
         private System.Windows.Forms.Label codigoFuncionario;
         private System.Windows.Forms.MaskedTextBox salarioFuncionario;
         private System.Windows.Forms.TextBox outraFuncao;

@@ -36,7 +36,7 @@
             this.prodFornecido = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.telefoneFornecedor = new System.Windows.Forms.MaskedTextBox();
-            this.codFornecedor = new System.Windows.Forms.Label();
+            this.codForn = new System.Windows.Forms.Label();
             this.produtoFornecido = new System.Windows.Forms.ComboBox();
             this.outroProduto = new System.Windows.Forms.TextBox();
             this.codigoFornecedor = new System.Windows.Forms.Label();
@@ -112,15 +112,15 @@
             this.telefoneFornecedor.Size = new System.Drawing.Size(91, 20);
             this.telefoneFornecedor.TabIndex = 20;
             // 
-            // codFornecedor
+            // codForn
             // 
-            this.codFornecedor.AutoSize = true;
-            this.codFornecedor.Font = new System.Drawing.Font("Candara", 12.25F, System.Drawing.FontStyle.Bold);
-            this.codFornecedor.Location = new System.Drawing.Point(285, 65);
-            this.codFornecedor.Name = "codFornecedor";
-            this.codFornecedor.Size = new System.Drawing.Size(155, 21);
-            this.codFornecedor.TabIndex = 21;
-            this.codFornecedor.Text = "Código Fornecedor:";
+            this.codForn.AutoSize = true;
+            this.codForn.Font = new System.Drawing.Font("Candara", 12.25F, System.Drawing.FontStyle.Bold);
+            this.codForn.Location = new System.Drawing.Point(285, 65);
+            this.codForn.Name = "codForn";
+            this.codForn.Size = new System.Drawing.Size(155, 21);
+            this.codForn.TabIndex = 21;
+            this.codForn.Text = "Código Fornecedor:";
             // 
             // produtoFornecido
             // 
@@ -138,8 +138,8 @@
             "Jogos de luzes e efeitos especiais",
             "Kit multimídia",
             "Lembrancinhas diversas",
-            "Outros",
-            "Salgados"});
+            "Salgados",
+            "Outros"});
             this.produtoFornecido.Location = new System.Drawing.Point(290, 290);
             this.produtoFornecido.Name = "produtoFornecido";
             this.produtoFornecido.Size = new System.Drawing.Size(150, 21);
@@ -156,10 +156,10 @@
             // codigoFornecedor
             // 
             this.codigoFornecedor.AutoSize = true;
-            this.codigoFornecedor.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
+            this.codigoFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.codigoFornecedor.Location = new System.Drawing.Point(446, 65);
             this.codigoFornecedor.Name = "codigoFornecedor";
-            this.codigoFornecedor.Size = new System.Drawing.Size(0, 23);
+            this.codigoFornecedor.Size = new System.Drawing.Size(0, 20);
             this.codigoFornecedor.TabIndex = 24;
             // 
             // btVoltar
@@ -183,7 +183,7 @@
             this.Controls.Add(this.codigoFornecedor);
             this.Controls.Add(this.outroProduto);
             this.Controls.Add(this.produtoFornecido);
-            this.Controls.Add(this.codFornecedor);
+            this.Controls.Add(this.codForn);
             this.Controls.Add(this.telefoneFornecedor);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.prodFornecido);
@@ -207,7 +207,7 @@
         private System.Windows.Forms.Label prodFornecido;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MaskedTextBox telefoneFornecedor;
-        private System.Windows.Forms.Label codFornecedor;
+        private System.Windows.Forms.Label codForn;
         private System.Windows.Forms.ComboBox produtoFornecido;
         private System.Windows.Forms.TextBox outroProduto;
         private System.Windows.Forms.Label codigoFornecedor;

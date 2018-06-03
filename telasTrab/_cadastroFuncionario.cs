@@ -14,7 +14,7 @@ namespace telasTrab
 {
     public partial class _cadastroFuncionario : Form
     {
-        public static int codigo = 0;
+        public static int codFuncionario = 0;
 
         struct Funcionario
         {
@@ -46,17 +46,17 @@ namespace telasTrab
                 if (linha != null)
                 {
                     dadosDoFuncionario = linha.Split('*');
-                    codigo = Convert.ToInt32(dadosDoFuncionario[0]);
+                    codFuncionario = Convert.ToInt32(dadosDoFuncionario[0]);
                 }
             }
             arquivo2.Close();
-            codigoFuncionario.Text = codigo.ToString();
+            codigoFuncionario.Text = codFuncionario.ToString();
         }
 
         private void _cadastroFuncionario_Load(object sender, EventArgs e)
         {
-            codigo++;
-            codigoFuncionario.Text = codigo.ToString();
+            codFuncionario++;
+            codigoFuncionario.Text = codFuncionario.ToString();
         }
 
         private void btVoltar_Click(object sender, EventArgs e)
@@ -76,8 +76,7 @@ namespace telasTrab
                 outraFuncao.Enabled = false;
             }
         }
-
-
+        
         private void btGravarFuncionario_Click(object sender, EventArgs e)
         {
             Funcionario funcionario = new Funcionario();
@@ -111,8 +110,8 @@ namespace telasTrab
             if (MessageBox.Show("Deseja cadastrar outro(a) funcionário(a)?", "Aviso", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Information) == DialogResult.Yes)
             {
-                codigo++;
-                codigoFuncionario.Text = codigo.ToString();
+                codFuncionario++;
+                codigoFuncionario.Text = codFuncionario.ToString();
                 nomeFuncionario.Text = string.Empty;
                 telefoneFuncionario.Text = string.Empty;
                 tipoFuncionario.Text = string.Empty;
@@ -121,7 +120,7 @@ namespace telasTrab
             }
             else
             {
-                codigo++;
+                codFuncionario++;
                 this.Close();
             }
         }

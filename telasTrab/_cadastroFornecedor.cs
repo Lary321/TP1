@@ -5,17 +5,16 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing.Drawing2D;
 using System.IO;
 
 namespace telasTrab
 {
     public partial class _cadastroFornecedor : Form
     {
-        int codigo = 0;
-
+        public static int codFornecedor = 0;
 
         struct Fornecedor
         {
@@ -28,6 +27,9 @@ namespace telasTrab
         public _cadastroFornecedor()
         {
             InitializeComponent();
+
+            outroProduto.Enabled = false;
+
             FileStream arquivo = new FileStream("fornecedores.txt", FileMode.OpenOrCreate);
             arquivo.Close();
             FileStream arquivo2 = new FileStream("fornecedores.txt", FileMode.Open);
@@ -42,17 +44,17 @@ namespace telasTrab
                 if (linha != null)
                 {
                     dadosDoFornecedor = linha.Split('*');
-                    codigo = Convert.ToInt32(dadosDoFornecedor[0]);
+                    codFornecedor = Convert.ToInt32(dadosDoFornecedor[0]);
                 }
             }
             arquivo2.Close();
-            codigoFornecedor.Text = codigo.ToString();
+            codigoFornecedor.Text = codFornecedor.ToString();
         }
 
-        private void _cadastroCliente_Load(object sender, EventArgs e)
+        private void _cadastroFornecedor_Load(object sender, EventArgs e)
         {
-            codigo++;
-            codigoFornecedor.Text = codigo.ToString();
+            codFornecedor++;
+            codigoFornecedor.Text = codFornecedor.ToString();
         }
 
         private void btVoltar_Click(object sender, EventArgs e)
@@ -63,13 +65,13 @@ namespace telasTrab
 
         private void produtoFornecido_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (produtoFornecido.Text != "Outros")
+            if (produtoFornecido.Text == "Outros")
             {
-                outroProduto.Enabled = false;
+                outroProduto.Enabled = true;
             }
             else
             {
-                outroProduto.Enabled = true;
+                outroProduto.Enabled = false;
             }
         }
 
@@ -96,23 +98,21 @@ namespace telasTrab
             escreve.WriteLine(fornecedor.codigo + '*' + fornecedor.nome + '*' + fornecedor.telefone + '*' + fornecedor.produtoFornecido);
             escreve.Close();
 
-            escreve.Close();
+            MessageBox.Show("Fornecedor(a) cadastrado(a) com sucesso!", "Aviso", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
 
-            MessageBox.Show("Fornecedor cadastrado com sucesso!", "Aviso", MessageBoxButtons.OK,
-               MessageBoxIcon.Information);
-
-            if (MessageBox.Show("Deseja cadastrar outro fornecedor?", "Aviso", MessageBoxButtons.YesNo,
-               MessageBoxIcon.Information) == DialogResult.Yes)
+            if (MessageBox.Show("Deseja cadastrar outro(a) fornecedor(a)?", "Aviso", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Information) == DialogResult.Yes)
             {
-                codigo++;
-                codigoFornecedor.Text = codigo.ToString();
+                codFornecedor++;
+                codigoFornecedor.Text = codFornecedor.ToString();
                 nomeFornecedor.Text = string.Empty;
                 telefoneFornecedor.Text = string.Empty;
                 produtoFornecido.Text = string.Empty;
             }
             else
             {
-                codigo++;
+                codFornecedor++;
                 this.Close();
             }
         }

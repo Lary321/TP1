@@ -14,7 +14,7 @@ namespace telasTrab
 {
     public partial class _cadastroCliente : Form
     {
-        int codigo = 0;
+        int codCliente = 0;
         
 
         public struct Cliente
@@ -44,17 +44,17 @@ namespace telasTrab
                 if (linha != null)
                 {
                     dadosDoCliente = linha.Split('*');
-                    codigo = Convert.ToInt32(dadosDoCliente[0]);
+                    codCliente = Convert.ToInt32(dadosDoCliente[0]);
                 } 
             }
             arquivo2.Close();
-            codigoCliente.Text = codigo.ToString();
+            codigoCliente.Text = codCliente.ToString();
         }
 
         private void _cadastroCliente_Load(object sender, EventArgs e)
         {
-           codigo++;         
-           codigoCliente.Text = codigo.ToString();
+           codCliente++;         
+           codigoCliente.Text = codCliente.ToString();
         }
 
         private void btVoltar_Click(object sender, EventArgs e)
@@ -89,15 +89,15 @@ namespace telasTrab
             if (MessageBox.Show("Deseja cadastrar outro cliente?", "Aviso", MessageBoxButtons.YesNo, 
                 MessageBoxIcon.Information) == DialogResult.Yes)
             {
-                codigo++;
-                codigoCliente.Text = codigo.ToString();
+                codCliente++;
+                codigoCliente.Text = codCliente.ToString();
                 nomeCliente.Text = string.Empty;
                 enderecoCliente.Text = string.Empty;
                 telefoneCliente.Text = string.Empty;
             }
             else
             {
-                codigo++;
+                codCliente++;
                 this.Close();
             }
         }
@@ -106,5 +106,6 @@ namespace telasTrab
         {
             telefoneCliente.SelectionStart = 0;
         }
+                
     }
 }

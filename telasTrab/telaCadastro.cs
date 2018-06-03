@@ -45,8 +45,7 @@ namespace telasTrab
 
         // Botão para acessar a tela de cadastros dos fornecedores 
         private void btCadastroFornecedor_Click(object sender, EventArgs e)
-        {
-            
+        {            
             _cadastroFornecedor telaFornecedor = new _cadastroFornecedor();
             telaFornecedor.StartPosition = FormStartPosition.CenterScreen;
             telaFornecedor.FormBorderStyle = FormBorderStyle.FixedSingle;

@@ -66,3 +66,4 @@ C:\Users\lucinea\Desktop\FACUL_ARTHUR\1° periodo\ATP\TP1\TP1\telasTrab\bin\Debu
 C:\Users\lucinea\Desktop\FACUL_ARTHUR\1° periodo\ATP\TP1\TP1\telasTrab\bin\Debug\itextsharp.xml
 C:\Users\lucinea\Desktop\FACUL_ARTHUR\1° periodo\ATP\TP1\TP1\telasTrab\obj\Debug\telasTrab.telaConsulta.resources
 C:\Users\lucinea\Desktop\FACUL_ARTHUR\1° periodo\ATP\TP1\TP1\telasTrab\obj\Debug\telasTrab._geraContrato.resources
+E:\PUC MINAS\1º Período\Disciplinas\Lab. Algoritmos e Técnicas de Programação\TP1\TP1\telasTrab\obj\Debug\telasTrab._geraContrato.resources

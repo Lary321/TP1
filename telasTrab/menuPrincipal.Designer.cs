@@ -40,11 +40,11 @@
             // 
             this.novoCadastro.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("novoCadastro.BackgroundImage")));
             this.novoCadastro.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.novoCadastro.Location = new System.Drawing.Point(65, 235);
+            this.novoCadastro.Location = new System.Drawing.Point(68, 275);
             this.novoCadastro.Name = "novoCadastro";
             this.novoCadastro.Size = new System.Drawing.Size(190, 60);
             this.novoCadastro.TabIndex = 0;
-            this.novoCadastro.Text = "Novo Cadastro";
+            this.novoCadastro.Text = "Novos Cadastros";
             this.novoCadastro.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.novoCadastro.UseVisualStyleBackColor = true;
             this.novoCadastro.Click += new System.EventHandler(this.novoCadastro_Click);
@@ -53,7 +53,7 @@
             // 
             this.pesquisarCadastro.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pesquisarCadastro.BackgroundImage")));
             this.pesquisarCadastro.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pesquisarCadastro.Location = new System.Drawing.Point(65, 315);
+            this.pesquisarCadastro.Location = new System.Drawing.Point(68, 341);
             this.pesquisarCadastro.Name = "pesquisarCadastro";
             this.pesquisarCadastro.Size = new System.Drawing.Size(190, 60);
             this.pesquisarCadastro.TabIndex = 3;
@@ -66,7 +66,7 @@
             // 
             this.relatorio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("relatorio.BackgroundImage")));
             this.relatorio.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.relatorio.Location = new System.Drawing.Point(65, 395);
+            this.relatorio.Location = new System.Drawing.Point(68, 407);
             this.relatorio.Name = "relatorio";
             this.relatorio.Size = new System.Drawing.Size(190, 60);
             this.relatorio.TabIndex = 4;
@@ -79,7 +79,7 @@
             // 
             this.sair.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sair.BackgroundImage")));
             this.sair.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sair.Location = new System.Drawing.Point(582, 12);
+            this.sair.Location = new System.Drawing.Point(329, 407);
             this.sair.Name = "sair";
             this.sair.Size = new System.Drawing.Size(110, 60);
             this.sair.TabIndex = 5;
@@ -92,11 +92,11 @@
             // 
             this.atualizarContrato.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
             this.atualizarContrato.Image = ((System.Drawing.Image)(resources.GetObject("atualizarContrato.Image")));
-            this.atualizarContrato.Location = new System.Drawing.Point(297, 395);
+            this.atualizarContrato.Location = new System.Drawing.Point(68, 209);
             this.atualizarContrato.Name = "atualizarContrato";
             this.atualizarContrato.Size = new System.Drawing.Size(190, 60);
             this.atualizarContrato.TabIndex = 6;
-            this.atualizarContrato.Text = "Atualizar Contrato";
+            this.atualizarContrato.Text = "Atualizar Contratos";
             this.atualizarContrato.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.atualizarContrato.UseVisualStyleBackColor = true;
             this.atualizarContrato.Click += new System.EventHandler(this.atualizarContrato_Click);

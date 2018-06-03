@@ -54,7 +54,7 @@ namespace telasTrab
             arquivoFestas.Close();
             lerFestas.Close();
 
-            //inserind codigo
+            //inserindo codigo festa
             FileStream contratoArq = new FileStream("contratos.txt", FileMode.Open);
             StreamReader lerArqContra = new StreamReader(contratoArq);
 
