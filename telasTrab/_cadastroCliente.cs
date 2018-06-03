@@ -79,8 +79,8 @@ namespace telasTrab
 
             escreve.WriteLine(cliente.codigo + '*' + cliente.nome + '*' + cliente.endereco + '*' + cliente.telefone + 
                 '*' + cliente.dataNasc);
+            escreve.WriteLine(" ");
             escreve.Close();
-            arquivo3.Close();
 
             MessageBox.Show("Cliente cadastrado com sucesso!", "Aviso", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
