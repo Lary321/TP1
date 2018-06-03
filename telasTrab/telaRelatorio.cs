@@ -110,7 +110,7 @@ namespace telasTrab
                             var contentByte = pdfWriter.DirectContent;
 
                             // Inserindo imagem no relatorio em pdf
-                            var imagem = iTextSharp.text.Image.GetInstance("E:/PUC MINAS/1º Período/Disciplinas/Lab. Algoritmos e Técnicas de Programação/TP1/TP1/_imagens/imagemRelatorioCliente.png");
+                            var imagem = iTextSharp.text.Image.GetInstance("imagemRelatorioCliente.png");
                             imagem.ScaleToFit(700, 200);
                             imagem.SetAbsolutePosition(32, 625);
                             imagem.Alignment = iTextSharp.text.Image.ALIGN_CENTER;

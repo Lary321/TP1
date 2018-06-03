@@ -67,12 +67,6 @@ namespace telasTrab
             arquivoCliente.Close();
 
 
-          
-
-            
-            
-
-
             //vendo ultimo código de festa 
             FileStream festaArq = new FileStream("festas.txt", FileMode.Open);
             StreamReader lerArqFesta = new StreamReader(festaArq);
@@ -92,8 +86,6 @@ namespace telasTrab
 
         private void _cadastroFesta_Load(object sender, EventArgs e)
         {
-            
-
             codigo++;
             codigoFesta.Text = codigo.ToString();
 
