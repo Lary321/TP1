@@ -14,7 +14,7 @@ namespace telasTrab
 {
     public partial class _cadastroFornecedor : Form
     {
-        public static int codFornecedor = 0;
+        int codFornecedor = 0;
 
         struct Fornecedor
         {
@@ -32,6 +32,8 @@ namespace telasTrab
 
             FileStream arquivo = new FileStream("fornecedores.txt", FileMode.OpenOrCreate);
             arquivo.Close();
+
+            //
             FileStream arquivo2 = new FileStream("fornecedores.txt", FileMode.Open);
             StreamReader ler = new StreamReader(arquivo2);
 
@@ -47,15 +49,10 @@ namespace telasTrab
                     codFornecedor = Convert.ToInt32(dadosDoFornecedor[0]);
                 }
             }
-            arquivo2.Close();
+            ler.Close();
             codigoFornecedor.Text = codFornecedor.ToString();
         }
 
-        private void _cadastroFornecedor_Load(object sender, EventArgs e)
-        {
-            codFornecedor++;
-            codigoFornecedor.Text = codFornecedor.ToString();
-        }
 
         private void btVoltar_Click(object sender, EventArgs e)
         {
@@ -79,42 +76,100 @@ namespace telasTrab
         {
             Fornecedor fornecedor = new Fornecedor();
 
-            fornecedor.codigo = codigoFornecedor.Text;
-            fornecedor.nome = nomeFornecedor.Text;
-            fornecedor.telefone = telefoneFornecedor.Text;
-
-            if (produtoFornecido.Text == "Outros")
+            //VERIFICANDO CAMPOS
+            //nome
+            if (nomeFornecedor.Text == String.Empty)
             {
-                fornecedor.produtoFornecido = outroProduto.Text;
+                MessageBox.Show("Insira um nome para o fornecedor!", "Aviso", MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+                fornecedor.nome = " ";
+                nomeFornecedor.Focus();
             }
             else
             {
-                fornecedor.produtoFornecido = produtoFornecido.Text;
+                fornecedor.nome = nomeFornecedor.Text;
             }
+
+
+            //telefone
+            if (telefoneFornecedor.Text == String.Empty)
+            {
+                MessageBox.Show("Insira um telefone para o fornecedor!", "Aviso", MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+                fornecedor.telefone = String.Empty;
+                telefoneFornecedor.Focus();
+            }
+            else
+            {
+                fornecedor.telefone = telefoneFornecedor.Text;
+            }
+
+            //produto
+            if (produtoFornecido.Text == "Outros")
+            {
+                if (outroProduto.Text == String.Empty)
+                {
+                    MessageBox.Show("Insira um produto para o fornecedor!", "Aviso", MessageBoxButtons.OK,
+                         MessageBoxIcon.Exclamation);
+                    fornecedor.produtoFornecido = " ";
+                    outroProduto.Focus();
+                }
+                else
+                {
+                    fornecedor.produtoFornecido = outroProduto.Text;
+                }
+            }
+            else
+            {
+                if (produtoFornecido.SelectedIndex.Equals(-1))
+                {
+                    MessageBox.Show("Insira um produto para o fornecedor!", "Aviso", MessageBoxButtons.OK,
+                         MessageBoxIcon.Exclamation);
+                    fornecedor.produtoFornecido = " ";
+                    produtoFornecido.Focus();
+                }
+                else
+                {
+                    fornecedor.produtoFornecido = produtoFornecido.Text;
+                }
+            }
+
+
 
             FileStream arquivo3 = new FileStream("fornecedores.txt", FileMode.Append);
             StreamWriter escreve = new StreamWriter(arquivo3);
 
-            escreve.WriteLine(fornecedor.codigo + '*' + fornecedor.nome + '*' + fornecedor.telefone + '*' + fornecedor.produtoFornecido);
-            escreve.Close();
+            fornecedor.codigo = codFornecedor.ToString();
+            //escrevendo no arquivo
+            if ((fornecedor.nome != " ") && (fornecedor.produtoFornecido != " ") && (fornecedor.telefone != String.Empty)) { 
 
-            MessageBox.Show("Fornecedor(a) cadastrado(a) com sucesso!", "Aviso", MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+                escreve.WriteLine(fornecedor.codigo + '*' + fornecedor.nome + '*' + fornecedor.telefone + '*' + fornecedor.produtoFornecido);
+                escreve.Close();
 
-            if (MessageBox.Show("Deseja cadastrar outro(a) fornecedor(a)?", "Aviso", MessageBoxButtons.YesNo,
-                MessageBoxIcon.Information) == DialogResult.Yes)
-            {
-                codFornecedor++;
-                codigoFornecedor.Text = codFornecedor.ToString();
-                nomeFornecedor.Text = string.Empty;
-                telefoneFornecedor.Text = string.Empty;
-                produtoFornecido.Text = string.Empty;
+                MessageBox.Show("Fornecedor(a) cadastrado(a) com sucesso!", "Aviso", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                if (MessageBox.Show("Deseja cadastrar outro(a) fornecedor(a)?", "Aviso", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Information) == DialogResult.Yes)
+                {
+                    codFornecedor++;
+                    codigoFornecedor.Text = codFornecedor.ToString();
+                    nomeFornecedor.Text = string.Empty;
+                    telefoneFornecedor.Text = string.Empty;
+                    produtoFornecido.Text = string.Empty;
+                }
+                else
+                {
+                    codFornecedor++;
+                    this.Close();
+                }
             }
-            else
-            {
-                codFornecedor++;
-                this.Close();
-            }
+        }
+
+        private void _cadastroFornecedor_Load_1(object sender, EventArgs e)
+        {
+            codFornecedor++;
+            codigoFornecedor.Text = codFornecedor.ToString();
         }
     }
 }

@@ -35,12 +35,12 @@
             this.telFornecedor = new System.Windows.Forms.Label();
             this.prodFornecido = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.telefoneFornecedor = new System.Windows.Forms.MaskedTextBox();
             this.codForn = new System.Windows.Forms.Label();
             this.produtoFornecido = new System.Windows.Forms.ComboBox();
             this.outroProduto = new System.Windows.Forms.TextBox();
             this.codigoFornecedor = new System.Windows.Forms.Label();
             this.btVoltar = new System.Windows.Forms.Button();
+            this.telefoneFornecedor = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // btGravarFornecedor
@@ -50,7 +50,7 @@
             this.btGravarFornecedor.Location = new System.Drawing.Point(290, 358);
             this.btGravarFornecedor.Name = "btGravarFornecedor";
             this.btGravarFornecedor.Size = new System.Drawing.Size(117, 61);
-            this.btGravarFornecedor.TabIndex = 12;
+            this.btGravarFornecedor.TabIndex = 5;
             this.btGravarFornecedor.Text = "Gravar ";
             this.btGravarFornecedor.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btGravarFornecedor.UseVisualStyleBackColor = true;
@@ -71,7 +71,7 @@
             this.nomeFornecedor.Location = new System.Drawing.Point(290, 140);
             this.nomeFornecedor.Name = "nomeFornecedor";
             this.nomeFornecedor.Size = new System.Drawing.Size(380, 20);
-            this.nomeFornecedor.TabIndex = 13;
+            this.nomeFornecedor.TabIndex = 1;
             // 
             // telFornecedor
             // 
@@ -104,14 +104,6 @@
             this.label3.TabIndex = 19;
             this.label3.Text = "Para cadastrar um novo fornecedor, preencha os dados abaixo:";
             // 
-            // telefoneFornecedor
-            // 
-            this.telefoneFornecedor.Location = new System.Drawing.Point(290, 220);
-            this.telefoneFornecedor.Mask = "(00)00000-0000";
-            this.telefoneFornecedor.Name = "telefoneFornecedor";
-            this.telefoneFornecedor.Size = new System.Drawing.Size(91, 20);
-            this.telefoneFornecedor.TabIndex = 20;
-            // 
             // codForn
             // 
             this.codForn.AutoSize = true;
@@ -124,6 +116,7 @@
             // 
             // produtoFornecido
             // 
+            this.produtoFornecido.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.produtoFornecido.FormattingEnabled = true;
             this.produtoFornecido.Items.AddRange(new object[] {
             "Artigos decorativos",
@@ -143,7 +136,7 @@
             this.produtoFornecido.Location = new System.Drawing.Point(290, 290);
             this.produtoFornecido.Name = "produtoFornecido";
             this.produtoFornecido.Size = new System.Drawing.Size(150, 21);
-            this.produtoFornecido.TabIndex = 22;
+            this.produtoFornecido.TabIndex = 3;
             this.produtoFornecido.SelectedIndexChanged += new System.EventHandler(this.produtoFornecido_SelectedIndexChanged);
             // 
             // outroProduto
@@ -151,13 +144,13 @@
             this.outroProduto.Location = new System.Drawing.Point(465, 290);
             this.outroProduto.Name = "outroProduto";
             this.outroProduto.Size = new System.Drawing.Size(150, 20);
-            this.outroProduto.TabIndex = 23;
+            this.outroProduto.TabIndex = 4;
             // 
             // codigoFornecedor
             // 
             this.codigoFornecedor.AutoSize = true;
             this.codigoFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codigoFornecedor.Location = new System.Drawing.Point(446, 65);
+            this.codigoFornecedor.Location = new System.Drawing.Point(451, 65);
             this.codigoFornecedor.Name = "codigoFornecedor";
             this.codigoFornecedor.Size = new System.Drawing.Size(0, 20);
             this.codigoFornecedor.TabIndex = 24;
@@ -172,6 +165,14 @@
             this.btVoltar.UseVisualStyleBackColor = true;
             this.btVoltar.Click += new System.EventHandler(this.btVoltar_Click);
             // 
+            // telefoneFornecedor
+            // 
+            this.telefoneFornecedor.Location = new System.Drawing.Point(289, 219);
+            this.telefoneFornecedor.Mask = "(00)00000-0000";
+            this.telefoneFornecedor.Name = "telefoneFornecedor";
+            this.telefoneFornecedor.Size = new System.Drawing.Size(100, 20);
+            this.telefoneFornecedor.TabIndex = 2;
+            // 
             // _cadastroFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,12 +180,12 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(704, 481);
+            this.Controls.Add(this.telefoneFornecedor);
             this.Controls.Add(this.btVoltar);
             this.Controls.Add(this.codigoFornecedor);
             this.Controls.Add(this.outroProduto);
             this.Controls.Add(this.produtoFornecido);
             this.Controls.Add(this.codForn);
-            this.Controls.Add(this.telefoneFornecedor);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.prodFornecido);
             this.Controls.Add(this.telFornecedor);
@@ -194,6 +195,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "_cadastroFornecedor";
             this.Text = "Cadastro Fornecedor";
+            this.Load += new System.EventHandler(this._cadastroFornecedor_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,11 +208,11 @@
         private System.Windows.Forms.Label telFornecedor;
         private System.Windows.Forms.Label prodFornecido;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MaskedTextBox telefoneFornecedor;
         private System.Windows.Forms.Label codForn;
         private System.Windows.Forms.ComboBox produtoFornecido;
         private System.Windows.Forms.TextBox outroProduto;
         private System.Windows.Forms.Label codigoFornecedor;
         private System.Windows.Forms.Button btVoltar;
+        private System.Windows.Forms.MaskedTextBox telefoneFornecedor;
     }
 }
