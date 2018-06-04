@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace telasTrab
 {
@@ -36,21 +37,37 @@ namespace telasTrab
         // Botão que abre a tela de pesquisas 
         private void pesquisarCadastro_Click(object sender, EventArgs e)
         {
-            telaConsulta telaConsulta = new telaConsulta();
-            telaConsulta.StartPosition = FormStartPosition.CenterScreen;
-            telaConsulta.FormBorderStyle = FormBorderStyle.FixedSingle;
-            telaConsulta.ControlBox = false;
-            telaConsulta.ShowDialog();
+            if (File.Exists("festas.txt") || File.Exists("funcionarios.txt") || File.Exists("fornecedores.txt"))
+            {
+                telaConsulta telaConsulta = new telaConsulta();
+                telaConsulta.StartPosition = FormStartPosition.CenterScreen;
+                telaConsulta.FormBorderStyle = FormBorderStyle.FixedSingle;
+                telaConsulta.ControlBox = false;
+                telaConsulta.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Não existem dados para serem pesquisados!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
         }
 
         // Botão que abre a tela de gerar relatórios 
         private void relatorio_Click(object sender, EventArgs e)
         {
-            telaRelatorio telaRelatorio = new telaRelatorio();
-            telaRelatorio.StartPosition = FormStartPosition.CenterScreen;
-            telaRelatorio.FormBorderStyle = FormBorderStyle.FixedSingle;
-            telaRelatorio.ControlBox = false;
-            telaRelatorio.ShowDialog();
+            if (File.Exists("festas.txt"))
+            {
+                telaRelatorio telaRelatorio = new telaRelatorio();
+                telaRelatorio.StartPosition = FormStartPosition.CenterScreen;
+                telaRelatorio.FormBorderStyle = FormBorderStyle.FixedSingle;
+                telaRelatorio.ControlBox = false;
+                telaRelatorio.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Não existem festas cadastradas!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
         }
 
         // Botão para sair do sistema 
@@ -69,11 +86,18 @@ namespace telasTrab
 
         private void atualizarContrato_Click(object sender, EventArgs e)
         {
-            _geraContrato geraContrato = new _geraContrato();
-            geraContrato.StartPosition = FormStartPosition.CenterScreen;
-            geraContrato.FormBorderStyle = FormBorderStyle.FixedSingle;
-            geraContrato.ControlBox = false;
-            geraContrato.ShowDialog();
+            if (File.Exists("contratos.txt"))
+            {
+                _geraContrato geraContrato = new _geraContrato();
+                geraContrato.StartPosition = FormStartPosition.CenterScreen;
+                geraContrato.FormBorderStyle = FormBorderStyle.FixedSingle;
+                geraContrato.ControlBox = false;
+                geraContrato.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Não existem contratos cadastrados!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

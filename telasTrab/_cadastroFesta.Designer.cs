@@ -73,7 +73,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.Window;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(94, 9);
+            this.label2.Location = new System.Drawing.Point(85, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(409, 20);
             this.label2.TabIndex = 4;
@@ -131,6 +131,7 @@
             this.timeHoradiaSemana2.Size = new System.Drawing.Size(81, 20);
             this.timeHoradiaSemana2.TabIndex = 2;
             this.timeHoradiaSemana2.Value = new System.DateTime(2018, 5, 23, 16, 0, 0, 0);
+            this.timeHoradiaSemana2.ValueChanged += new System.EventHandler(this.timeHoradiaSemana2_ValueChanged);
             // 
             // timeHoradiaSemana1
             // 
@@ -200,8 +201,8 @@
             this.cbHoraFestaSabado.Enabled = false;
             this.cbHoraFestaSabado.FormattingEnabled = true;
             this.cbHoraFestaSabado.Items.AddRange(new object[] {
-            "12:00:00a16:00:00",
-            "18:00:00a22:00:00"});
+            "12:00:00 as 16:00:00",
+            "18:00:00 as 22:00:00"});
             this.cbHoraFestaSabado.Location = new System.Drawing.Point(24, 41);
             this.cbHoraFestaSabado.Name = "cbHoraFestaSabado";
             this.cbHoraFestaSabado.Size = new System.Drawing.Size(205, 21);
@@ -215,7 +216,6 @@
             this.cbNomeCliente.Name = "cbNomeCliente";
             this.cbNomeCliente.Size = new System.Drawing.Size(259, 21);
             this.cbNomeCliente.TabIndex = 1;
-            this.cbNomeCliente.SelectedIndexChanged += new System.EventHandler(this.cbNomeCliente_SelectedIndexChanged);
             // 
             // labelQtdConvidados
             // 

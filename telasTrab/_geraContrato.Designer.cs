@@ -38,6 +38,7 @@
             this.cbFormaPagamento = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.labelPagamento = new System.Windows.Forms.Label();
+            this.reais = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             gravarCliente = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -53,7 +54,7 @@
             gravarCliente.Text = "Confirmar";
             gravarCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             gravarCliente.UseVisualStyleBackColor = true;
-            gravarCliente.Click += new System.EventHandler(this.gravarCliente_Click);
+            gravarCliente.Click += new System.EventHandler(this.gravarContrato_Click);
             // 
             // btVoltar
             // 
@@ -69,17 +70,17 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.Location = new System.Drawing.Point(77, 12);
+            this.label1.Location = new System.Drawing.Point(81, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(358, 20);
+            this.label1.Size = new System.Drawing.Size(385, 20);
             this.label1.TabIndex = 15;
-            this.label1.Text = "Selecione a festa que deseja atualizar o contrato:";
+            this.label1.Text = "Selecione o código da festa para atualizar o contrato:";
             // 
             // cbFestas
             // 
             this.cbFestas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFestas.FormattingEnabled = true;
-            this.cbFestas.Location = new System.Drawing.Point(152, 40);
+            this.cbFestas.Location = new System.Drawing.Point(151, 59);
             this.cbFestas.Name = "cbFestas";
             this.cbFestas.Size = new System.Drawing.Size(184, 21);
             this.cbFestas.TabIndex = 16;
@@ -102,8 +103,8 @@
             this.cbPagarCancelar.FormattingEnabled = true;
             this.cbPagarCancelar.Items.AddRange(new object[] {
             "Cancelar contrato",
-            "Pagar contrato"});
-            this.cbPagarCancelar.Location = new System.Drawing.Point(151, 127);
+            "Pagar"});
+            this.cbPagarCancelar.Location = new System.Drawing.Point(151, 135);
             this.cbPagarCancelar.Name = "cbPagarCancelar";
             this.cbPagarCancelar.Size = new System.Drawing.Size(184, 21);
             this.cbPagarCancelar.TabIndex = 18;
@@ -119,7 +120,7 @@
             "Duas vezes",
             "Três vezes",
             "Quatro ou mais vezes"});
-            this.cbFormaPagamento.Location = new System.Drawing.Point(245, 186);
+            this.cbFormaPagamento.Location = new System.Drawing.Point(274, 186);
             this.cbFormaPagamento.Name = "cbFormaPagamento";
             this.cbFormaPagamento.Size = new System.Drawing.Size(171, 21);
             this.cbFormaPagamento.TabIndex = 19;
@@ -129,7 +130,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(6, 187);
+            this.label3.Location = new System.Drawing.Point(35, 187);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(233, 20);
             this.label3.TabIndex = 20;
@@ -139,19 +140,29 @@
             // 
             this.labelPagamento.AutoSize = true;
             this.labelPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelPagamento.Location = new System.Drawing.Point(148, 244);
+            this.labelPagamento.Location = new System.Drawing.Point(216, 244);
             this.labelPagamento.Name = "labelPagamento";
             this.labelPagamento.Size = new System.Drawing.Size(0, 20);
             this.labelPagamento.TabIndex = 22;
+            // 
+            // reais
+            // 
+            this.reais.AutoSize = true;
+            this.reais.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.reais.Location = new System.Drawing.Point(292, 244);
+            this.reais.Name = "reais";
+            this.reais.Size = new System.Drawing.Size(43, 20);
+            this.reais.TabIndex = 24;
+            this.reais.Text = "reais";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label4.Location = new System.Drawing.Point(8, 244);
+            this.label4.Location = new System.Drawing.Point(81, 244);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(129, 20);
-            this.label4.TabIndex = 23;
+            this.label4.TabIndex = 25;
             this.label4.Text = "Valor a ser pago:";
             // 
             // _geraContrato
@@ -161,6 +172,7 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(487, 363);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.reais);
             this.Controls.Add(this.labelPagamento);
             this.Controls.Add(gravarCliente);
             this.Controls.Add(this.label3);
@@ -172,7 +184,6 @@
             this.Controls.Add(this.btVoltar);
             this.Name = "_geraContrato";
             this.Text = "Contrato";
-            this.Load += new System.EventHandler(this._geraContrato_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,6 +199,7 @@
         private System.Windows.Forms.ComboBox cbFormaPagamento;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelPagamento;
+        private System.Windows.Forms.Label reais;
         private System.Windows.Forms.Label label4;
     }
 }

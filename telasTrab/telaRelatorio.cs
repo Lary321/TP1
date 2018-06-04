@@ -65,13 +65,19 @@ namespace telasTrab
             FileStream arquivo1 = new FileStream("festas.txt", FileMode.Open);
             StreamReader ler1 = new StreamReader(arquivo1);
 
+            FileStream arquivo2 = new FileStream("contratos.txt", FileMode.Open);
+            StreamReader ler2 = new StreamReader(arquivo2);
+
             string linha = " ";
             string linha1 = " ";
+            string linha2 = " ";
             string[] dadosDoCliente;
             string[] dadosDaFesta;
+            string[] dadosDoContrato;
             int cont = 0;
             string codigoCliente = " ";
             string pesquisa = " ";
+            string codigoFesta = " ";
 
             if (rBRelatorioCliente.Checked == true)
             {
@@ -80,7 +86,7 @@ namespace telasTrab
                 {
                     linha = ler.ReadLine();
                     if (linha != null)
-                    {                        
+                    {
                         dadosDoCliente = linha.Split('*');
                         if (dadosDoCliente[1].ToUpper() == pesquisa)
                         {
@@ -90,7 +96,7 @@ namespace telasTrab
                             // Instanciando um FileStream do tipo PDF (criando o arquivo ou abrindo)
                             FileStream filestream = new FileStream("Relatorio_Cliente.pdf", FileMode.OpenOrCreate, FileAccess.Write, FileShare.None);
                             filestream.Close();
-                            
+
                             // Zerando os dados do arquivo PDF
                             FileStream filestream1 = new FileStream("Relatorio_Cliente.pdf", FileMode.Truncate, FileAccess.Write, FileShare.None);
                             filestream1.Close();
@@ -110,7 +116,7 @@ namespace telasTrab
                             var contentByte = pdfWriter.DirectContent;
 
                             // Inserindo imagem no relatorio em pdf
-                            var imagem = iTextSharp.text.Image.GetInstance("E:/PUC MINAS/1º Período/Disciplinas/Lab. Algoritmos e Técnicas de Programação/TP1/TP1/_imagens/imagemRelatorioCliente.png");
+                            var imagem = iTextSharp.text.Image.GetInstance("imagemRelatorioCliente.png");
                             imagem.ScaleToFit(700, 200);
                             imagem.SetAbsolutePosition(32, 625);
                             imagem.Alignment = iTextSharp.text.Image.ALIGN_CENTER;
@@ -138,11 +144,36 @@ namespace telasTrab
                                 {
                                     dadosDaFesta = linha1.Split('*');
                                     {
+                                        codigoFesta = dadosDaFesta[0];
                                         if (dadosDaFesta[6] == codigoCliente)
                                         {
 
                                             paragrafo = new iTextSharp.text.Paragraph("Código: " + dadosDaFesta[0] + "\nQuantidade de Convidados: " + dadosDaFesta[1] + "\nData: " + dadosDaFesta[2] + "\nDia da Semana: " + dadosDaFesta[3] + "\nHorário: " + dadosDaFesta[4]
                                                + "\nTema: " + dadosDaFesta[5] + "\n\n", fonte);
+                                            paragrafo.Alignment = iTextSharp.text.Element.ALIGN_JUSTIFIED;
+                                            relatorio.Add(paragrafo);
+                                            cont++;
+                                        }
+                                    }
+                                }
+                            } while (linha1 != null);
+
+                            paragrafo = new iTextSharp.text.Paragraph("\nDados do(s) Contrato(s) associado(s)", fonte1);
+                            paragrafo.Alignment = iTextSharp.text.Element.ALIGN_CENTER;
+                            relatorio.Add(paragrafo);
+
+                            do
+                            {
+                                linha2 = ler2.ReadLine();
+                                if (linha2 != null)
+                                {
+                                    dadosDoContrato = linha2.Split('*');
+                                    {
+                                        if (dadosDoContrato[6] == codigoFesta)
+                                        {
+
+                                            paragrafo = new iTextSharp.text.Paragraph("Código: " + dadosDoContrato[0] + "\nValor Total: " + dadosDoContrato[1] + "\nDesconto: " + dadosDoContrato[2] + "\nValor Final: " + dadosDoContrato[3] + "\nForma de Pagamento: " + dadosDoContrato[4]
+                                               + "\nStatus: " + dadosDoContrato[6] + "\n\n", fonte);
                                             paragrafo.Alignment = iTextSharp.text.Element.ALIGN_JUSTIFIED;
                                             relatorio.Add(paragrafo);
                                             cont++;
@@ -202,7 +233,7 @@ namespace telasTrab
                                 var contentByte = pdfWriter.DirectContent;
 
                                 // Inserindo imagem no relatorio em pdf
-                                var imagem = iTextSharp.text.Image.GetInstance("E:/PUC MINAS/1º Período/Disciplinas/Lab. Algoritmos e Técnicas de Programação/TP1/TP1/_imagens/imagemRelatorioData.png");
+                                var imagem = iTextSharp.text.Image.GetInstance("imagemRelatorioData.png");
                                 imagem.ScaleToFit(700, 200);
                                 imagem.SetAbsolutePosition(32, 625);
                                 imagem.Alignment = iTextSharp.text.Image.ALIGN_CENTER;
