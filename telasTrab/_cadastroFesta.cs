@@ -166,7 +166,14 @@ namespace telasTrab
                 contrato.diaSemana = festa.diaSemanaFesta;
             }
 
-            //verificando horario
+           //verificando horario
+            FileStream arquivoHrFesta = new FileStream("festas.txt", FileMode.Open);
+            StreamReader lerArq = new StreamReader(arquivoHrFesta);
+            string[] todaLinha;
+            string linha = " ";
+            string horarioFesta = " ";
+            int cont = 0;
+
             if (cbHoraFestaSabado.Enabled == true)
             {
                 if (cbHoraFestaSabado.SelectedIndex.Equals(-1))
@@ -175,19 +182,10 @@ namespace telasTrab
                         MessageBoxIcon.Exclamation);
                     cbHoraFestaSabado.Focus();
                 }
-            }
-            else
-            {
-                
-
-                FileStream arquivoHrFesta = new FileStream("festas.txt", FileMode.Open);
-                StreamReader lerArq = new StreamReader(arquivoHrFesta);
-                string[] todaLinha;
-                string linha = " ";
-                string horarioFesta = " ";
-                int cont = 0;
-                if (cbHoraFestaSabado.Enabled == true)//no sabado
+                else
                 {
+                    // Verificando horários aos sábados
+
                     horarioFesta = cbHoraFestaSabado.Text;
                     while (linha != null)
                     {
@@ -196,13 +194,13 @@ namespace telasTrab
                         {
                             todaLinha = linha.Split('*');
                             //VERIFICANDO SE HORÁRIO ESTA DISPONIVEL
-
-                            if ((todaLinha[2] == dTPdataFesta.Value.Date.ToString("dd/MM/yyyy")) && (todaLinha[4] == horarioFesta))
+                            if ((todaLinha[2] == dTPdataFesta.Value.Date.ToString("dd/MM/yyyy")) && (todaLinha[4].Equals(horarioFesta)))
                             {
                                 MessageBox.Show("Horário Indisponível!", "Aviso", MessageBoxButtons.OK,
                                     MessageBoxIcon.Warning);
                                 festa.horarioFesta = " ";
                                 festa.dataFesta = " ";
+                                cont++;
                             }
                             else
                             {
@@ -212,42 +210,45 @@ namespace telasTrab
                             }
                         }
                     }
-                }
-                else if ((timeHoradiaSemana1.Enabled == true))//dia de semana
-                {
-                    while (linha != null)
+                    if ((linha == null) && (cont == 0))
                     {
-                        linha = lerArq.ReadLine();
-                        if (linha != null)
+                        festa.dataFesta = dTPdataFesta.Value.Date.ToString("dd/MM/yyyy");
+                        festa.horarioFesta = cbHoraFestaSabado.Text;
+                    }
+                }
+            }
+            else if ((timeHoradiaSemana1.Enabled == true))//dia de semana
+            {
+                while (linha != null)
+                {
+                    linha = lerArq.ReadLine();
+                    if (linha != null)
+                    {
+                        todaLinha = linha.Split('*');
+                        if (todaLinha[2] == dTPdataFesta.Value.Date.ToString("dd/MM/yyyy"))
                         {
-                            todaLinha = linha.Split('*');
-                            if (todaLinha[2] == dTPdataFesta.Value.ToString("dd/MM/yyyy"))
-                            {
-                                MessageBox.Show("Data Indisponível!", "Aviso", MessageBoxButtons.OK,
-                                    MessageBoxIcon.Warning);
-                                festa.horarioFesta = " ";
-                                festa.dataFesta = " ";
-                                cont++;
-                            }
-                            else
-                            {
-                                festa.dataFesta = dTPdataFesta.Value.Date.ToString("dd/MM/yyyy");
-                                festa.horarioFesta = ((timeHoradiaSemana1.Value) + "as" + (timeHoradiaSemana2.Value));
-                                cont++;
-                            }
+                            MessageBox.Show("Data Indisponível!", "Aviso", MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                            festa.horarioFesta = " ";
+                            festa.dataFesta = " ";
+                            cont++;
+                        }
+                        else
+                        {
+                            festa.dataFesta = dTPdataFesta.Value.Date.ToString("dd/MM/yyyy");
+                            festa.horarioFesta = ((timeHoradiaSemana1.Value.TimeOfDay) + "a" + (timeHoradiaSemana2.Value.TimeOfDay));
+                            cont++;
                         }
                     }
                 }
-                if ((linha == null) && (cont == 0))
-                {
-                    festa.dataFesta = dTPdataFesta.Value.Date.ToString("dd/MM/yyyy");
-                    festa.horarioFesta = ((timeHoradiaSemana1.Value.TimeOfDay) + "as" + (timeHoradiaSemana2.Value.TimeOfDay));
-                }
-
-                arquivoHrFesta.Close();
             }
-            
+            if ((linha == null) && (cont == 0))
+            {
+                festa.dataFesta = dTPdataFesta.Value.Date.ToString("dd/MM/yyyy");
+                festa.horarioFesta = ((timeHoradiaSemana1.Value.TimeOfDay) + "a" + (timeHoradiaSemana2.Value.TimeOfDay));
+            }
 
+            arquivoHrFesta.Close();
             //verificando se o tema foi preenchido
             if (tbTemaFesta.Text == string.Empty)
             {
