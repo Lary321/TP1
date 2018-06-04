@@ -115,12 +115,12 @@ namespace telasTrab
                             // Variável utilizada para adicionar imagens e formas em um documento PDF no iTextSharp
                             var contentByte = pdfWriter.DirectContent;
 
-                            // Inserindo imagem no relatorio em pdf
-                            var imagem = iTextSharp.text.Image.GetInstance("imagemRelatorioCliente.png");
+                            // Inserindo imagem no relatorio em pdf (PARA FUNCIONAR TEM QUE ALTERAR O DIRETÓRIO DA IMAGEM) 
+                            /*var imagem = iTextSharp.text.Image.GetInstance("E:/PUC MINAS/1º Período/Disciplinas/Lab. Algoritmos e Técnicas de Programação/TP1/TP1/_imagens/imagemRelatorioCliente.png");
                             imagem.ScaleToFit(700, 200);
                             imagem.SetAbsolutePosition(32, 625);
                             imagem.Alignment = iTextSharp.text.Image.ALIGN_CENTER;
-                            contentByte.AddImage(imagem);
+                            contentByte.AddImage(imagem);*/
 
                             // inserindo os dados da festa no relatorio em pdf
                             var paragrafo = new iTextSharp.text.Paragraph();
@@ -232,12 +232,12 @@ namespace telasTrab
                                 // Variável utilizada para adicionar imagens e formas em um documento PDF no iTextSharp
                                 var contentByte = pdfWriter.DirectContent;
 
-                                // Inserindo imagem no relatorio em pdf
-                                var imagem = iTextSharp.text.Image.GetInstance("imagemRelatorioData.png");
+                                // Inserindo imagem no relatorio em pdf (PARA FUNCIONAR TEM QUE ALTERAR O DIRETÓRIO DA IMAGEM) 
+                                /*var imagem = iTextSharp.text.Image.GetInstance("E:/PUC MINAS/1º Período/Disciplinas/Lab.Algoritmos e Técnicas de Programação/TP1/TP1/_imagens/RelatorioData.png");
                                 imagem.ScaleToFit(700, 200);
                                 imagem.SetAbsolutePosition(32, 625);
                                 imagem.Alignment = iTextSharp.text.Image.ALIGN_CENTER;
-                                contentByte.AddImage(imagem);
+                                contentByte.AddImage(imagem);*/
 
                                 // inserindo os dados da festa no relatorio em pdf
                                 var paragrafo = new iTextSharp.text.Paragraph();

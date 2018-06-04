@@ -119,17 +119,17 @@ namespace telasTrab
                     if (cbFormaPagamento.Text == "A vista")
                     {
                         contrato.valorFinal = double.Parse(contrato.valor) * 0.90;
-                        labelPagamento.Text = contrato.valorFinal.ToString();
+                        labelPagamento.Text = contrato.valorFinal.ToString().Replace(".", ",");
                     }
                     else if (cbFormaPagamento.SelectedItem.ToString() == "Duas vezes")
                     {
                         contrato.valorFinal = double.Parse(contrato.valor) * 0.95;
-                        labelPagamento.Text = contrato.valorFinal.ToString();
+                        labelPagamento.Text = contrato.valorFinal.ToString().Replace(".", ",");
                     }
                     else if (cbFormaPagamento.SelectedItem.ToString() == "Três vezes")
                     {
                         contrato.valorFinal = double.Parse(contrato.valor) * 0.98;
-                        labelPagamento.Text = contrato.valorFinal.ToString();
+                        labelPagamento.Text = contrato.valorFinal.ToString().Replace(".", ",");
                     }
                     else if (cbFormaPagamento.SelectedItem.ToString() == "Quatro ou mais vezes")
                     {
@@ -144,17 +144,17 @@ namespace telasTrab
                     if (cbFormaPagamento.Text == "A vista")
                     {
                         contrato.valorFinal = double.Parse(contrato.valor) * 0.90;
-                        labelPagamento.Text = contrato.valorFinal.ToString();
+                        labelPagamento.Text = contrato.valorFinal.ToString().Replace(".", ",");
                     }
                     else if (cbFormaPagamento.SelectedItem.ToString() == "Duas vezes")
                     {
                         contrato.valorFinal = double.Parse(contrato.valor) * 0.95;
-                        labelPagamento.Text = contrato.valorFinal.ToString();
+                        labelPagamento.Text = contrato.valorFinal.ToString().Replace(".", ",");
                     }
                     else if (cbFormaPagamento.SelectedItem.ToString() == "Três vezes")
                     {
                         contrato.valorFinal = double.Parse(contrato.valor) * 0.98;
-                        labelPagamento.Text = contrato.valorFinal.ToString();
+                        labelPagamento.Text = contrato.valorFinal.ToString().Replace(".", ",");
                     }
                     else if (cbFormaPagamento.SelectedItem.ToString() == "Quatro ou mais vezes")
                     {
@@ -198,22 +198,22 @@ namespace telasTrab
                     if (cbFormaPagamento.Text == "A vista")
                     {
                         contrato.valorFinal = double.Parse(contrato.valor) * 0.90;
-                        labelPagamento.Text = contrato.valorFinal.ToString();
+                        labelPagamento.Text = contrato.valorFinal.ToString().Replace(".", ",");
                     }
                     else if (cbFormaPagamento.SelectedItem.ToString() == "Duas vezes")
                     {
                         contrato.valorFinal = double.Parse(contrato.valor) * 0.95;
-                        labelPagamento.Text = contrato.valorFinal.ToString();
+                        labelPagamento.Text = contrato.valorFinal.ToString().Replace(".", ",");
                     }
                     else if (cbFormaPagamento.SelectedItem.ToString() == "Três vezes")
                     {
                         contrato.valorFinal = double.Parse(contrato.valor) * 0.98;
-                        labelPagamento.Text = contrato.valorFinal.ToString();
+                        labelPagamento.Text = contrato.valorFinal.ToString().Replace(".", ",");
                     }
                     else if (cbFormaPagamento.SelectedItem.ToString() == "Quatro ou mais vezes")
                     {
                         contrato.valorFinal = 2299.00;
-                        labelPagamento.Text = contrato.valorFinal.ToString();
+                        labelPagamento.Text = contrato.valorFinal.ToString().Replace(".", ",");
                     }
                 }
             }
@@ -222,22 +222,22 @@ namespace telasTrab
                 if (contrato.diaSemana == "Segunda-feira" || contrato.diaSemana == "Terça-feira" ||
                     contrato.diaSemana == "Quarta-feira" || contrato.diaSemana == "Quinta-feira")
                 {
-                    contrato.valor = "3199,00";
+                    contrato.valor = "3199.00";
                     labelPagamento.Text = contrato.valor.ToString();
                     if (cbFormaPagamento.Text == "A vista")
                     {
                         contrato.valorFinal = double.Parse(contrato.valor) * 0.90;
-                        labelPagamento.Text = contrato.valorFinal.ToString();
+                        labelPagamento.Text = contrato.valorFinal.ToString().Replace(".", ",");
                     }
                     else if (cbFormaPagamento.SelectedItem.ToString() == "Duas vezes")
                     {
                         contrato.valorFinal = double.Parse(contrato.valor) * 0.95;
-                        labelPagamento.Text = contrato.valorFinal.ToString();
+                        labelPagamento.Text = contrato.valorFinal.ToString().Replace(".", ",");
                     }
                     else if (cbFormaPagamento.SelectedItem.ToString() == "Três vezes")
                     {
                         contrato.valorFinal = double.Parse(contrato.valor) * 0.98;
-                        labelPagamento.Text = contrato.valorFinal.ToString();
+                        labelPagamento.Text = contrato.valorFinal.ToString().Replace(".", ",");
                     }
                     else if (cbFormaPagamento.SelectedItem.ToString() == "Quatro ou mais vezes")
                     {
@@ -253,17 +253,17 @@ namespace telasTrab
                     if (cbFormaPagamento.Text == "A vista")
                     {
                         contrato.valorFinal = double.Parse(contrato.valor) * 0.90;
-                        labelPagamento.Text = contrato.valorFinal.ToString();
+                        labelPagamento.Text = contrato.valorFinal.ToString().Replace(".", ",");
                     }
                     else if (cbFormaPagamento.SelectedItem.ToString() == "Duas vezes")
                     {
                         contrato.valorFinal = double.Parse(contrato.valor) * 0.95;
-                        labelPagamento.Text = contrato.valorFinal.ToString();
+                        labelPagamento.Text = contrato.valorFinal.ToString().Replace(".", ",");
                     }
                     else if (cbFormaPagamento.SelectedItem.ToString() == "Três vezes")
                     {
                         contrato.valorFinal = double.Parse(contrato.valor) * 0.98;
-                        labelPagamento.Text = contrato.valorFinal.ToString();
+                        labelPagamento.Text = contrato.valorFinal.ToString().Replace(".", ",");
                     }
                     else if (cbFormaPagamento.SelectedItem.ToString() == "Quatro ou mais vezes")
                     {
@@ -277,22 +277,22 @@ namespace telasTrab
                 if (contrato.diaSemana == "Segunda-feira" || contrato.diaSemana == "Terça-feira" ||
                  contrato.diaSemana == "Quarta-feira" || contrato.diaSemana == "Quinta-feira")
                 {
-                    contrato.valor = "3799,00";
+                    contrato.valor = "3799.00";
                     labelPagamento.Text = contrato.valor.ToString();
                     if (cbFormaPagamento.Text == "A vista")
                     {
                         contrato.valorFinal = double.Parse(contrato.valor) * 0.90;
-                        labelPagamento.Text = contrato.valorFinal.ToString();
+                        labelPagamento.Text = contrato.valorFinal.ToString().Replace(".", ",");
                     }
                     else if (cbFormaPagamento.SelectedItem.ToString() == "Duas vezes")
                     {
                         contrato.valorFinal = double.Parse(contrato.valor) * 0.95;
-                        labelPagamento.Text = contrato.valorFinal.ToString();
+                        labelPagamento.Text = contrato.valorFinal.ToString().Replace(".", ",");
                     }
                     else if (cbFormaPagamento.SelectedItem.ToString() == "Três vezes")
                     {
                         contrato.valorFinal = double.Parse(contrato.valor) * 0.98;
-                        labelPagamento.Text = contrato.valorFinal.ToString();
+                        labelPagamento.Text = contrato.valorFinal.ToString().Replace(".", ",");
                     }
                     else if (cbFormaPagamento.SelectedItem.ToString() == "Quatro ou mais vezes")
                     {
@@ -303,22 +303,22 @@ namespace telasTrab
                 else if (contrato.diaSemana == "Sexta-feira" || contrato.diaSemana == "Sábado" ||
                      contrato.diaSemana == "Domingo")
                 {
-                    contrato.valor = "3999,00";
+                    contrato.valor = "3999.00";
                     labelPagamento.Text = contrato.valor.ToString();
                     if (cbFormaPagamento.Text == "A vista")
                     {
                         contrato.valorFinal = double.Parse(contrato.valor) * 0.90;
-                        labelPagamento.Text = contrato.valorFinal.ToString();
+                        labelPagamento.Text = contrato.valorFinal.ToString().Replace(".", ",");
                     }
                     else if (cbFormaPagamento.SelectedItem.ToString() == "Duas vezes")
                     {
                         contrato.valorFinal = double.Parse(contrato.valor) * 0.95;
-                        labelPagamento.Text = contrato.valorFinal.ToString();
+                        labelPagamento.Text = contrato.valorFinal.ToString().Replace(".", ",");
                     }
                     else if (cbFormaPagamento.SelectedItem.ToString() == "Três vezes")
                     {
                         contrato.valorFinal = (double.Parse(contrato.valor) * 0.98);
-                        labelPagamento.Text = contrato.valorFinal.ToString();
+                        labelPagamento.Text = contrato.valorFinal.ToString().Replace(".", ",");
                     }
                     else if (cbFormaPagamento.SelectedItem.ToString() == "Quatro ou mais vezes")
                     {

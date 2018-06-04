@@ -7,8 +7,8 @@ namespace telasTrab
     public partial class _cadastroFesta : Form
     {
 
-        int codigo = 0;
-        int codigoContrato = 0;
+        int codigo = 1000;
+        int codigoContrato = 100;
         public struct Contrato
         {
             public string valor;
@@ -62,6 +62,7 @@ namespace telasTrab
                 {
                     todaLinhaCliente = linhaCliente.Split('*');
                     cbNomeCliente.Items.Add(todaLinhaCliente[1]);
+                    cbNomeCliente.Sorted = true;
                 }
             } while (linhaCliente != null);
             arquivoCliente.Close();
@@ -128,6 +129,12 @@ namespace telasTrab
         }
 
         private void timeHoradiaSemana1_ValueChanged(object sender, EventArgs e)
+        {
+            //altera horario dos dateTime
+            timeHoradiaSemana2.Value = timeHoradiaSemana1.Value.AddHours(4);
+        }
+
+        private void timeHoradiaSemana2_ValueChanged(object sender, EventArgs e)
         {
             //altera horario dos dateTime
             timeHoradiaSemana2.Value = timeHoradiaSemana1.Value.AddHours(4);
@@ -415,8 +422,6 @@ namespace telasTrab
                  /////////////////////////////////////////////////
 
 
-
-
                 MessageBox.Show("Dados gravados com sucesso!", "Aviso", MessageBoxButtons.OK,
                        MessageBoxIcon.Asterisk);
                 escreve.Close();
@@ -466,7 +471,6 @@ namespace telasTrab
         {
             this.Hide();
             this.Close();
-        }
-
+        }        
     }
 }
