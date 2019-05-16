@@ -312,7 +312,7 @@ namespace telasTrab
                     {
                         todaLinhaCliente2 = linhaCliente2.Split('*');
                         if(todaLinhaCliente2[1] == festa.nomeCliente) { 
-                            festa.codigoCliente = todaLinhaCliente2[0].ToString();
+                            festa.codigoCliente = todaLinhaCliente2[0].ToString().Trim();
                         }
                     }
                 } while (linhaCliente2 != null);
@@ -471,6 +471,6 @@ namespace telasTrab
         {
             this.Hide();
             this.Close();
-        }        
+        }
     }
 }

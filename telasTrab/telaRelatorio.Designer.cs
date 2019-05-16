@@ -106,7 +106,7 @@
             this.gBdataFesta.Enabled = false;
             this.gBdataFesta.Location = new System.Drawing.Point(215, 66);
             this.gBdataFesta.Name = "gBdataFesta";
-            this.gBdataFesta.Size = new System.Drawing.Size(279, 100);
+            this.gBdataFesta.Size = new System.Drawing.Size(279, 109);
             this.gBdataFesta.TabIndex = 11;
             this.gBdataFesta.TabStop = false;
             // 

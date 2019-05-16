@@ -67,3 +67,24 @@ C:\Users\lucinea\Desktop\FACUL_ARTHUR\1° periodo\ATP\TP1\TP1\telasTrab\bin\Debu
 C:\Users\lucinea\Desktop\FACUL_ARTHUR\1° periodo\ATP\TP1\TP1\telasTrab\obj\Debug\telasTrab.telaConsulta.resources
 C:\Users\lucinea\Desktop\FACUL_ARTHUR\1° periodo\ATP\TP1\TP1\telasTrab\obj\Debug\telasTrab._geraContrato.resources
 E:\PUC MINAS\1º Período\Disciplinas\Lab. Algoritmos e Técnicas de Programação\TP1\TP1\telasTrab\obj\Debug\telasTrab._geraContrato.resources
+C:\Users\Larys\Source\Repos\Workspace\TP1\Lary321\TP1\telasTrab\obj\Debug\telasTrab.csprojAssemblyReference.cache
+C:\Users\Larys\Source\Repos\Workspace\TP1\Lary321\TP1\telasTrab\obj\Debug\telasTrab.menuPrincipal.resources
+C:\Users\Larys\Source\Repos\Workspace\TP1\Lary321\TP1\telasTrab\obj\Debug\telasTrab.telaCadastro.resources
+C:\Users\Larys\Source\Repos\Workspace\TP1\Lary321\TP1\telasTrab\obj\Debug\telasTrab.telaConsulta.resources
+C:\Users\Larys\Source\Repos\Workspace\TP1\Lary321\TP1\telasTrab\obj\Debug\telasTrab.telaRelatorio.resources
+C:\Users\Larys\Source\Repos\Workspace\TP1\Lary321\TP1\telasTrab\obj\Debug\telasTrab.Properties.Resources.resources
+C:\Users\Larys\Source\Repos\Workspace\TP1\Lary321\TP1\telasTrab\obj\Debug\telasTrab._cadastroCliente.resources
+C:\Users\Larys\Source\Repos\Workspace\TP1\Lary321\TP1\telasTrab\obj\Debug\telasTrab._cadastroFesta.resources
+C:\Users\Larys\Source\Repos\Workspace\TP1\Lary321\TP1\telasTrab\obj\Debug\telasTrab._cadastroFornecedor.resources
+C:\Users\Larys\Source\Repos\Workspace\TP1\Lary321\TP1\telasTrab\obj\Debug\telasTrab._cadastroFuncionario.resources
+C:\Users\Larys\Source\Repos\Workspace\TP1\Lary321\TP1\telasTrab\obj\Debug\telasTrab._geraContrato.resources
+C:\Users\Larys\Source\Repos\Workspace\TP1\Lary321\TP1\telasTrab\obj\Debug\telasTrab.csproj.GenerateResource.cache
+C:\Users\Larys\Source\Repos\Workspace\TP1\Lary321\TP1\telasTrab\obj\Debug\telasTrab.csproj.CoreCompileInputs.cache
+C:\Users\Larys\Source\Repos\Workspace\TP1\Lary321\TP1\telasTrab\bin\Debug\telasTrab.exe.config
+C:\Users\Larys\Source\Repos\Workspace\TP1\Lary321\TP1\telasTrab\bin\Debug\telasTrab.exe
+C:\Users\Larys\Source\Repos\Workspace\TP1\Lary321\TP1\telasTrab\bin\Debug\telasTrab.pdb
+C:\Users\Larys\Source\Repos\Workspace\TP1\Lary321\TP1\telasTrab\bin\Debug\itextsharp.dll
+C:\Users\Larys\Source\Repos\Workspace\TP1\Lary321\TP1\telasTrab\bin\Debug\itextsharp.xml
+C:\Users\Larys\Source\Repos\Workspace\TP1\Lary321\TP1\telasTrab\obj\Debug\telasTrab.csproj.CopyComplete
+C:\Users\Larys\Source\Repos\Workspace\TP1\Lary321\TP1\telasTrab\obj\Debug\telasTrab.exe
+C:\Users\Larys\Source\Repos\Workspace\TP1\Lary321\TP1\telasTrab\obj\Debug\telasTrab.pdb
